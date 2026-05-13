@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRC Engineering: Secure Coding Training</title>
+  <title>Обучение основам безопасного программирования</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -810,8 +810,8 @@
   <div class="achievement" id="achievementPopup">
     <div class="achievement-icon" id="achievementIcon">🏆</div>
     <div>
-      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Achievement Unlocked!</div>
-      <div style="font-size:14px; color:#6c757d;" id="achievementText">You're making great progress!</div>
+      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Достижение разблокировано!</div>
+      <div style="font-size:14px; color:#6c757d;" id="achievementText">Вы отлично продвигаетесь!</div>
     </div>
   </div>
 
@@ -822,65 +822,65 @@
     <div class="grc-header">
       <div class="grc-logo">
         <div class="grc-owl" onclick="owlClick()">👾</div>
-        <span>Secure Coding (OWASP)</span>
+        <span>Безопасное программирование (OWASP Top 10)</span>
       </div>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
 
     <!-- Slide 1: Welcome -->
     <div class="slide active" id="slide1">
-      <h1>🔐 Secure Coding Training</h1>
+      <h1>🔐 Обучение безопасному программированию</h1>
       <div class="intro-animation">💻</div>
       <p style="text-align:center; font-size:1.4rem; margin-bottom:24px; color:#7B2CBF; font-weight:600;">
-        Master OWASP Top 10 Security Best Practices
+        Освойте лучшие практики безопасности OWASP Top 10
       </p>
       
       <div style="background:#f0f7ff; padding:24px; border-radius:12px; margin:20px auto; max-width:700px; border:1px solid #d0e4ff;">
         <p style="font-size:1.1rem; color:#333; margin-bottom:16px; font-weight:600;">
-          In this training you will learn to:
+          В этом обучении вы научитесь:
         </p>
         <ul style="text-align:left; font-size:1rem; color:#555; line-height:1.8; max-width:500px; margin:0 auto; list-style:none;">
-          <li>💉 <strong>Prevent SQL injection</strong> and other injection attacks</li>
-          <li>🔍 <strong>Conduct secure code reviews</strong> to catch vulnerabilities</li>
-          <li>📦 <strong>Manage dependencies</strong> and identify vulnerable packages</li>
-          <li>🛡️ <strong>Implement authentication</strong> and authorization properly</li>
+          <li>💉 <strong>Предотвращать SQL-инъекции</strong> и другим виды инъекций</li>
+          <li>🔍 <strong>Проводить проверки безопасности кода</strong> для выявления уязвимостей</li>
+          <li>📦 <strong>Управлять зависимостями</strong> и выявлять уязвимые пакеты</li>
+          <li>🛡️ <strong>Реализовывать аутентификацию</strong> и авторизацию надлежащим образом</li>
         </ul>
       </div>
       
       <div style="margin:32px auto; max-width:700px;">
         <p style="font-size:1.2rem; color:#333; margin-bottom:32px; text-align:center;">
-          Please select your role to continue:
+          Выберите вашу роль для продолжения:
         </p>
         <div class="decision-grid" style="max-width:600px; margin:0 auto;">
           <button class="decision-btn" onclick="roleCheck('engineer')" style="padding:24px; font-size:1.1rem;">
             <span style="font-size:1.5rem; margin-bottom:8px; display:block;">👨‍💻</span>
-            I'm an Engineer/Developer
+            Я разработчик
           </button>
           <button class="decision-btn" onclick="roleCheck('other')" style="padding:24px; font-size:1.1rem;">
             <span style="font-size:1.5rem; margin-bottom:8px; display:block;">👔</span>
-            Other Role
+            Другая роль
           </button>
         </div>
         <p style="font-size:0.9rem; color:#666; margin-top:24px; text-align:center; font-style:italic;">
-          💡 This training contains technical secure coding content designed for developers
+          💡 Это обучение содержит технический контент по безопасному программированию для разработчиков
         </p>
       </div>
       
       <!-- Skip Confirmation Popup -->
       <div id="popupOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9998;"></div>
       <div id="skipConfirmation" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:32px; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.2); z-index:9999; max-width:500px;">
-        <h3 style="color:#ff9800; margin:0 0 16px 0;">⚠️ Training Recommendation</h3>
-        <p style="color:#333; margin-bottom:24px;">This secure coding training contains technical content specifically designed for engineers and developers. As a non-technical role, you can:</p>
+        <h3 style="color:#ff9800; margin:0 0 16px 0;">⚠️ Рекомендация по обучению</h3>
+        <p style="color:#333; margin-bottom:24px;">Это обучение по безопасному программированию содержит технический контент специально для инженеров и разработчиков. Как нетехнический специалист, вы можете:</p>
         <div style="display:flex; gap:16px; justify-content:center; align-items:center;">
           <button class="btn" onclick="document.getElementById('skipConfirmation').style.display='none'; document.getElementById('popupOverlay').style.display='none'; skipToCompletion();" style="background:linear-gradient(135deg, #4CAF50, #45a049); padding:12px 24px; min-width:150px;">
-            ✅ Skip & Complete
+            ✅ Пропустить и завершить
           </button>
           <button class="btn btn-secondary" onclick="document.getElementById('skipConfirmation').style.display='none'; document.getElementById('popupOverlay').style.display='none'; startTraining();" style="padding:12px 24px; min-width:150px;">
-            👀 Continue Anyway
+            👀 Продолжить, несмотря на это
           </button>
         </div>
         <p style="font-size:0.85rem; color:#666; margin-top:16px; text-align:center; font-style:italic;">
-          Both options will mark your training as complete
+          Оба варианта засчитают обучение как пройденное
         </p>
       </div>
       
@@ -891,32 +891,32 @@
 
     <!-- Slide 2: OWASP Top 10 Interactive List -->
     <div class="slide" id="slide2">
-      <h2>📚 OWASP Top 10 Security Risks</h2>
-      <p>Click on each item to learn more about these critical security vulnerabilities:</p>
+      <h2>📚 OWASP Top 10: основные угрозы безопасности</h2>
+      <p>Нажмите на каждый пункт, чтобы узнать об этих критических уязвимостях:</p>
       
       <div style="max-width: 900px; margin: 32px auto;">
         <div class="owasp-item" onclick="toggleOWASP(this, 1)">
           <div class="owasp-header">
             <span class="owasp-number">1</span>
             <span class="owasp-icon">💉</span>
-            <span class="owasp-title">Injection</span>
+            <span class="owasp-title">Инъекции</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Injection occurs when malicious code is inserted into vulnerable programs through untrusted data inputs.</p>
+            <p><strong>Что это такое:</strong> Инъекции происходят, когда вредоносный код вставляется в уязвимые программы через ненадёжные входные данные.</p>
             
-            <p><strong>Real-world example:</strong> In 2017, Equifax was breached due to a SQL injection vulnerability, exposing 147 million records. The attack used a simple payload like <code>' UNION SELECT password FROM users--</code></p>
+            <p><strong>Реальный пример:</strong> В 2017 году Equifax был взломан из-за уязвимости SQL-инъекции, что привело к утечке 147 миллионов записей. Атака использовала простой payload, например <code>' UNION SELECT password FROM users--</code></p>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Use parameterized queries: <code>SELECT * FROM users WHERE id = ?</code></li>
-              <li>Validate all inputs server-side</li>
-              <li>Use ORM frameworks with built-in protections</li>
-              <li>Apply principle of least privilege to database accounts</li>
+              <li>Используйте параметризованные запросы: <code>SELECT * FROM users WHERE id = ?</code></li>
+              <li>Проверяйте все входные данные на стороне сервера</li>
+              <li>Используйте ORM-фреймворки со встроенной защитой</li>
+              <li>Применяйте принцип наименьших привилегий к аккаунтам баз данных</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank" style="color: var(--primary-purple);">OWASP SQL Injection</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Prevention Cheat Sheet</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank" style="color: var(--primary-purple);">OWASP: SQL-инъекции</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Памятка по предотвращению</a></p>
           </div>
         </div>
         
@@ -924,25 +924,25 @@
           <div class="owasp-header">
             <span class="owasp-number">2</span>
             <span class="owasp-icon">🔐</span>
-            <span class="owasp-title">Broken Authentication</span>
+            <span class="owasp-title">Нарушение аутентификации</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Vulnerabilities in authentication and session management that allow attackers to compromise passwords, keys, or session tokens.</p>
+            <p><strong>Что это такое:</strong> Уязвимости в аутентификации и управлении сессиями, позволяющие злоумышленникам компрометировать пароли, ключи или токены сессий.</p>
             
-            <p><strong>Real-world example:</strong> In 2019, Capital One was breached when an attacker used misconfigured AWS credentials to access 100 million customer records. The attack exploited weak authentication controls.</p>
+            <p><strong>Реальный пример:</strong> В 2019 году Capital One был взломан: злоумышленник использовал некорректно настроенные AWS-учётные данные для доступа к 100 миллионам записей клиентов.</p>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Implement multi-factor authentication (MFA) everywhere</li>
-              <li>Use secure secret management systems (HashiCorp Vault, AWS Secrets)</li>
-              <li>Rotate credentials regularly and automatically</li>
-              <li>Enforce strong password policies (12+ chars, complexity)</li>
-              <li>Implement session timeout and secure cookie flags</li>
+              <li>Внедряйте многофакторную аутентификацию (MFA) везде</li>
+              <li>Используйте системы управления секретами (HashiCorp Vault, AWS Secrets)</li>
+              <li>Регулярно и автоматически ротируйте учётные данные</li>
+              <li>Применяйте политики надёжных паролей (12+ символов, сложность)</li>
+              <li>Внедряйте тайм-аут сессий и безопасные флаги cookie</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication" target="_blank" style="color: var(--primary-purple);">OWASP Broken Authentication</a> | <a href="https://owasp.org/www-community/secrets-management" target="_blank" style="color: var(--primary-purple);">Secrets Management</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication" target="_blank" style="color: var(--primary-purple);">OWASP: нарушение аутентификации</a> | <a href="https://owasp.org/www-community/secrets-management" target="_blank" style="color: var(--primary-purple);">Управление секретами</a></p>
           </div>
         </div>
         
@@ -950,25 +950,25 @@
           <div class="owasp-header">
             <span class="owasp-number">3</span>
             <span class="owasp-icon">🕵️</span>
-            <span class="owasp-title">Sensitive Data Exposure</span>
+            <span class="owasp-title">Раскрытие конфиденциальных данных</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Applications fail to protect sensitive data like credit cards, health records, and personal information through inadequate encryption or storage practices.</p>
+            <p><strong>Что это такое:</strong> Приложения не защищают конфиденциальные данные — кредитные карты, медицинские записи, персональные данные — из-за недостаточного шифрования или ненадлежащего хранения.</p>
             
-            <p><strong>Real-world example:</strong> In 2018, Marriott exposed 500 million guest records stored in plain text for years. The data included passport numbers, names, and encrypted payment cards - but the encryption keys were also compromised!</p>
+            <p><strong>Реальный пример:</strong> В 2018 году Marriott раскрыл 500 миллионов записей гостей, хранившихся в открытом виде годами. Данные включали номера паспортов, имена и зашифрованные платёжные карты — но ключи шифрования тоже были скомпрометированы!</p>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Encrypt all data at rest (AES-256) and in transit (TLS 1.3)</li>
-              <li>Use secure environment variable management (not plain text files)</li>
-              <li>Classify data and apply appropriate protection levels</li>
-              <li>Disable autocomplete on sensitive forms</li>
-              <li>Use secure key management (AWS KMS, Azure Key Vault)</li>
+              <li>Шифруйте все данные в покое (AES-256) и при передаче (TLS 1.2/1.3)</li>
+              <li>Используйте безопасное управление переменными окружения (не текстовые файлы)</li>
+              <li>Классифицируйте данные и применяйте соответствующие уровни защиты</li>
+              <li>Отключайте автозаполнение на конфиденциальных формах</li>
+              <li>Используйте безопасное управление ключами (AWS KMS, Azure Key Vault)</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure" target="_blank" style="color: var(--primary-purple);">OWASP Sensitive Data</a> | <a href="https://csrc.nist.gov/publications/detail/fips/140/2/final" target="_blank" style="color: var(--primary-purple);">NIST Encryption Standards</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure" target="_blank" style="color: var(--primary-purple);">OWASP: конфиденциальные данные</a> | <a href="https://csrc.nist.gov/publications/detail/fips/140/2/final" target="_blank" style="color: var(--primary-purple);">Стандарты шифрования NIST</a></p>
           </div>
         </div>
         
@@ -976,30 +976,30 @@
           <div class="owasp-header">
             <span class="owasp-number">4</span>
             <span class="owasp-icon">🔗</span>
-            <span class="owasp-title">XML External Entities (XXE)</span>
+            <span class="owasp-title">XML-сущности (XXE)</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> XML parsers evaluate external entity references within XML documents, leading to disclosure of internal files, internal port scanning, or remote code execution.</p>
+            <p><strong>Что это такое:</strong> Парсеры XML обрабатывают ссылки на внешние сущности в XML-документах, что может привести к раскрытию внутренних файлов, сканированию портов или удалённому выполнению кода.</p>
             
-            <p><strong>Real-world example:</strong> In 2014, Facebook's XML parser was exploited to read local files from their servers. Attackers used payloads like:</p>
+            <p><strong>Реальный пример:</strong> В 2014 году XML-парсер Facebook был использован для чтения локальных файлов с серверов компании.</p>
             <code style="display: block; background: #f0f0f0; padding: 8px; margin: 8px 0; border-radius: 4px; font-size: 12px;">
 &lt;?xml version="1.0"?&gt;<br>
 &lt;!DOCTYPE data [&lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;<br>
 &lt;data&gt;&amp;xxe;&lt;/data&gt;
             </code>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Disable external entities: <code>DocumentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true)</code></li>
-              <li>Use JSON instead of XML when possible</li>
-              <li>Validate and sanitize all XML inputs</li>
-              <li>Use XML processors with secure defaults</li>
-              <li>Implement whitelist input validation</li>
+              <li>Отключайте внешние сущности: <code>DocumentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true)</code></li>
+              <li>Используйте JSON вместо XML там, где это возможно</li>
+              <li>Проверяйте и очищайте все XML-входные данные</li>
+              <li>Используйте XML-процессоры с безопасными настройками по умолчанию</li>
+              <li>Внедряйте валидацию входных данных по белому списку</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing" target="_blank" style="color: var(--primary-purple);">OWASP XXE Guide</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">XXE Prevention</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing" target="_blank" style="color: var(--primary-purple);">OWASP: руководство по XXE</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение XXE</a></p>
           </div>
         </div>
         
@@ -1007,25 +1007,25 @@
           <div class="owasp-header">
             <span class="owasp-number">5</span>
             <span class="owasp-icon">🚪</span>
-            <span class="owasp-title">Broken Access Control</span>
+            <span class="owasp-title">Нарушение управления доступом</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Users can access unauthorized functionality and data due to missing or ineffective access control checks.</p>
+            <p><strong>Что это такое:</strong> Пользователи могут получить доступ к несанкционированным функциям и данным из-за отсутствия или неэффективности проверок контроля доступа.</p>
             
-            <p><strong>Real-world example:</strong> In 2019, First American Financial Corp exposed 885 million documents by failing to implement proper access controls. Changing URL parameters gave access to any customer's mortgage documents: <code>/document/12345</code> → <code>/document/99999</code></p>
+            <p><strong>Реальный пример:</strong> В 2019 году First American Financial Corp раскрыла 885 миллионов документов из-за отсутствия надлежащего контроля доступа. Изменение параметров URL давало доступ к ипотечным документам любого клиента. <code>/document/12345</code> → <code>/document/99999</code></p>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Implement Role-Based Access Control (RBAC)</li>
-              <li>Run applications with minimal required privileges</li>
-              <li>Validate access controls on every request</li>
-              <li>Apply principle of least privilege everywhere</li>
-              <li>Implement network segmentation and access controls</li>
+              <li>Внедряйте ролевое управление доступом (RBAC)</li>
+              <li>Запускайте приложения с минимально необходимыми привилегиями</li>
+              <li>Проверяйте контроль доступа при каждом запросе</li>
+              <li>Применяйте принцип наименьших привилегий повсеместно</li>
+              <li>Внедряйте сегментацию сети и контроль доступа</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control" target="_blank" style="color: var(--primary-purple);">OWASP Access Control</a> | <a href="https://www.nist.gov/privacy-framework/nist-sp-800-53" target="_blank" style="color: var(--primary-purple);">NIST Security Controls</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control" target="_blank" style="color: var(--primary-purple);">OWASP: управление доступом</a> | <a href="https://www.nist.gov/privacy-framework/nist-sp-800-53" target="_blank" style="color: var(--primary-purple);">Средства управления безопасностью NIST</a></p>
           </div>
         </div>
         
@@ -1033,34 +1033,34 @@
           <div class="owasp-header">
             <span class="owasp-number">6</span>
             <span class="owasp-icon">⚙️</span>
-            <span class="owasp-title">Security Misconfiguration</span>
+            <span class="owasp-title">Неправильная конфигурация безопасности</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Applications, frameworks, and servers are often misconfigured, leaving systems vulnerable through insecure default configurations, incomplete setups, or outdated software.</p>
+            <p><strong>Что это такое:</strong> Приложения, фреймворки и серверы часто настроены неправильно, что оставляет системы уязвимыми из-за небезопасных конфигураций по умолчанию, неполных настроек или устаревшего ПО.</p>
             
-            <p><strong>Real-world example:</strong> In 2017, a misconfigured AWS S3 bucket exposed 198 million voter records from Deep Root Analytics. The bucket was set to public read access when it should have been private.</p>
+            <p><strong>Реальный пример:</strong> В 2017 году некорректно настроенный AWS S3-бакет компании Deep Root Analytics раскрыл 198 миллионов записей избирателей. Бакет был настроен на публичный доступ для чтения, хотя должен был быть приватным.</p>
             
-            <p><strong>Common misconfigurations:</strong></p>
+            <p><strong>Типичные ошибки конфигурации:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Default usernames/passwords still active</li>
-              <li>Unnecessary features or services enabled</li>
-              <li>Missing security headers</li>
-              <li>Verbose error messages revealing system information</li>
-              <li>Outdated or unpatched software components</li>
+              <li>Стандартные логины/пароли до сих пор активны</li>
+              <li>Включены ненужные функции или сервисы</li>
+              <li>Отсутствуют заголовки безопасности</li>
+              <li>Подробные сообщения об ошибках раскрывают информацию о системе</li>
+              <li>Устаревшие или непропатченные компоненты ПО</li>
             </ul>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Implement secure defaults and hardening guides</li>
-              <li>Remove unnecessary features, components, and documentation</li>
-              <li>Keep all systems updated with latest security patches</li>
-              <li>Use automated security configuration scanning</li>
-              <li>Implement proper error handling (don't leak system info)</li>
+              <li>Внедряйте безопасные настройки по умолчанию и руководства по усилению защиты</li>
+              <li>Удаляйте ненужные функции, компоненты и документацию</li>
+              <li>Поддерживайте все системы с актуальными патчами безопасности</li>
+              <li>Используйте автоматическое сканирование конфигурации безопасности</li>
+              <li>Внедряйте правильную обработку ошибок (не раскрывайте системную информацию)</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration" target="_blank" style="color: var(--primary-purple);">OWASP Security Misconfiguration</a> | <a href="https://cisecurity.org/cis-benchmarks/" target="_blank" style="color: var(--primary-purple);">CIS Security Benchmarks</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration" target="_blank" style="color: var(--primary-purple);">OWASP: неправильная конфигурация безопасности</a> | <a href="https://cisecurity.org/cis-benchmarks/" target="_blank" style="color: var(--primary-purple);">Эталоны безопасности CIS</a></p>
           </div>
         </div>
         
@@ -1068,36 +1068,36 @@
           <div class="owasp-header">
             <span class="owasp-number">7</span>
             <span class="owasp-icon">💻</span>
-            <span class="owasp-title">Cross-Site Scripting (XSS)</span>
+            <span class="owasp-title">Межсайтовый скриптинг (XSS)</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Malicious scripts are injected into trusted websites, executing in users' browsers to steal cookies, session tokens, or redirect users to malicious sites.</p>
+            <p><strong>Что это такое:</strong> Вредоносные скрипты внедряются в доверенные сайты и выполняются в браузерах пользователей для кражи cookie, токенов сессий или перенаправления на вредоносные сайты.</p>
             
-            <p><strong>Real-world example:</strong> In 2018, British Airways suffered an XSS attack where malicious JavaScript was injected into their payment page, stealing 380,000 customers' payment card details. The script looked like:</p>
+            <p><strong>Реальный пример:</strong> В 2018 году British Airways подверглась XSS-атаке: вредоносный JavaScript был внедрён на страницу оплаты, похитив данные платёжных карт 380 000 клиентов. The script looked like:</p>
             <code style="display: block; background: #f0f0f0; padding: 8px; margin: 8px 0; border-radius: 4px; font-size: 12px;">
 &lt;script&gt;document.getElementById('card').value = steal();&lt;/script&gt;
             </code>
             
-            <p><strong>Common XSS scenarios:</strong></p>
+            <p><strong>Типичные сценарии XSS:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>User input displayed without validation: <code>&lt;p&gt;Hello {{username}}&lt;/p&gt;</code></li>
-              <li>URL parameters reflected in pages</li>
-              <li>Unsafe innerHTML usage in JavaScript</li>
-              <li>User-generated content in comments or profiles</li>
+              <li>Пользовательский ввод без проверки: <code>&lt;p&gt;Hello {{username}}&lt;/p&gt;</code></li>
+              <li>Параметры URL отражаются на страницах</li>
+              <li>Небезопасное использование innerHTML в JavaScript</li>
+              <li>Пользовательский контент в комментариях или профилях</li>
             </ul>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Use context-aware escaping: HTML escape for HTML, JS escape for JavaScript</li>
-              <li>Enable Content Security Policy: <code>Content-Security-Policy: default-src 'self'</code></li>
-              <li>Use safe APIs: <code>textContent</code> instead of <code>innerHTML</code></li>
-              <li>Validate all input server-side with whitelist approach</li>
-              <li>Use frameworks with built-in XSS protection (React, Angular)</li>
+              <li>Используйте контекстно-зависимое экранирование: HTML-экранирование для HTML, JS-экранирование для JavaScript</li>
+              <li>Включайте Content Security Policy: <code>Content-Security-Policy: default-src 'self'</code></li>
+              <li>Используйте безопасные API: <code>textContent</code> вместо <code>innerHTML</code></li>
+              <li>Проверяйте все входные данные на стороне сервера по белому списку</li>
+              <li>Используйте фреймворки со встроенной защитой от XSS (React, Angular)</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" style="color: var(--primary-purple);">OWASP XSS Guide</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">XSS Prevention</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" style="color: var(--primary-purple);">OWASP: руководство по XSS</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение XSS</a></p>
           </div>
         </div>
         
@@ -1105,34 +1105,34 @@
           <div class="owasp-header">
             <span class="owasp-number">8</span>
             <span class="owasp-icon">📦</span>
-            <span class="owasp-title">Insecure Deserialization</span>
+            <span class="owasp-title">Небезопасная десериализация</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Applications deserialize untrusted data without proper validation, potentially leading to remote code execution, replay attacks, or privilege escalation.</p>
+            <p><strong>Что это такое:</strong> Приложения десериализуют ненадёжные данные без надлежащей проверки, что может привести к удалённому выполнению кода, атакам повтора или повышению привилегий.</p>
             
-            <p><strong>Real-world example:</strong> In 2017, Apache Struts was exploited via insecure deserialization, affecting companies like Equifax. Attackers sent malicious serialized objects that executed system commands when deserialized.</p>
+            <p><strong>Реальный пример:</strong> В 2017 году Apache Struts был использован через небезопасную десериализацию, затронув компании, включая Equifax. Злоумышленники отправляли вредоносные сериализованные объекты, выполнявшие системные команды при десериализации.</p>
             
-            <p><strong>Dangerous scenarios:</strong></p>
+            <p><strong>Опасные сценарии:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Accepting pickled objects in Python applications</li>
-              <li>Java applications deserializing untrusted ObjectInputStream data</li>
-              <li>PHP applications using unserialize() on user input</li>
-              <li>Node.js apps using eval() on serialized JSON</li>
+              <li>Принятие pickle-объектов в Python-приложениях</li>
+              <li>Java-приложения, десериализующие ненадёжные данные ObjectInputStream</li>
+              <li>PHP-приложения, использующие unserialize() на пользовательском вводе</li>
+              <li>Node.js-приложения, использующие eval() для сериализованного JSON</li>
             </ul>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Never deserialize data from untrusted sources</li>
-              <li>Use signing/encryption for serialized data: HMAC, JWT</li>
-              <li>Implement strict type constraints during deserialization</li>
-              <li>Use safe serialization formats like JSON (no code execution)</li>
-              <li>Monitor deserialization exceptions and failures</li>
-              <li>Run deserialization code in low-privilege environments</li>
+              <li>Никогда не десериализуйте данные из ненадёжных источников</li>
+              <li>Используйте подпись/шифрование для сериализованных данных: HMAC, JWT</li>
+              <li>Внедряйте строгие ограничения типов при десериализации</li>
+              <li>Используйте безопасные форматы сериализации, например JSON (без выполнения кода)</li>
+              <li>Отслеживайте исключения и сбои десериализации</li>
+              <li>Запускайте код десериализации в средах с минимальными привилегиями</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization" target="_blank" style="color: var(--primary-purple);">OWASP Deserialization</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Deserialization Prevention</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization" target="_blank" style="color: var(--primary-purple);">OWASP: десериализация</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение небезопасной десериализации</a></p>
           </div>
         </div>
         
@@ -1140,34 +1140,34 @@
           <div class="owasp-header">
             <span class="owasp-number">9</span>
             <span class="owasp-icon">🔧</span>
-            <span class="owasp-title">Using Components with Known Vulnerabilities</span>
+            <span class="owasp-title">Использование компонентов с известными уязвимостями</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Applications use components (libraries, frameworks, modules) with known security vulnerabilities, providing attackers easy entry points.</p>
+            <p><strong>Что это такое:</strong> Приложения используют компоненты (библиотеки, фреймворки, модули) с известными уязвимостями безопасности, предоставляя злоумышленникам лёгкие точки входа.</p>
             
-            <p><strong>Real-world example:</strong> In 2017, the WannaCry ransomware exploited a Windows SMB vulnerability (CVE-2017-0144) that had been patched months earlier. Organizations running unpatched systems were crippled worldwide.</p>
+            <p><strong>Реальный пример:</strong> В 2017 году ransomware WannaCry использовал уязвимость Windows SMB (CVE-2017-0144), которая была исправлена за несколько месяцев до этого. Организации с непропатченными системами пострадали по всему миру.</p>
             
-            <p><strong>Critical vulnerability examples:</strong></p>
+            <p><strong>Примеры критических уязвимостей:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li><strong>Log4j (2021):</strong> Remote code execution in logging library used by millions</li>
-              <li><strong>Struts (2017):</strong> Led to Equifax breach affecting 147M people</li>
-              <li><strong>OpenSSL Heartbleed (2014):</strong> Memory disclosure in encryption library</li>
-              <li><strong>jQuery XSS (2019):</strong> Cross-site scripting in popular JavaScript library</li>
+              <li><strong>Log4j (2021):</strong> Удалённое выполнение кода в библиотеке логирования, используемой миллионами</li>
+              <li><strong>Struts (2017):</strong> Привёл к утечке Equifax, затронувшей 147 млн человек</li>
+              <li><strong>OpenSSL Heartbleed (2014):</strong> Раскрытие памяти в библиотеке шифрования</li>
+              <li><strong>jQuery XSS (2019):</strong> XSS в популярной JavaScript-библиотеке</li>
             </ul>
             
-            <p><strong>Prevention:</strong></p>
+            <p><strong>Предотвращение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Maintain inventory of all components and versions</li>
-              <li>Monitor CVE databases: <code>npm audit</code>, <code>pip-audit</code>, Snyk, WhiteSource</li>
-              <li>Update components regularly with automated dependency updates</li>
-              <li>Remove unused dependencies and features</li>
-              <li>Use Software Composition Analysis (SCA) tools</li>
-              <li>Subscribe to security mailing lists for your technology stack</li>
+              <li>Ведите инвентаризацию всех компонентов и версий</li>
+              <li>Отслеживайте базы данных CVE: <code>npm audit</code>, <code>pip-audit</code>, Snyk, WhiteSource</li>
+              <li>Регулярно обновляйте компоненты с помощью автоматизированного обновления зависимостей</li>
+              <li>Удаляйте неиспользуемые зависимости и функции</li>
+              <li>Используйте инструменты анализа состава ПО (SCA)</li>
+              <li>Подписывайтесь на рассылки безопасности для вашего технологического стека</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities" target="_blank" style="color: var(--primary-purple);">OWASP Vulnerable Components</a> | <a href="https://cve.mitre.org/" target="_blank" style="color: var(--primary-purple);">CVE Database</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities" target="_blank" style="color: var(--primary-purple);">OWASP: уязвимые компоненты</a> | <a href="https://cve.mitre.org/" target="_blank" style="color: var(--primary-purple);">База данных CVE</a></p>
           </div>
         </div>
         
@@ -1175,55 +1175,55 @@
           <div class="owasp-header">
             <span class="owasp-number">10</span>
             <span class="owasp-icon">📊</span>
-            <span class="owasp-title">Insufficient Logging & Monitoring</span>
+            <span class="owasp-title">Недостаточное логирование и мониторинг</span>
             <span class="owasp-checkmark">✓</span>
             <span class="owasp-arrow">▶</span>
           </div>
           <div class="owasp-detail">
-            <p><strong>What it is:</strong> Lack of proper logging and monitoring allows breaches to go undetected for months, giving attackers time to achieve their goals and cover their tracks.</p>
+            <p><strong>Что это такое:</strong> Отсутствие надлежащего логирования и мониторинга позволяет утечкам оставаться незамеченными месяцами, давая злоумышленникам время достичь целей и скрыть следы.</p>
             
-            <p><strong>Real-world example:</strong> The Target breach (2013) went undetected for 19 days despite security tools alerting on the intrusion. Poor monitoring meant 40 million credit cards were stolen before discovery. Average breach detection time is still 277 days (IBM, 2022).</p>
+            <p><strong>Реальный пример:</strong> Взлом Target (2013) оставался незамеченным 19 дней, несмотря на срабатывание инструментов безопасности. Слабый мониторинг привёл к краже 40 миллионов кредитных карт до обнаружения. Среднее время обнаружения утечки по-прежнему составляет 277 дней (IBM, 2022).</p>
             
-            <p><strong>Critical events to log:</strong></p>
+            <p><strong>Критические события для логирования:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Failed login attempts and account lockouts</li>
-              <li>Privilege escalation and administrative actions</li>
-              <li>Input validation failures and injection attempts</li>
-              <li>Authentication token manipulation</li>
-              <li>Server-side request forgery (SSRF) attempts</li>
+              <li>Неудачные попытки входа и блокировки аккаунтов</li>
+              <li>Повышение привилегий и административные действия</li>
+              <li>Ошибки валидации входных данных и попытки инъекций</li>
+              <li>Манипуляции с токенами аутентификации</li>
+              <li>Попытки подделки запросов на стороне сервера (SSRF)</li>
             </ul>
             
-            <p><strong>Prevention & Detection:</strong></p>
+            <p><strong>Предотвращение и обнаружение:</strong></p>
             <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Log all security-relevant events with sufficient context</li>
-              <li>Use centralized logging: ELK Stack, Splunk, CloudWatch</li>
-              <li>Implement real-time alerting for suspicious patterns</li>
-              <li>Ensure log integrity (tamper-proof, off-site storage)</li>
-              <li>Regularly test incident response procedures</li>
-              <li>Use Security Information and Event Management (SIEM) tools</li>
+              <li>Логируйте все события, связанные с безопасностью, с достаточным контекстом</li>
+              <li>Используйте централизованное логирование: ELK Stack, Splunk, CloudWatch</li>
+              <li>Внедряйте оповещения в реальном времени для подозрительных паттернов</li>
+              <li>Обеспечивайте целостность логов (защита от изменений, хранение вне сайта)</li>
+              <li>Регулярно тестируйте процедуры реагирования на инциденты</li>
+              <li>Используйте инструменты управления информацией и событиями безопасности (SIEM)</li>
             </ul>
             
-            <p style="margin-top: 12px;"><strong>📚 Resources:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring" target="_blank" style="color: var(--primary-purple);">OWASP Logging & Monitoring</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Logging Best Practices</a></p>
+            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring" target="_blank" style="color: var(--primary-purple);">OWASP: логирование и мониторинг</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Лучшие практики логирования</a></p>
           </div>
         </div>
       </div>
       
       <div style="text-align: center; margin: 24px 0;">
         <p style="font-size: 18px; color: var(--primary-purple); font-weight: 600;">
-          <span id="owaspCount">0</span>/10 explored
+          <span id="owaspCount">0</span>/10 изучено
         </p>
       </div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="owaspContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="owaspContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 3: SQL Injection Detection Simulation -->
     <div class="slide" id="slide3">
-      <h2>🚨 Interactive SQL Injection Lab</h2>
-      <p>You're reviewing a colleague's pull request. First identify the vulnerability, then see it in action!</p>
+      <h2>🚨 Интерактивная лаборатория SQL-инъекций</h2>
+      <p>Вы проверяете pull request коллеги. Сначала выявите уязвимость, затем посмотрите её в действии!</p>
       
       <div class="simulation-box">
         <div style="background: #1e1e1e; border-radius: 12px; padding: 20px; font-family: 'Monaco', 'Courier New', monospace;">
@@ -1241,37 +1241,37 @@
           </div>
           
           <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 15px;">
-            <p style="margin: 0; color: #856404; font-weight: 600;">⚠️ Security Review Required</p>
-            <p style="margin: 10px 0 0 0; color: #333;">This code handles user authentication for a web application. What's the critical vulnerability?</p>
+            <p style="margin: 0; color: #856404; font-weight: 600;">⚠️ Требуется проверка безопасности</p>
+            <p style="margin: 10px 0 0 0; color: #333;">Этот код обрабатывает аутентификацию пользователей веб-приложения. Какова критическая уязвимость?</p>
           </div>
         </div>
         
-        <p style="text-align:center; font-weight:600; margin-top:24px;">What's the vulnerability in this code?</p>
+        <p style="text-align:center; font-weight:600; margin-top:24px;">Какова уязвимость в этом коде?</p>
       </div>
       
       <div class="decision-grid">
-        <button class="decision-btn" onclick="ransomwareDecision('validation')" id="ransom-validation">Missing input validation</button>
-        <button class="decision-btn" onclick="ransomwareDecision('concatenation')" id="ransom-concatenation">String concatenation creates SQL injection</button>
-        <button class="decision-btn" onclick="ransomwareDecision('async')" id="ransom-async">Using async/await is insecure</button>
-        <button class="decision-btn" onclick="ransomwareDecision('password')" id="ransom-password">Storing plain text passwords</button>
+        <button class="decision-btn" onclick="ransomwareDecision('validation')" id="ransom-validation">Отсутствие валидации входных данных</button>
+        <button class="decision-btn" onclick="ransomwareDecision('concatenation')" id="ransom-concatenation">Конкатенация строк создаёт SQL-инъекцию</button>
+        <button class="decision-btn" onclick="ransomwareDecision('async')" id="ransom-async">Использование async/await небезопасно</button>
+        <button class="decision-btn" onclick="ransomwareDecision('password')" id="ransom-password">Хранение паролей в открытом виде</button>
       </div>
       
       <div id="ransomwareFeedback" style="margin-top:24px;"></div>
       
       <!-- Interactive SQL Injection Demo (shows after correct answer) -->
       <div id="sqlDemo" style="display: none; margin-top: 32px; background: #f8f9fa; border-radius: 12px; padding: 24px; border: 2px solid var(--primary-purple);">
-        <h3 style="color: var(--dark-purple); margin-bottom: 16px;">🧪 Try the Attack!</h3>
-        <p style="margin-bottom: 16px;">See how an attacker could exploit this vulnerability:</p>
+        <h3 style="color: var(--dark-purple); margin-bottom: 16px;">🧪 Демонстрация атаки</h3>
+        <p style="margin-bottom: 16px;">Посмотрите, как злоумышленник мог бы использовать эту уязвимость:</p>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
           <div>
-            <label style="font-weight: 600; margin-bottom: 8px; display: block;">Email Input:</label>
+            <label style="font-weight: 600; margin-bottom: 8px; display: block;">Ввод email:</label>
             <input type="text" id="emailTest" placeholder="user@example.com" 
                    style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: monospace;"
                    onkeyup="updateQuery()">
           </div>
           <div>
-            <label style="font-weight: 600; margin-bottom: 8px; display: block;">Password Input:</label>
+            <label style="font-weight: 600; margin-bottom: 8px; display: block;">Ввод пароля:</label>
             <input type="text" id="passwordTest" placeholder="password123" 
                    style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: monospace;"
                    onkeyup="updateQuery()">
@@ -1279,36 +1279,36 @@
         </div>
         
         <div style="margin-bottom: 16px;">
-          <h4 style="color: var(--dark-purple); margin-bottom: 8px;">Generated SQL Query:</h4>
+          <h4 style="color: var(--dark-purple); margin-bottom: 8px;">Сгенерированный SQL-запрос:</h4>
           <div id="generatedQuery" style="background: #2d2d2d; color: #d4d4d4; padding: 16px; border-radius: 8px; font-family: monospace; word-break: break-all;">
             SELECT * FROM users WHERE email = 'user@example.com' AND password = 'password123'
           </div>
         </div>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
-          <button class="btn btn-secondary" onclick="loadSample('normal')" style="font-size: 14px;">Normal Login</button>
-          <button class="btn" onclick="loadSample('bypass')" style="background: linear-gradient(135deg, #ff9800, #f57c00); font-size: 14px;">SQL Injection Attack</button>
-          <button class="btn" onclick="loadSample('union')" style="background: linear-gradient(135deg, #f44336, #d32f2f); font-size: 14px;">Advanced: UNION Attack</button>
+          <button class="btn btn-secondary" onclick="loadSample('normal')" style="font-size: 14px;">Обычный вход</button>
+          <button class="btn" onclick="loadSample('bypass')" style="background: linear-gradient(135deg, #ff9800, #f57c00); font-size: 14px;">Атака SQL-инъекции</button>
+          <button class="btn" onclick="loadSample('union')" style="background: linear-gradient(135deg, #f44336, #d32f2f); font-size: 14px;">Продвинутый: UNION-атака</button>
         </div>
         
         <div id="queryResult" style="min-height: 80px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px; padding: 16px;">
           <div style="background: #f5f5f5; border-left: 4px solid #2196F3; padding: 12px;">
-            <strong style="color: #1976D2;">👆 Try the attack buttons above to see what happens!</strong><br>
-            <span style="color: #666;">Or type your own values to test SQL injection patterns like: ' OR '1'='1</span>
+            <strong style="color: #1976D2;">👆 Нажмите кнопки атаки выше, чтобы увидеть результат!</strong><br>
+            <span style="color: #666;">Или введите свои значения для тестирования SQL-инъекций, например: ' OR '1'='1</span>
           </div>
         </div>
       </div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="ransomwareContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="ransomwareContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 4: Code Review Simulation -->
     <div class="slide" id="slide4">
-      <h2>🔍 Interactive Security Code Review</h2>
-      <p>Analyze this authentication function. Click on code lines to investigate, then run the security scanner!</p>
+      <h2>🔍 Интерактивная проверка безопасности кода</h2>
+      <p>Проанализируйте эту функцию аутентификации. Нажимайте на строки кода для изучения, затем запустите сканер безопасности!</p>
       
       <!-- Mode Selector -->
       <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 20px;">
@@ -1331,7 +1331,7 @@
             <div class="browser-dot"></div>
           </div>
           <div class="url-bar">
-            <span id="codeReviewStatus">Code Review Tool - Analyzing...</span>
+            <span id="codeReviewStatus">Инструмент проверки кода — анализирую...</span>
           </div>
         </div>
         <div class="website-content" style="background: #1e1e1e; padding: 20px; position: relative;">
@@ -1342,7 +1342,7 @@
               <span class="line-comment" style="color: #6a9955;"> // Line 1</span>
               <span class="line-indicator" style="position: absolute; right: 10px; top: 4px; display: none;">🔍</span>
               <div class="line-analysis" id="analysis-0" style="display: none; background: rgba(244,67,54,0.1); border-left: 3px solid #f44336; padding: 8px; margin-top: 4px; font-size: 12px; color: #ff9999;">
-                🔴 CRITICAL: Hard-coded secret key in source code!
+                🔴 КРИТИЧНО: Жёстко заданный секретный ключ в исходном коде!
               </div>
             </div>
             
@@ -1358,7 +1358,7 @@
               <span class="line-comment" style="color: #6a9955;"> // Line 2</span>
               <span class="line-indicator" style="position: absolute; right: 10px; top: 4px; display: none;">🔍</span>
               <div class="line-analysis" id="analysis-2" style="display: none; background: rgba(244,67,54,0.1); border-left: 3px solid #f44336; padding: 8px; margin-top: 4px; font-size: 12px; color: #ff9999;">
-                🔴 CRITICAL: Logging sensitive data (passwords and email/PII) in plain text!
+                🔴 КРИТИЧНО: Логирование конфиденциальных данных (пароли и email/ПДн) в открытом виде!
               </div>
             </div>
             
@@ -1369,7 +1369,7 @@
               <span class="line-comment" style="color: #6a9955;"> // Line 3</span>
               <span class="line-indicator" style="position: absolute; right: 10px; top: 4px; display: none;">🔍</span>
               <div class="line-analysis" id="analysis-3" style="display: none; background: rgba(76,175,80,0.1); border-left: 3px solid #4CAF50; padding: 8px; margin-top: 4px; font-size: 12px; color: #81c784;">
-                ✅ GOOD: Using bcrypt for secure password comparison
+                ✅ ХОРОШО: Используется bcrypt для сравнения паролей
               </div>
             </div>
             
@@ -1380,7 +1380,7 @@
               <span class="line-comment" style="color: #6a9955;"> // Line 4 - Uses the hardcoded secret!</span>
               <span class="line-indicator" style="position: absolute; right: 10px; top: 4px; display: none;">🔍</span>
               <div class="line-analysis" id="analysis-4" style="display: none; background: rgba(255,152,0,0.1); border-left: 3px solid #ff9800; padding: 8px; margin-top: 4px; font-size: 12px; color: #ffb74d;">
-                ⚠️ WARNING: Using hardcoded JWT_SECRET from line 1
+                ⚠️ ВНИМАНИЕ: Используется жёстко заданный JWT_SECRET из строки 1
               </div>
             </div>
             
@@ -1391,7 +1391,7 @@
               <span class="line-comment" style="color: #6a9955;"> // Line 5</span>
               <span class="line-indicator" style="position: absolute; right: 10px; top: 4px; display: none;">🔍</span>
               <div class="line-analysis" id="analysis-5" style="display: none; background: rgba(76,175,80,0.1); border-left: 3px solid #4CAF50; padding: 8px; margin-top: 4px; font-size: 12px; color: #81c784;">
-                ✅ OK: Standard return statement
+                ✅ OK: Стандартный оператор возврата
               </div>
             </div>
             
@@ -1404,7 +1404,7 @@
           <div id="scannerOverlay" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 10; border-radius: 8px;">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
               <div style="color: #4CAF50; font-size: 48px; animation: spin 2s linear infinite;">🔍</div>
-              <div style="color: white; margin-top: 16px; font-size: 18px;">Scanning for vulnerabilities...</div>
+              <div style="color: white; margin-top: 16px; font-size: 18px;">Сканирование уязвимостей...</div>
               <div style="width: 200px; height: 4px; background: #333; border-radius: 2px; margin: 16px auto;">
                 <div id="scanProgress" style="width: 0%; height: 100%; background: #4CAF50; border-radius: 2px; transition: width 0.3s;"></div>
               </div>
@@ -1415,71 +1415,71 @@
       
       <!-- Vulnerability Report (shows after scan) -->
       <div id="vulnerabilityReport" style="display: none; margin-top: 24px; background: #f8f9fa; border-radius: 12px; padding: 20px; border: 2px solid var(--primary-purple);">
-        <h3 style="color: var(--dark-purple); margin-bottom: 16px;">🛡️ Security Scan Results</h3>
+        <h3 style="color: var(--dark-purple); margin-bottom: 16px;">🛡️ Результаты сканирования безопасности</h3>
         <div id="reportContent"></div>
       </div>
       
       <!-- Fix Mode Panel (shows after issues identified) -->
       <div id="fixPanel" style="display: none; margin-top: 24px; background: #e8f5e9; border-radius: 12px; padding: 20px; border: 2px solid #4CAF50;">
-        <h3 style="color: #2e7d32; margin-bottom: 16px;">🔧 Fix Security Issues</h3>
+        <h3 style="color: #2e7d32; margin-bottom: 16px;">🔧 Исправить проблемы безопасности</h3>
         <div id="fixContent"></div>
       </div>
       
       <div id="lockFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="lockContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="lockContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 5: Dependency Vulnerability Scanner -->
     <div class="slide" id="slide5">
-      <h2>📦 Dependency Vulnerability Scanner</h2>
-      <p>Your CI/CD pipeline detected critical vulnerabilities in npm packages. What's your action?</p>
+      <h2>📦 Сканер уязвимостей зависимостей</h2>
+      <p>Ваш CI/CD-конвейер обнаружил критические уязвимости в npm-пакетах. Каков ваш ответ?</p>
       
       <div class="simulation-box">
         <div style="background: #1a1a1a; border-radius: 12px; padding: 20px;">
           <div style="background: #2d2d2d; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-            <h3 style="color: #ff3b30; margin: 0 0 15px 0;">🚨 Critical Vulnerabilities Detected</h3>
+            <h3 style="color: #ff3b30; margin: 0 0 15px 0;">🚨 Обнаружены критические уязвимости</h3>
             <div style="font-family: 'Monaco', monospace; font-size: 14px; color: #d4d4d4; line-height: 1.8;">
               <div style="background: rgba(255,59,48,0.1); border-left: 4px solid #ff3b30; padding: 10px; margin-bottom: 10px;">
                 <div style="color: #ff3b30; font-weight: bold;">• Package: jodit@3.14.2</div>
                 <div style="color: #ff9500;">  CVE-2023-26469 - Remote Code Execution (CVSS: 9.8)</div>
-                <div style="color: #d4d4d4;">  Attacker can execute arbitrary code via XSS in editor</div>
+                <div style="color: #d4d4d4;">  Злоумышленник может выполнить произвольный код через XSS в редакторе</div>
               </div>
               <div style="background: rgba(255,59,48,0.1); border-left: 4px solid #ff3b30; padding: 10px; margin-bottom: 10px;">
                 <div style="color: #ff3b30; font-weight: bold;">• Package: xml2js@0.4.19</div>
                 <div style="color: #ff9500;">  CVE-2023-0842 - XXE Injection (CVSS: 9.1)</div>
-                <div style="color: #d4d4d4;">  XML External Entity attack allows file disclosure</div>
+                <div style="color: #d4d4d4;">  Атака XML External Entity позволяет раскрыть файлы</div>
               </div>
               <div style="background: rgba(255,204,0,0.1); border-left: 4px solid #ffcc00; padding: 10px;">
                 <div style="color: #ffcc00; font-weight: bold;">• Package: lodash@4.17.11</div>
                 <div style="color: #ffcc00;">  CVE-2021-23337 - Command Injection (CVSS: 7.2)</div>
-                <div style="color: #d4d4d4;">  template function allows command injection</div>
+                <div style="color: #d4d4d4;">  Функция template допускает инъекцию команд</div>
               </div>
             </div>
           </div>
           
           <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 15px;">
-            <p style="margin: 0; color: #856404; font-weight: 600;">⚠️ Build Pipeline Decision Required</p>
-            <p style="margin: 10px 0 0 0; color: #333;">Production deployment is scheduled in 2 hours. What's your action?</p>
+            <p style="margin: 0; color: #856404; font-weight: 600;">⚠️ Требуется решение по конвейеру сборки</p>
+            <p style="margin: 10px 0 0 0; color: #333;">Развёртывание на продакшн запланировано через 2 часа. Каков ваш ответ?</p>
           </div>
         </div>
       </div>
       
       <div class="decision-grid">
-        <button class="decision-btn" onclick="dependencyDecision('ignore')" id="dep-ignore">Ignore - they're in dev dependencies</button>
-        <button class="decision-btn" onclick="dependencyDecision('later')" id="dep-later">Schedule updates for next sprint</button>
-        <button class="decision-btn" onclick="dependencyDecision('update')" id="dep-update">Update immediately and test</button>
-        <button class="decision-btn" onclick="dependencyDecision('research')" id="dep-research">Research if we're affected first</button>
+        <button class="decision-btn" onclick="dependencyDecision('ignore')" id="dep-ignore">Игнорировать — они в dev-зависимостях</button>
+        <button class="decision-btn" onclick="dependencyDecision('later')" id="dep-later">Запланировать обновления на следующий спринт</button>
+        <button class="decision-btn" onclick="dependencyDecision('update')" id="dep-update">Обновить немедленно и протестировать</button>
+        <button class="decision-btn" onclick="dependencyDecision('research')" id="dep-research">Сначала исследовать, затронуты ли мы</button>
       </div>
       
       <div id="passwordCompleteFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="passwordContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="passwordContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
@@ -1487,28 +1487,28 @@
     <div class="slide" id="slide6">
       <div class="certificate">
         <div class="trophy-icon">🏆</div>
-        <h1 style="color:var(--primary-purple); margin:24px 0;">Secure Coding Champion!</h1>
+        <h1 style="color:var(--primary-purple); margin:24px 0;">Чемпион безопасного программирования!</h1>
         <p style="font-size:1.25rem; color:var(--dark-purple); margin-bottom:32px;">
-          You've mastered OWASP Top 10 secure coding practices!
+          Вы освоили 10 лучших практик безопасного программирования по версии OWASP!
         </p>
         
         <div style="margin:32px 0;">
           <div>
             <div style="font-size:2rem; font-weight:700; color:var(--primary-purple);" id="finalScore">100%</div>
-            <div style="color:#6c757d;">Final Score</div>
+            <div style="color:#6c757d;">Итоговый результат</div>
           </div>
         </div>
         
         <p style="color:var(--primary-purple); font-weight:600; font-size:1.125rem;">
-          Stay Vigilant. Stay Secure. 👾
+          Будьте бдительны. Оставайтесь в безопасности. 👾
         </p>
         
-        <button class="btn" onclick="completeModule()" style="margin-top:24px;">Exit Training</button>
+        <button class="btn" onclick="completeModule()" style="margin-top:24px;">Выйти из обучения</button>
       </div>
     </div>
   </div>
 
-  <div class="scorm-status" id="scormStatus">SCORM: Disconnected</div>
+  <div class="scorm-status" id="scormStatus">SCORM: Отключён</div>
 
   <script>
     // SCORM API wrapper
@@ -1649,7 +1649,7 @@
             <strong style="color: #c62828;">🚨 SQL INJECTION DETECTED!</strong><br>
             <strong>Attack Type:</strong> Authentication Bypass<br>
             <strong>What happens:</strong> The OR condition makes the WHERE clause always TRUE<br>
-            <strong>Database returns:</strong> ALL user records instead of checking credentials<br>
+            <strong>База данных возвращает:</strong> ВСЕ записи пользователей вместо проверки учётных данных<br>
             <strong>Result:</strong> Attacker logs in without knowing any passwords!<br>
             <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
               Query becomes: WHERE email = '' OR '1'='1' AND password = '...'<br>
@@ -1722,10 +1722,10 @@
           setTimeout(() => {
             resultDiv.innerHTML = `
               <div style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 16px;">
-                <strong style="color: #2e7d32;">✅ Normal Authentication</strong><br>
-                <strong>Query Result:</strong> 0 or 1 user record returned<br>
-                <strong>Behavior:</strong> If credentials match, user logs in. If not, authentication fails.<br>
-                <strong>Database sees:</strong> A normal query checking for one specific user
+                <strong style="color: #2e7d32;">✅ Обычная аутентификация</strong><br>
+                <strong>Результат запроса:</strong> Возвращена запись 0 или 1 пользователя<br>
+                <strong>Поведение:</strong> Если учетные данные совпадают, пользователь входит в систему. В противном случае аутентификация завершается неудачей.<br>
+                <strong>Для базы данных:</strong> Обычный запрос, проверяющий наличие одного конкретного пользователя.
               </div>`;
           }, 100);
           break;
@@ -1735,11 +1735,11 @@
           setTimeout(() => {
             resultDiv.innerHTML = `
               <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 16px;">
-                <strong style="color: #c62828;">🚨 AUTHENTICATION BYPASS ATTACK!</strong><br>
-                <strong>Query Result:</strong> ALL user records returned (could be thousands!)<br>
-                <strong>Attack Impact:</strong> Attacker logs in as the first user (often admin)<br>
-                <strong>Why it works:</strong> The OR '1'='1' condition is always TRUE, so the query returns every user in the database<br>
-                <strong>Real damage:</strong> Complete authentication bypass - attacker gains unauthorized access!
+                <strong style="color: #c62828;">🚨 АТАКА С ОБХОДОМ АУТЕНТИФИКАЦИИ!</strong><br>
+                <strong>Результат запроса:</strong> озвращены ВСЕ записи о пользователях (их может быть тысячи!)<br>
+                <strong>Влияние атаки:</strong> Злоумышленник входит в систему под именем первого пользователя (часто администратора)<br>
+                <strong>Почему это сработало:</strong> Условие ИЛИ '1'='1' всегда истинно, поэтому запрос возвращает всех пользователей в базе данных<br>
+                <strong>Реальный ущерб:</strong> Полный обход аутентификации — злоумышленник получает несанкционированный доступ!
               </div>`;
           }, 100);
           break;
@@ -1749,11 +1749,11 @@
           setTimeout(() => {
             resultDiv.innerHTML = `
               <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 16px;">
-                <strong style="color: #c62828;">💀 ADVANCED DATA EXTRACTION ATTACK!</strong><br>
-                <strong>Query Result:</strong> Attacker extracts data from OTHER tables<br>
-                <strong>Attack Impact:</strong> Can steal usernames, passwords, credit cards, personal data<br>
-                <strong>Why it works:</strong> UNION combines results from multiple queries, exposing sensitive data<br>
-                <strong>Real damage:</strong> Complete data breach - all admin credentials exposed!<br>
+                <strong style="color: #c62828;">💀 Усовершенствованная атака по извлечению данных!</strong><br>
+                <strong>Результат запроса:</strong> Злоумышленник извлекает данные из ДРУГИХ таблиц<br>
+                <strong>Влияние атаки:</strong> Может украсть имена пользователей, пароли, данные кредитных карт и персональные данные<br>
+                <strong>Почему это сработало:</strong> Функция UNION объединяет результаты нескольких запросов, что приводит к раскрытию конфиденциальных данных<br>
+                <strong>Реальный ущерб:</strong> Полная утечка данных — раскрыты все учетные данные администратора!<br>
                 <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace;">
                   admin_user1 | $2b$10$hashedpassword...<br>
                   admin_user2 | $2b$10$anotherhashedpw...<br>
@@ -1801,7 +1801,7 @@
       // Find the clicked button
       let clickedButton;
       buttons.forEach(btn => {
-        if ((choice === 'validation' && btn.textContent.includes('Missing input validation')) ||
+        if ((choice === 'validation' && btn.textContent.includes('Отсутствие валидации входных данных')) ||
             (choice === 'concatenation' && btn.textContent.includes('String concatenation')) ||
             (choice === 'async' && btn.textContent.includes('async/await')) ||
             (choice === 'password' && btn.textContent.includes('plain text passwords'))) {
@@ -1820,7 +1820,7 @@
       switch(choice) {
         case 'validation':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Input validation helps but is not the root cause. The string concatenation is the vulnerability.
+            ❌ Проверка входных данных помогает, но не является первопричиной. Уязвимость заключается в конкатенации строк.
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1855,21 +1855,21 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
         case 'concatenation':
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ CORRECT! String concatenation creates SQL injection vulnerabilities!<br><br>
-            <strong>The vulnerability:</strong><br>
-            • User input is directly concatenated into the SQL query<br>
-            • An attacker could pass: <code>admin' OR '1'='1</code><br>
-            • This would return ALL users, not just the one with that email<br><br>
-            <strong>How to fix:</strong><br>
-            • Use parameterized queries: <code>SELECT * FROM users WHERE email = ?</code><br>
-            • Use an ORM with built-in protection<br>
-            • Never concatenate user input into queries
+            ✅ ПРАВИЛЬНО! Конкатенация строк создает уязвимости для SQL-инъекций!<br><br>
+            <strong>В чем заключается уязвимость:</strong><br>
+            • Введенные пользователем данные напрямую объединяются в SQL-запрос<br>
+            • Злоумышленник может передать: <code>admin' OR '1'='1'</code><br>
+            •Это вернет ВСЕХ пользователей, а не только того, у кого указан этот адрес электронной почты<br><br>
+            <strong>Как исправить:</strong><br>
+            • Используйте параметризованные запросы: <code>SELECT * FROM users WHERE email = ?</code><br>
+            • Используйте ORM-фреймворки со встроенной защитой<br>
+            • Никогда не объединяйте пользовательский ввод в запросы
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -1904,10 +1904,10 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('🔍', 'Vulnerability Hunter', 'Found the SQL injection!');
+          showAchievement('🔍', 'Охотник за уязвимостями', 'Найдена SQL инъекция!');
           gameState.ransomwareComplete = true;
           document.getElementById('ransomwareContinue').style.display = 'inline-flex';
           document.querySelectorAll('#slide3 .decision-btn').forEach(btn => {
@@ -1920,7 +1920,7 @@
           break;
         case 'async':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Async/await is perfectly secure. The issue is how the SQL query is constructed.
+            ❌ Использование async/await абсолютно безопасно. Проблема заключается в способе построения SQL-запроса.
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1955,13 +1955,13 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
         case 'password':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ That's another issue, but the immediate SQL injection vulnerability is from string concatenation!
+            ❌ Это уже другая проблема, но непосредственная уязвимость к SQL-инъекциям возникает из-за конкатенации строк!
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1996,7 +1996,7 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -2118,7 +2118,7 @@
           if (foundIssues.includes(0) && foundIssues.includes(2)) {
             setTimeout(() => {
               document.getElementById('fixMode').disabled = false;
-              showAchievement('🔍', 'Security Expert', 'Found all critical vulnerabilities!');
+              showAchievement('🔍', 'Эксперт кибербезопасности', 'Найдены все критические уязвимости!');
               document.getElementById('lockContinue').style.display = 'inline-flex';
               gameState.lockComplete = true;
             }, 500);
@@ -2206,10 +2206,10 @@
           </div>
           
           <div style="margin-top: 16px; padding: 16px; background: #fff3e0; border-radius: 8px;">
-            <strong>📊 Scan Summary:</strong>
-            <p style="margin: 8px 0 0 0;">• 2 Critical vulnerabilities found</p>
-            <p style="margin: 4px 0 0 0;">• Security Score: 40/100</p>
-            <p style="margin: 4px 0 0 0;">• Recommendation: Fix critical issues immediately</p>
+            <strong>📊 Результаты сканирования:</strong>
+            <p style="margin: 8px 0 0 0;">• 2 критические уязвимости найдено</p>
+            <p style="margin: 4px 0 0 0;">• Оценка безопасности: 40/100</p>
+            <p style="margin: 4px 0 0 0;">• Рекомендации: исправить уязвимости в приоритетном порядке!</p>
           </div>
         </div>
       `;
@@ -2265,7 +2265,7 @@ console.log(\`Login attempt for user ID: \${userId}\`);
           </div>
           
           <div>
-            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use AWS Secrets Manager for Secrets</h4>
+            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use VAULT for Secrets</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div>
                 <strong style="color: #666;">❌ Current (Vulnerable):</strong>
@@ -2276,7 +2276,7 @@ const JWT_SECRET = "secret2024Key!";</pre>
                 <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
                 <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
-// Managed in AWS Secrets Manager with rotation!</pre>
+// Managed in VAULT with rotation!</pre>
               </div>
             </div>
           </div>
@@ -2285,8 +2285,8 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             <h4 style="color: var(--dark-purple); margin-bottom: 8px;">📚 Security Best Practices Applied:</h4>
             <ul style="margin: 0; padding-left: 20px; color: #666;">
               <li>Never log sensitive information (passwords, tokens, emails, or PII)</li>
-              <li>Use user IDs instead of email addresses in logs</li>
-              <li>Store secrets in AWS Secrets Manager</li>
+              <li>Используйте ID пользователей вместо email-адресов в логах</li>
+              <li>Store secrets in VAULT</li>
               <li>Enable automatic secret rotation</li>
               <li>Use structured logging with severity levels</li>
               <li>Implement audit logging for security events</li>
@@ -2394,7 +2394,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -2441,10 +2441,10 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('🔍', 'Security Reviewer', 'Found critical security issues!');
+          showAchievement('🔍', 'Security Reviewer', 'Найдены критические ошибки в безопасности!');
           gameState.lockComplete = true;
           document.getElementById('lockContinue').style.display = 'inline-flex';
           document.querySelectorAll('#slide4 .decision-btn').forEach(btn => {
@@ -2489,7 +2489,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -2536,7 +2536,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           showAchievement('🔍', 'Security Reviewer', 'Found critical security issues!');
@@ -2602,16 +2602,16 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
       
       if (choice === 'update') {
         feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-          ✅ CORRECT! Critical vulnerabilities must be patched immediately!<br><br>
-          <strong>Why immediate action is required:</strong><br>
-          • CVE-2023-26469 allows remote code execution (CVSS 9.8!)<br>
-          • These vulnerabilities are publicly known and actively exploited<br>
-          • Automated tools scan for these exact versions<br><br>
-          <strong>Best practices:</strong><br>
-          • Block deployment if critical CVEs are found<br>
-          • Update and thoroughly test the changes<br>
-          • Use automated dependency scanning in CI/CD<br>
-          • Maintain a Software Bill of Materials (SBOM)
+          ✅ ПРАВИЛЬНО! Критические уязвимости необходимо немедленно устранить!<br><br>
+          <strong>Почему необходимы немедленные действия:</strong><br>
+          • CVE-2023-26469 допускает удаленное выполнение кода (CVSS 9.8!)<br>
+          • Эти уязвимости общеизвестны и активно эксплуатируются'<br>
+          • Автоматизированные инструменты сканируют на наличие именно этих версий<br><br>
+          <strong>Рекомендации:</strong><br>
+          • Блокируйте развертывание, если обнаружены критические CVE<br>
+          • Обновите и тщательно протестируйте изменения<br>
+          • Используйте автоматическое сканирование зависимостей в CI/CD<br>
+          • Ведите спецификацию программного обеспечения (SBOM)
         </div>`;
         if (clickedButton) {
           clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -2646,10 +2646,10 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           clickedButton.appendChild(label);
         }
-        showAchievement('🔒', 'Dependency Guardian', 'Protected against known vulnerabilities!');
+        showAchievement('🔒', 'Защитник зависимостей', 'Защищено от известных уязвимостей!');
         gameState.passwordComplete = true;
         document.getElementById('passwordContinue').style.display = 'inline-flex';
         document.querySelectorAll('#slide5 .decision-btn').forEach(btn => {
@@ -2658,9 +2658,9 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
         });
       } else {
         const wrongReasons = {
-          'ignore': 'Dev dependencies can still be exploited! They run on developer machines and CI systems.',
-          'later': 'Too risky! Critical vulnerabilities are actively exploited. Every day of delay increases risk.',
-          'research': 'With a CVSS score of 9.8, assume you ARE affected. Patch first, then verify.'
+          'ignore': 'Зависимости для разработки всё ещё могут быть использованы злоумышленниками! Они работают на машинах разработчиков и в системах CI.',
+          'later': 'Слишком рискованно! Критические уязвимости активно используются злоумышленниками. Каждый день задержки увеличивает риск.',
+          'research': 'С оценкой CVSS 9,8 предположите, что вы затронуты. Сначала установите патч, затем проверьте.'
         };
         feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
           ❌ ${wrongReasons[choice] || 'Try again!'}
@@ -2698,7 +2698,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           clickedButton.appendChild(label);
         }
       }
@@ -2893,7 +2893,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           showAchievement('🛡️', 'Security Headers Expert', 'Prioritized the right security header!');
@@ -2941,7 +2941,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -2982,7 +2982,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -3023,7 +3023,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -3231,7 +3231,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
     function roleCheck(role) {
       if (role === 'engineer') {
         // Engineers go straight to training
-        showAchievement('🚀', 'Training Started!', 'Your secure coding journey begins!');
+        showAchievement('🚀', 'Обучение началось!', 'Твое путешествие в мир кибербезопасности началось!');
         nextSlide();
       } else {
         // Non-engineers get a clear popup with overlay
@@ -3242,7 +3242,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
     
     function skipToCompletion() {
       // Mark training as complete for non-technical roles
-      showAchievement('✅', 'Training Complete!', 'Thank you for your commitment to security!');
+      showAchievement('✅', 'Обучение завершено!', 'Спасибо за вашу приверженность безопасности!');
       gameState.currentSlide = 6; // Jump to certificate
       showSlide(6);
       // Mark as completed
@@ -3271,7 +3271,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
     }
     
     function startTraining() {
-      showAchievement('🚀', 'Training Started!', 'Your secure coding journey begins!');
+      showAchievement('🚀', 'Обучение началось!', 'Твое путешествие в мир кибербезопасности началось!');
       nextSlide();
     }
     
@@ -3324,7 +3324,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
       
       showSlide(6);
       launchConfetti();
-      showAchievement('🏆', 'Training Complete!', 'You are now a Secure Coding Champion!');
+      showAchievement('🏆', 'Обучение завершено!', 'Теперь ты Чемпион по безопасному программированию!');
     }
     
     function launchConfetti() {
@@ -3410,7 +3410,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
         // Find the selected button
         let selectedButton = null;
         buttons.forEach(btn => {
-          if ((choice === 'validation' && btn.textContent.includes('Missing input validation')) ||
+          if ((choice === 'validation' && btn.textContent.includes('Отсутствие валидации входных данных')) ||
               (choice === 'concatenation' && btn.textContent.includes('String concatenation')) ||
               (choice === 'async' && btn.textContent.includes('async/await')) ||
               (choice === 'password' && btn.textContent.includes('plain text passwords'))) {
@@ -3471,7 +3471,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           selectedButton.appendChild(label);
           
           // Show feedback and restore full state
@@ -3483,7 +3483,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               • An attacker could pass: <code>admin' OR '1'='1</code><br>
               • This would return ALL users, not just the one with that email<br><br>
               <strong>How to fix:</strong><br>
-              • Use parameterized queries: <code>SELECT * FROM users WHERE email = ?</code><br>
+              • Используйте параметризованные запросы: <code>SELECT * FROM users WHERE email = ?</code><br>
               • Use an ORM with built-in protection<br>
               • Never concatenate user input into queries
             </div>`;
@@ -3652,7 +3652,7 @@ console.log(\`Login attempt for user ID: \${userId}\`);
               </div>
               
               <div>
-                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use AWS Secrets Manager for Secrets</h4>
+                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use VAULT for Secrets</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                   <div>
                     <strong style="color: #666;">❌ Current (Vulnerable):</strong>
@@ -3663,20 +3663,20 @@ const JWT_SECRET = "secret2024Key!";</pre>
                     <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
                     <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
-// Managed in AWS Secrets Manager with rotation!</pre>
+// Managed in VAULT with rotation!</pre>
                   </div>
                 </div>
               </div>
               
               <div style="background: #e3f2fd; padding: 16px; border-radius: 8px;">
-                <h4 style="color: var(--dark-purple); margin-bottom: 8px;">📚 Security Best Practices Applied:</h4>
+                <h4 style="color: var(--dark-purple); margin-bottom: 8px;">📚 Применение лучших практик обеспечения безопасности:</h4>
                 <ul style="margin: 0; padding-left: 20px; color: #666;">
-                  <li>Never log sensitive information (passwords, tokens, emails, or PII)</li>
-                  <li>Use user IDs instead of email addresses in logs</li>
-                  <li>Store secrets in AWS Secrets Manager</li>
-                  <li>Enable automatic secret rotation</li>
-                  <li>Use structured logging with severity levels</li>
-                  <li>Implement audit logging for security events</li>
+                <li>Никогда не регистрируйте конфиденциальную информацию (пароли, токены, электронные письма или личные данные)</li> 
+                <li>Используйте идентификаторы пользователей вместо адресов электронной почты в логах</li> 
+                <li>Хранить секреты в VAULT</li> 
+                <li>Включить автоматическую ротацию секретов.</li> 
+                <li>Использовать структурированное журналирование с указанием уровней серьезности</li> 
+                <li>Внедрить ведение журнала аудита событий безопасности</li>
                 </ul>
               </div>
             </div>
@@ -3789,13 +3789,13 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           selectedButton.appendChild(label);
           
           // Show feedback
           if (choice === 'update') {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ CORRECT! Critical vulnerabilities must be patched immediately!
+              ✅ ВЕРНО! Критические уязвимости необходимо устранить немедленно!
             </div>`;
             gameState.passwordComplete = true;
             // Show continue button
@@ -3809,7 +3809,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
             });
           } else {
             feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-              ❌ Not the best choice. Try again!
+              ❌ Не лучший выбор. Попробуй еще раз!
             </div>`;
           }
         }
@@ -3887,7 +3887,7 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
       }, 10);
       if (!gameState.achievements.includes('owl')) {
         gameState.achievements.push('owl');
-        showAchievement('👾', 'Wise Discovery!', 'You found the easter egg!');
+        showAchievement('👾', 'Мудрое открытие!', 'Вы нашли пасхалку!');
       }
       // If in iframe, send message to parent to go home
       if (window.parent !== window) {
