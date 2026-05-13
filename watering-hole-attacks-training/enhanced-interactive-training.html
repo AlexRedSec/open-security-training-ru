@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRC Engineering: Watering Hole Attack Defense Training</title>
+  <title>Защита от атак типа «Watering Hole»</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     
@@ -642,8 +642,8 @@
   <div class="achievement" id="achievementPopup">
     <div class="achievement-icon" id="achievementIcon">🏆</div>
     <div>
-      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Achievement Unlocked!</div>
-      <div style="font-size:14px; color:#6c757d;" id="achievementText">You're making great progress!</div>
+      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Достижение разблокировано!</div>
+      <div style="font-size:14px; color:#6c757d;" id="achievementText">Вы отлично продвигаетесь!</div>
     </div>
   </div>
 
@@ -654,128 +654,128 @@
     <div class="grc-header">
       <div class="grc-logo">
         <div class="grc-owl" onclick="owlClick()">👾</div>
-        <span>Watering Hole Attacks</span>
+        <span>Атаки типа «Водопой»</span>
       </div>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
 
     <!-- Slide 1: Welcome -->
     <div class="slide active" id="slide1">
-      <h1>💧 Watering Hole Attack Defense</h1>
+      <h1>💧 Защита от атак типа «Водопой»</h1>
       <div class="intro-animation">🦁</div>
       <p style="text-align:center; font-size:1.25rem; margin-bottom:32px;">
-        Just as predators wait at watering holes for prey, attackers compromise websites your team trusts to infect visitors.
+        Как хищники поджидают добычу у водопоя, злоумышленники компрометируют сайты, которым доверяет ваша команда, чтобы скомпрометировать посетителей.
       </p>
       <p style="text-align:center; color:#6c757d;">
-        This interactive training will teach you to recognize and defend against these sophisticated attacks.
+        Это интерактивное обучение научит вас распознавать и защищаться от таких сложных атак.
       </p>
       <div class="navigation">
         <span></span>
-        <button class="btn" onclick="startTraining()">Begin Training →</button>
+        <button class="btn" onclick="startTraining()">Начать обучение →</button>
       </div>
     </div>
 
     <!-- Slide 2: Understanding Watering Holes -->
     <div class="slide" id="slide2">
-      <h2>📚 Understanding Watering Hole Attacks</h2>
-      <p>Watering hole attacks are particularly dangerous because they exploit trust in legitimate websites.</p>
+      <h2>📚 Понимание атак типа «Водопой»</h2>
+      <p>Атаки типа «Водопой» особенно опасны, поскольку используют доверие к легитимным сайтам.</p>
       
       <div class="info-cards">
         <div class="info-card">
           <span class="info-card-icon">🔍</span>
-          <h3>Reconnaissance</h3>
-          <p>Attackers profile targets to identify frequently visited sites</p>
+          <h3>Разведка</h3>
+          <p>Злоумышленники изучают цели, чтобы выявить часто посещаемые сайты</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">💉</span>
-          <h3>Compromise</h3>
-          <p>The trusted site is hacked or ads are poisoned with malicious code</p>
+          <h3>Компрометация</h3>
+          <p>Доверенный сайт взламывается или его реклама заражается вредоносным кодом</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🎯</span>
-          <h3>Delivery</h3>
-          <p>Visitors are redirected or prompted to install fake updates</p>
+          <h3>Доставка</h3>
+          <p>Посетителей перенаправляют на вредоносный ресурс или предлагают установить поддельные обновления ПО</p>
         </div>
       </div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 3: Real Examples -->
     <div class="slide" id="slide3">
-      <h2>🌍 Real-World Examples</h2>
-      <p>These actual watering hole attacks have targeted major organizations:</p>
+      <h2>🌍 Реальные примеры</h2>
+      <p>Эти реальные атаки были направлены против крупных организаций:</p>
       
       <div class="detection-challenge">
-        <h3 style="color:var(--dark-purple); margin-bottom:16px;">Notable Attacks:</h3>
+        <h3 style="color:var(--dark-purple); margin-bottom:16px;">Известные атаки:</h3>
         <div class="site-card">
           <strong>🏢 NotPetya (2017)</strong>
-          <p>Ukrainian accounting software was compromised, spreading ransomware globally</p>
-          <span class="url-display">Impact: $10+ billion in damages</span>
+          <p>Бухгалтерское ПО было взломано, что привело к глобальному распространению ransomware</p>
+          <span class="url-display">Ущерб: более $10 млрд</span>
         </div>
         <div class="site-card">
-          <strong>🔧 CCleaner Attack (2017)</strong>
-          <p>Popular PC cleaning tool distributed malware to millions of users</p>
-          <span class="url-display">2.27 million infected systems</span>
+          <strong>🔧 Атака CCleaner (2017)</strong>
+          <p>Популярная утилита для очистки ПК распространила вредоносное ПО среди миллионов пользователей</p>
+          <span class="url-display">2,27 миллиона заражённых систем</span>
         </div>
         <div class="site-card">
-          <strong>📱 iOS Developer Sites (2013)</strong>
-          <p>Apple developer forums compromised to target iOS developers</p>
-          <span class="url-display">Targeted high-value developer accounts</span>
+          <strong>📱 Сайты iOS-разработчиков (2013)</strong>
+          <p>Форумы Apple Developer были взломаны для атаки на iOS-разработчиков</p>
+          <span class="url-display">Целью были аккаунты разработчиков</span>
         </div>
       </div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Next →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Далее →</button>
       </div>
     </div>
 
     <!-- Slide 4: How Organizations Are Targeted -->
     <div class="slide" id="slide4">
-      <h2>🎯 How Organizations Are Targeted</h2>
-      <p>Attackers specifically target sites that employees frequently visit:</p>
+      <h2>🎯 Как атакуют организации</h2>
+      <p>Злоумышленники целенаправленно атакуют сайты, которые часто посещают сотрудники:</p>
       
       <div class="info-cards">
         <div class="info-card">
           <span class="info-card-icon">📰</span>
-          <h3>Tech News Sites</h3>
-          <p>Hacker News, TechCrunch, dev blogs</p>
+          <h3>Технологические новостные сайты</h3>
+          <p>Популярные новостные ресурсы и блоги разработчиков</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🛠️</span>
-          <h3>Developer Tools</h3>
-          <p>Package repos, documentation sites, forums</p>
+          <h3>Инструменты разработчика</h3>
+          <p>Репозитории пакетов, сайты документации, форумы</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🤝</span>
-          <h3>Vendor Portals</h3>
-          <p>Supplier sites, partner portals, SaaS tools</p>
+          <h3>Порталы поставщиков</h3>
+          <p>Сайты поставщиков, партнёрские порталы, SaaS-инструменты</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">☁️</span>
-          <h3>Cloud Providers</h3>
-          <p>AWS, Azure, GCP documentation and consoles</p>
+          <h3>Облачные провайдеры</h3>
+          <p>Документация и консоли облачных сервисов (Яндекс.Облако, Google Cloud Platform)</p>
         </div>
       </div>
       
       <p style="text-align:center; color:var(--error-red); font-weight:600; margin-top:24px;">
-        ⚠️ Even trusted sites can be compromised!
+        ⚠️ Даже доверенные сайты могут быть скомпрометированы!
       </p>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Next →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Далее →</button>
       </div>
     </div>
 
     <!-- Slide 5: Website Trust Challenge -->
     <div class="slide" id="slide5">
-      <h2>🌐 Website Trust Challenge</h2>
-      <p>You're visiting a familiar vendor portal. Which scenario is most suspicious?</p>
+      <h2>🌐 Наглядный пример для практики</h2>
+      <p>Вы заходите на знакомый портал поставщика. Какой сценарий вызывает наибольшее подозрение?</p>
       
       <div class="website-simulator">
         <div class="browser-bar">
@@ -787,77 +787,77 @@
           <div class="url-bar" id="urlDisplay">https://vendor-portal.yourcompany.com</div>
         </div>
         <div class="website-content">
-          <h3 style="color:#333;">Vendor Portal</h3>
-          <p style="color:#666;">Welcome to the vendor management system</p>
+          <h3 style="color:#333;">Портал поставщика</h3>
+          <p style="color:#666;">Добро пожаловать в систему управления поставщиками</p>
           <div class="fake-popup" id="fakePopup">
-            <h4 style="color:#ff3b30; margin-bottom:16px;">⚠️ Security Update Required</h4>
-            <p style="margin-bottom:16px;">Install our security plugin to continue</p>
-            <button class="btn btn-danger" onclick="showWarning()">Install Plugin</button>
+            <h4 style="color:#ff3b30; margin-bottom:16px;">⚠️ Требуется обновление безопасности</h4>
+            <p style="margin-bottom:16px;">Установите наш плагин безопасности для продолжения</p>
+            <button class="btn btn-danger" onclick="showWarning()">Установить плагин</button>
           </div>
         </div>
       </div>
       
       <div class="decision-grid">
-        <button class="decision-btn" onclick="trustDecision('normal')">Everything looks normal</button>
-        <button class="decision-btn" onclick="trustDecision('plugin')">Plugin request is suspicious</button>
-        <button class="decision-btn" onclick="trustDecision('url')">Check the URL carefully</button>
-        <button class="decision-btn" onclick="trustDecision('leave')">Leave the site immediately</button>
+        <button class="decision-btn" onclick="trustDecision('normal')">Всё выглядит нормально</button>
+        <button class="decision-btn" onclick="trustDecision('plugin')">Запрос плагина подозрителен</button>
+        <button class="decision-btn" onclick="trustDecision('url')">Проверить URL внимательно</button>
+        <button class="decision-btn" onclick="trustDecision('leave')">Немедленно покинуть сайт</button>
       </div>
       
       <div id="trustFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="trustContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="trustContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 6: URL Detection Game -->
     <div class="slide" id="slide6">
-      <h2>🔍 Spot the Fake URLs</h2>
-      <p>Click on ALL the suspicious URLs that could be watering hole attacks:</p>
+      <h2>🔍 Найдите поддельные URL</h2>
+      <p>Нажмите на ВСЕ подозрительные URL, которые могут быть частью атаки «водопой»:</p>
       
       <div class="detection-challenge">
         <div class="site-card" onclick="checkURL(this, 'facebook.com', false)">
-          <strong>Social Media</strong>
+          <strong>Социальные сети</strong>
           <span class="url-display">facebook.com</span>
         </div>
         <div class="site-card" onclick="checkURL(this, 'amaz0n-secure-login.com', true)">
-          <strong>Online Shopping Login</strong>
+          <strong>Вход в интернет-магазин</strong>
           <span class="url-display">amaz0n-secure-login.com</span>
         </div>
         <div class="site-card" onclick="checkURL(this, 'netflix.com', false)">
-          <strong>Streaming Service</strong>
+          <strong>Стриминговый сервис</strong>
           <span class="url-display">netflix.com</span>
         </div>
         <div class="site-card" onclick="checkURL(this, 'paypa1-support.com', true)">
-          <strong>Payment Service</strong>
+          <strong>Платёжный сервис</strong>
           <span class="url-display">paypa1-support.com</span>
         </div>
         <div class="site-card" onclick="checkURL(this, 'wikipedia.org', false)">
-          <strong>Online Encyclopedia</strong>
+          <strong>Онлайн-энциклопедия</strong>
           <span class="url-display">wikipedia.org</span>
         </div>
         <div class="site-card" onclick="checkURL(this, 'micr0soft-update.com', true)">
-          <strong>Software Update</strong>
+          <strong>Обновление ПО</strong>
           <span class="url-display">micr0soft-update.com</span>
         </div>
       </div>
       
       <div class="score-display">
-        Found: <span id="urlScore">0/3</span> suspicious URLs
+        Найдено: <span id="urlScore">0/3</span> подозрительные ссылки
       </div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="urlContinue" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="urlContinue" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 7: Response Simulation -->
     <div class="slide" id="slide7">
-      <h2>🚨 Incident Response Simulation</h2>
-      <p>You clicked "Sign in" on a familiar cloud provider site and were redirected to:</p>
+      <h2>🚨 Симуляция реагирования на инцидент</h2>
+      <p>Вы нажали «Войти» на знакомом сайте облачного провайдера и были перенаправлены на:</p>
       
       <div class="website-simulator">
         <div class="browser-bar">
@@ -875,25 +875,25 @@
           <div style="max-width:400px; margin:0 auto;">
             <input type="text" placeholder="Username" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:4px;">
             <input type="password" placeholder="Password" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:4px;">
-            <button style="width:100%; padding:12px; background:#ff6b00; color:white; border:none; border-radius:4px; font-size:16px; cursor:pointer;">Sign In</button>
+            <button style="width:100%; padding:12px; background:#ff6b00; color:white; border:none; border-radius:4px; font-size:16px; cursor:pointer;">Войти</button>
           </div>
         </div>
       </div>
       
-      <p style="text-align:center; font-weight:600; margin-top:24px;">What should you do?</p>
+      <p style="text-align:center; font-weight:600; margin-top:24px;">Что вы должны сделать?</p>
       
       <div class="decision-grid">
-        <button class="decision-btn" onclick="responseDecision('login')">Log in if the page looks legitimate</button>
-        <button class="decision-btn" onclick="responseDecision('verify')">Verify the URL and use bookmarks</button>
-        <button class="decision-btn" onclick="responseDecision('password')">Enter credentials then change password</button>
-        <button class="decision-btn" onclick="responseDecision('report')">Close immediately and report to Security</button>
+        <button class="decision-btn" onclick="responseDecision('login')">Войти, если страница выглядит легитимно</button>
+        <button class="decision-btn" onclick="responseDecision('verify')">Проверить URL и использовать закладки</button>
+        <button class="decision-btn" onclick="responseDecision('password')">Ввести данные, затем сменить пароль</button>
+        <button class="decision-btn" onclick="responseDecision('report')">Немедленно закрыть и сообщить службе безопасности</button>
       </div>
       
       <div id="responseFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="completeTraining()" id="responseContinue" style="display:none;">Complete Training →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="completeTraining()" id="responseContinue" style="display:none;">Завершить обучение →</button>
       </div>
     </div>
 
@@ -901,28 +901,28 @@
     <div class="slide" id="slide8">
       <div class="certificate">
         <div class="trophy-icon">🏆</div>
-        <h1 style="color:var(--primary-purple); margin:24px 0;">Watering Hole Defense Champion!</h1>
+        <h1 style="color:var(--primary-purple); margin:24px 0;">Чемпион защиты от атак «Watering Hole»!</h1>
         <p style="font-size:1.25rem; color:var(--dark-purple); margin-bottom:32px;">
-          You've mastered defending against watering hole attacks!
+          Вы освоили защиту от атак типа "водопой"!
         </p>
 
         <div style="margin:32px 0;">
           <div>
             <div style="font-size:2rem; font-weight:700; color:var(--primary-purple);" id="finalScore">100%</div>
-            <div style="color:#6c757d;">Final Score</div>
+            <div style="color:#6c757d;">Итоговый результат</div>
           </div>
         </div>
 
         <p style="color:var(--primary-purple); font-weight:600; font-size:1.125rem;">
-          Stay Vigilant. Stay Secure. 👾
+          Будьте бдительны. Оставайтесь в безопасности. 👾
         </p>
         
-        <button class="btn" onclick="window.close()" style="margin-top:24px;">Exit Training</button>
+        <button class="btn" onclick="window.close()" style="margin-top:24px;">Выйти из обучения</button>
       </div>
     </div>
   </div>
 
-  <div class="scorm-status" id="scormStatus">SCORM: Disconnected</div>
+  <div class="scorm-status" id="scormStatus">SCORM: Отключён</div>
 
   <script>
     // SCORM API wrapper
@@ -1030,10 +1030,10 @@
       // Find the clicked button
       let clickedButton;
       buttons.forEach(btn => {
-        if ((choice === 'normal' && btn.textContent.includes('Everything looks normal')) ||
-            (choice === 'plugin' && btn.textContent.includes('Plugin request is suspicious')) ||
-            (choice === 'url' && btn.textContent.includes('Check the URL carefully')) ||
-            (choice === 'leave' && btn.textContent.includes('Leave the site immediately'))) {
+        if ((choice === 'normal' && btn.textContent.includes('Всё выглядит нормально')) ||
+            (choice === 'plugin' && btn.textContent.includes('Запрос плагина подозрителен')) ||
+            (choice === 'url' && btn.textContent.includes('Проверить URL внимательно')) ||
+            (choice === 'leave' && btn.textContent.includes('Немедленно покинуть сайт'))) {
           clickedButton = btn;
         }
       });
@@ -1049,7 +1049,7 @@
       switch(choice) {
         case 'normal':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Look more carefully! Did you notice the security plugin popup?
+            ❌ Присмотритесь внимательнее! Вы заметили всплывающее окно плагина безопасности?
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1084,13 +1084,13 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
         case 'plugin':
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Excellent! Legitimate sites never require browser plugins for basic access. This is a major red flag!
+            ✅ Отлично! Для доступа к легитимным сайтам никогда не требуются плагины для браузера!
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -1125,10 +1125,10 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('🛡️', 'Plugin Detector', 'Spotted malicious plugin request!');
+          showAchievement('🛡️', 'Детектор плагина', 'Обнаружен запрос на установку вредоносного плагина!');
           gameState.trustComplete = true;
           document.getElementById('trustContinue').style.display = 'inline-flex';
           document.querySelectorAll('#slide5 .decision-btn').forEach(btn => {
@@ -1137,7 +1137,7 @@
           break;
         case 'url':
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Good instinct to check URLs, but did you see the plugin request?
+            ⚠️ Хороший выбор — проверять URL-адреса, но вы видели запрос на плагин?
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #ff9800, #E65100)';
@@ -1172,13 +1172,13 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
         case 'leave':
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Leaving is safe, but identifying the specific threat (plugin request) is important too!
+            ⚠️ Уходить безопасно, но важно также определить конкретную угрозу (запрос плагина)!
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #ff9800, #E65100)';
@@ -1213,7 +1213,7 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
@@ -1231,20 +1231,20 @@
             <div style="font-size: 64px; margin-bottom: 20px;">🚨</div>
             <h2 style="color: #f44336; margin-bottom: 16px;">Malware Alert!</h2>
             <p style="color: #666; font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
-              <strong>NEVER install plugins from websites!</strong><br><br>
-              This is exactly how watering hole attacks spread malware. Compromised legitimate sites trick you into installing malicious software.
+              <strong>НИКОГДА не устанавливайте плагины с веб-сайтов!</strong><br><br>
+              Именно так атаки типа «водопой» распространяют вредоносное ПО. Взломанные легитимные сайты обманом заставляют вас установить вредоносное П.
             </p>
             <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 16px; border-radius: 4px; margin-bottom: 24px; text-align: left;">
               <p style="margin: 0; color: #856404; font-size: 14px; line-height: 1.5;">
-                <strong>🛡️ Red Flags:</strong><br>
-                • Unexpected plugin request<br>
-                • Popup on trusted site (site compromised)<br>
-                • Claims to be "security update"<br>
-                • No official verification process
+                <strong>🛡️ "Красные флаги":</strong><br>
+                • Неожиданный запрос плагина<br>
+                • Всплывающее окно на доверенном сайте<br>
+                • Утверждается, что это «обновление безопасности»<br>
+                • Нет возможности проверить легитимность запроса
               </p>
             </div>
             <button onclick="closePluginWarningPopup()" style="background: linear-gradient(135deg, #7B2CBF 0%, #06A77D 100%); color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: 600; transition: all 0.2s ease;">
-              I Understand
+              Всё понятно
             </button>
           </div>
         </div>
@@ -1289,9 +1289,9 @@
       if (gameState.urlsChecked.includes(url)) {
         // Already checked - just show the visual feedback again
         if (isSuspicious) {
-          alert('✅ You already identified this suspicious URL!');
+          alert('✅ Вы уже определили этот подозрительный URL-адрес!');
         } else {
-          alert('✅ You already checked this legitimate URL.');
+          alert('✅ Вы уже определили этот подозрительный URL-адрес.');
         }
         return;
       }
@@ -1306,7 +1306,7 @@
         gameState.urlsFound++;
         
         if (gameState.urlsFound === 1) {
-          showAchievement('👁️', 'Sharp Eye', 'Found your first suspicious URL!');
+          showAchievement('👁️', 'Острый глаз', 'Найден первый подозрительный адрес!');
         }
       } else {
         element.classList.add('incorrect');
@@ -1315,7 +1315,7 @@
       document.getElementById('urlScore').textContent = gameState.urlsFound + '/' + gameState.totalSuspiciousUrls;
       
       if (gameState.urlsFound === gameState.totalSuspiciousUrls) {
-        showAchievement('🔍', 'URL Master', 'Found all suspicious URLs!');
+        showAchievement('🔍', 'Мастер ссылок', 'Найдены все вредоносные URL-ссылки!');
         document.getElementById('urlContinue').style.display = 'inline-flex';
       }
     }
@@ -1373,7 +1373,7 @@
       switch(choice) {
         case 'login':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ NEVER enter credentials on suspicious domains! This is a phishing site using a look-alike domain.
+            ❌ НИКОГДА не вводите учетные данные на подозрительных доменах! Это фишинговый сайт, использующий похожий домен.
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1408,14 +1408,14 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('⚠️', 'Close Call', 'Learn from this mistake!');
+          showAchievement('⚠️', 'На волоске от', 'Учимся на ошибках!');
           break;
         case 'verify':
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Perfect! Always verify URLs and use bookmarks or type the URL directly. The real AWS domain is aws.amazon.com, not aws-console-signin.net!
+            ✅ Отлично! Всегда проверяйте URL-адреса и используйте закладки или вводите URL напрямую!
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -1450,10 +1450,10 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('🔒', 'Security Pro', 'Avoided credential theft!');
+          showAchievement('🔒', 'Security Pro', 'Предотвращена кража учетных данных!');
           gameState.responseComplete = true;
           document.getElementById('responseContinue').style.display = 'inline-flex';
           document.querySelectorAll('#slide7 .decision-btn').forEach(btn => {
@@ -1462,7 +1462,7 @@
           break;
         case 'password':
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Never enter credentials first! Once entered, attackers have them immediately.
+            ❌ Никогда не вводите учетные данные сразу! После ввода злоумышленники мгновенно получают к ним доступ.
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
@@ -1497,13 +1497,13 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           break;
         case 'report':
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Excellent! Closing the page immediately and reporting to Security is a safe response. This prevents credential theft and alerts the security team.
+            ✅ Отлично! Немедленное закрытие страницы и сообщение в службу безопасности — это безопасный вариант.
           </div>`;
           if (clickedButton) {
             clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -1538,10 +1538,10 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
-          showAchievement('🔒', 'Security Pro', 'Great incident response!');
+          showAchievement('🔒', 'Мастер реагирования', 'Отлично среагировал на инцидент!');
           gameState.responseComplete = true;
           document.getElementById('responseContinue').style.display = 'inline-flex';
           document.querySelectorAll('#slide7 .decision-btn').forEach(btn => {
@@ -1555,33 +1555,33 @@
     function loadScenarios() {
       const scenarios = [
         {
-          title: 'Plugin Installation Request',
+          title: 'Запрос на установку плагина',
           type: 'plugin',
-          description: 'Which scenario is the clearest sign of a watering hole attack?',
+          description: 'Какой сценарий является наиболее явным признаком атаки типа "watering hole"?',
           options: [
-            { text: 'A well-known vendor portal asks you to install an "urgent security plugin" before continuing', feedback: 'Correct — malicious prompts on trusted sites are a hallmark of watering hole attacks.', correct: true },
-            { text: 'Your browser froze and needed a restart', feedback: 'Hangs can happen for many benign reasons. Not sufficient by itself.', correct: false },
-            { text: 'A bookmarked site is down for maintenance', feedback: 'Maintenance happens; not evidence of compromise on its own.', correct: false }
+            { text: 'Известный портал поставщика просит вас установить "срочный плагин безопасности" перед продолжением', feedback: 'Правильно — вредоносные подсказки на доверенных сайтах являются отличительной чертой атак типа watering hole.', correct: true },
+            { text: 'Ваш браузер завис и потребовалась перезагрузка', feedback: 'Зависания могут происходить по многим безобидным причинам. Само по себе это недостаточно.', correct: false },
+            { text: 'Сайт из закладок недоступен на время обслуживания', feedback: 'Обслуживание происходит; само по себе это не является доказательством компрометации.', correct: false }
           ]
         },
         {
-          title: 'Suspicious Redirect',
+          title: 'Подозрительное перенаправление',
           type: 'redirect',
-          description: 'You click "Sign in" on a familiar supplier site and land on suppliers-login-secure.net. Best next step?',
+          description: 'Вы нажимаете "Войти" на знакомом сайте поставщика и попадаете на suppliers-login-secure.net. Какой следующий шаг будет лучшим?',
           options: [
-            { text: 'Proceed if the page looks normal', feedback: 'Appearance can be spoofed; don\'t trust looks alone.', correct: false },
-            { text: 'Stop, verify the URL, and access via your known bookmark or official link', feedback: 'Correct — verify the URL and use trusted bookmarks to avoid look‑alike domains.', correct: true },
-            { text: 'Enter credentials and change your password later', feedback: 'Never enter credentials on a suspicious page.', correct: false }
+            { text: 'Продолжить, если страница выглядит нормально', feedback: 'Внешний вид может быть подделан; не доверяйте только внешности.', correct: false },
+            { text: 'Остановиться, проверить URL-адрес и получить доступ через известную закладку или официальную ссылку', feedback: 'Правильно — проверяйте URL-адрес и используйте доверенные закладки, чтобы избежать доменов-подделок.', correct: true },
+            { text: 'Ввести учетные данные, а затем сменить пароль', feedback: 'Никогда не вводите учетные данные на подозрительной странице.', correct: false }
           ]
         },
         {
-          title: 'Incident Response',
+          title: 'Реагирование на инцидент',
           type: 'response',
-          description: 'You suspect an industry news site you visit was compromised. What should you do first?',
+          description: 'Вы подозреваете, что новостной сайт, который вы посещаете, был скомпрометирован. Что следует сделать в первую очередь?',
           options: [
-            { text: 'Report it to Security and avoid using the site; if something ran, disconnect from the network', feedback: 'Correct — report to Security and isolate impacted systems.', correct: true },
-            { text: 'Post a warning in a public forum', feedback: 'Public posts can tip attackers or cause confusion; use internal channels.', correct: false },
-            { text: 'Install whatever update the site recommends to fix it', feedback: 'Never install unverified updates suggested by websites.', correct: false }
+            { text: 'Сообщить об этом в службу безопасности и избегать использования сайта; если что-то запустилось, отключиться от сети', feedback: 'Правильно — сообщите в службу безопасности и изолируйте затронутые системы.', correct: true },
+            { text: 'Опубликовать предупреждение на публичном форуме', feedback: 'Публичные сообщения могут дать наводку злоумышленникам или вызвать путаницу; используйте внутренние каналы.', correct: false },
+            { text: 'Установить любое обновление, рекомендованное сайтом, чтобы исправить проблему', feedback: 'Никогда не устанавливайте непроверенные обновления, предлагаемые веб-сайтами.', correct: false }
           ]
         }
       ];
@@ -1621,23 +1621,23 @@
       const scenarios = [
         {
           options: [
-            { feedback: 'Correct — malicious prompts on trusted sites are a hallmark of watering hole attacks.', correct: true },
-            { feedback: 'Hangs can happen for many benign reasons. Not sufficient by itself.', correct: false },
-            { feedback: 'Maintenance happens; not evidence of compromise on its own.', correct: false }
+            { feedback: 'Правильно — вредоносные подсказки на доверенных сайтах являются отличительной чертой атак типа "watering hole"', correct: true },
+            { feedback: 'Зависания могут происходить по многим безобидным причинам. Само по себе это недостаточно.', correct: false },
+            { feedback: 'Обслуживание происходит; само по себе это не является доказательством компрометации.', correct: false }
           ]
         },
         {
           options: [
-            { feedback: 'Appearance can be spoofed; don\'t trust looks alone.', correct: false },
-            { feedback: 'Correct — verify the URL and use trusted bookmarks to avoid look‑alike domains.', correct: true },
-            { feedback: 'Never enter credentials on a suspicious page.', correct: false }
+            { feedback: 'Внешний вид может быть подделан; не доверяйте только внешности.', correct: false },
+            { feedback: 'Правильно — проверяйте URL-адрес и используйте доверенные закладки, чтобы избежать доменов-подделок.', correct: true },
+            { feedback: 'Никогда не вводите учетные данные на подозрительной странице.', correct: false }
           ]
         },
         {
           options: [
-            { feedback: 'Correct — report to Security and isolate impacted systems.', correct: true },
-            { feedback: 'Public posts can tip attackers or cause confusion; use internal channels.', correct: false },
-            { feedback: 'Never install unverified updates suggested by websites.', correct: false }
+            { feedback: 'Правильно — сообщите в службу безопасности и изолируйте затронутые системы.', correct: true },
+            { feedback: 'Публичные сообщения могут дать наводку злоумышленникам или вызвать путаницу; используйте внутренние каналы.', correct: false },
+            { feedback: 'Никогда не устанавливайте непроверенные обновления, предлагаемые веб-сайтами.', correct: false }
           ]
         }
       ];
@@ -1680,7 +1680,7 @@
           document.getElementById('completeBtn').style.display = 'inline-flex';
           if (!gameState.achievements.includes('scenario_master')) {
             gameState.achievements.push('scenario_master');
-            showAchievement('🎯', 'Scenario Master', 'Completed all knowledge checks!');
+            showAchievement('🎯', 'Мастер сценариев', 'Все проверки знаний пройдены успешно!');
           }
         }
       } else {
@@ -1756,7 +1756,7 @@
     }
     
     function startTraining() {
-      showAchievement('🚀', 'Training Started!', 'Your watering hole defense journey begins!');
+      showAchievement('🚀', 'Обучение началось!', 'Твое путешествие в мир кибербезопасности начинается!');
       nextSlide();
     }
     
@@ -1783,7 +1783,7 @@
       
       showSlide(8);
       launchConfetti();
-      showAchievement('🏆', 'Training Complete!', 'You are now a Watering Hole Defense Expert!');
+      showAchievement('🏆', 'Обучение завершено!', 'Теперь ты эксперт по защите от атак типа "водопой"!');
     }
     
     function launchConfetti() {
@@ -1840,10 +1840,10 @@
         // Find the selected button based on the saved choice
         let selectedButton = null;
         buttons.forEach(btn => {
-          if ((choice === 'normal' && btn.textContent.includes('Everything looks normal')) ||
-              (choice === 'plugin' && btn.textContent.includes('Plugin request is suspicious')) ||
-              (choice === 'url' && btn.textContent.includes('Check the URL carefully')) ||
-              (choice === 'leave' && btn.textContent.includes('Leave the site immediately'))) {
+          if ((choice === 'normal' && btn.textContent.includes('Всё выглядит нормально')) ||
+              (choice === 'plugin' && btn.textContent.includes('Запрос плагина подозрителен')) ||
+              (choice === 'url' && btn.textContent.includes('Проверьте URL внимательно')) ||
+              (choice === 'leave' && btn.textContent.includes('Немедленно покиньте сайт'))) {
             selectedButton = btn;
           }
         });
@@ -1905,13 +1905,13 @@
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           selectedButton.appendChild(label);
           
           // Show appropriate feedback
           if (choice === 'plugin') {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ Excellent! Legitimate sites never require browser plugins for basic access. This is a major red flag!
+              ✅ Отлично! Для доступа к легитимным сайтам никогда не требуются плагины для браузера!
             </div>`;
             gameState.trustComplete = true;
             const btn = document.getElementById('trustContinue');
@@ -1925,15 +1925,15 @@
             });
           } else if (choice === 'url') {
             feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-              ⚠️ Good instinct to check URLs, but did you see the plugin request?
+              ⚠️ Хороший выбор — проверять URL-адреса, но вы видели запрос на плагин?
             </div>`;
           } else if (choice === 'leave') {
             feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-              ⚠️ Leaving is safe, but identifying the specific threat (plugin request) is important too!
+              ⚠️ Уходить безопасно, но важно также определить конкретную угрозу (запрос плагина)!
             </div>`;
           } else if (choice === 'normal') {
             feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-              ❌ Look more carefully! Did you notice the security plugin popup?
+              ❌ Присмотритесь внимательнее! Вы заметили всплывающее окно плагина безопасности?
             </div>`;
           }
         }
@@ -1990,10 +1990,10 @@
         // Find the selected button based on the saved choice
         let selectedButton = null;
         buttons.forEach(btn => {
-          if ((choice === 'login' && btn.textContent.includes('Log in if the page')) ||
-              (choice === 'verify' && btn.textContent.includes('Verify the URL')) ||
-              (choice === 'password' && btn.textContent.includes('Enter credentials then')) ||
-              (choice === 'report' && btn.textContent.includes('Close immediately and report'))) {
+          if ((choice === 'login' && btn.textContent.includes('Войдите, если страница')) ||
+              (choice === 'verify' && btn.textContent.includes('Проверьте URL')) ||
+              (choice === 'password' && btn.textContent.includes('Введите учетные данные, затем')) ||
+              (choice === 'report' && btn.textContent.includes('Немедленно закройте и сообщите'))) {
             selectedButton = btn;
           }
         });
@@ -2055,13 +2055,13 @@
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           selectedButton.appendChild(label);
           
           // Show appropriate feedback
           if (choice === 'verify') {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ Perfect! Always verify URLs and use bookmarks or type the URL directly. The real AWS domain is aws.amazon.com, not aws-console-signin.net!
+              ✅ Отлично! Всегда проверяйте URL-адреса и используйте закладки или вводите URL напрямую!
             </div>`;
             gameState.responseComplete = true;
             const btn = document.getElementById('responseContinue');
@@ -2075,7 +2075,7 @@
             });
           } else if (choice === 'report') {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ Excellent! Closing the page immediately and reporting to Security is a safe response. This prevents credential theft and alerts the security team.
+              ✅ Отлично! Немедленное закрытие страницы и сообщение в службу безопасности — это безопасный вариант.
             </div>`;
             gameState.responseComplete = true;
             const btn = document.getElementById('responseContinue');
@@ -2089,11 +2089,11 @@
             });
           } else if (choice === 'login') {
             feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-              ❌ NEVER enter credentials on suspicious domains! This is a phishing site using a look-alike domain.
+              ❌ НИКОГДА не вводите учетные данные на подозрительных доменах! Это фишинговый сайт, использующий похожий домен.
             </div>`;
           } else if (choice === 'password') {
             feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-              ❌ Never enter credentials first! Once entered, attackers have them immediately.
+              ❌ Никогда не вводите учетные данные сразу! После ввода злоумышленники мгновенно получают к ним доступ.
             </div>`;
           }
         }
@@ -2114,25 +2114,26 @@
             const scenarios = [
               {
                 options: [
-                  { feedback: 'Correct — malicious prompts on trusted sites are a hallmark of watering hole attacks.', correct: true },
-                  { feedback: 'Hangs can happen for many benign reasons. Not sufficient by itself.', correct: false },
-                  { feedback: 'Maintenance happens; not evidence of compromise on its own.', correct: false }
+                  { feedback: 'Правильно — вредоносные подсказки на доверенных сайтах являются отличительной чертой атак типа "watering hole"', correct: true },
+                  { feedback: 'Зависания могут происходить по многим безобидным причинам. Само по себе это недостаточно.', correct: false },
+                  { feedback: 'Обслуживание происходит; само по себе это не является доказательством компрометации.', correct: false }
                 ]
               },
               {
                 options: [
-                  { feedback: 'Appearance can be spoofed; don\'t trust looks alone.', correct: false },
-                  { feedback: 'Correct — verify the URL and use trusted bookmarks to avoid look‑alike domains.', correct: true },
-                  { feedback: 'Never enter credentials on a suspicious page.', correct: false }
+                  { feedback: 'Внешний вид может быть подделан; не доверяйте только внешности.', correct: false },
+                  { feedback: 'Правильно — проверяйте URL-адрес и используйте доверенные закладки, чтобы избежать доменов-подделок.', correct: true },
+                  { feedback: 'Никогда не вводите учетные данные на подозрительной странице.', correct: false }
                 ]
               },
               {
                 options: [
-                  { feedback: 'Correct — report to Security and isolate impacted systems.', correct: true },
-                  { feedback: 'Public posts can tip attackers or cause confusion; use internal channels.', correct: false },
-                  { feedback: 'Never install unverified updates suggested by websites.', correct: false }
+                  { feedback: 'Правильно — сообщите в службу безопасности и изолируйте затронутые системы.', correct: true },
+                  { feedback: 'Публичные сообщения могут дать наводку злоумышленникам или вызвать путаницу; используйте внутренние каналы.', correct: false },
+                  { feedback: 'Никогда не устанавливайте непроверенные обновления, предлагаемые веб-сайтами.', correct: false }
                 ]
               }
+
             ];
             
             const option = scenarios[scenarioIndex] && scenarios[scenarioIndex].options[choice];
@@ -2262,7 +2263,7 @@
       }, 10);
       if (!gameState.achievements.includes('owl')) {
         gameState.achievements.push('owl');
-        showAchievement('👾', 'Wise Discovery!', 'You found the easter egg!');
+        showAchievement('👾', 'Мудрое открытие!', 'Вы нашли пасхалку!');
       }
       // If in iframe, send message to parent to go home
       if (window.parent !== window) {
