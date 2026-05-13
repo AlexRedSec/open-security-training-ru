@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Защита от мошенничества от имени руководства</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    
+    :root {
+      --primary-purple:#7B2CBF; --light-purple:#E0B0FF; --dark-purple:#4A1A6B;
+      --primary-teal:#06A77D; --light-teal:#B2F5E8; --dark-teal:#045F4A;
+      --primary-off-black:#17191E; --primary-white:#FFFFFF; --success-green:#4CAF50;
+      --warning-amber:#FF9800; --error-red:#F44336; --neutral-gray:#9E9E9E;
+      --light-gray:#F5F5F5; --medium-gray:#E0E0E0; --primary-gradient: linear-gradient(135deg, #7B2CBF 0%, #06A77D 100%);
+    }
+    
+    body { 
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      background: #0a0e27;
+      color:var(--primary-off-black); 
+      min-height:100vh; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      padding:20px; 
+      line-height:1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Static gradient background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(123,44,191,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(123,44,191,0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 20%, rgba(0,85,204,0.1) 0%, transparent 50%);
+      z-index: -1;
+    }
+    
+    .module-container { 
+      background:var(--primary-white); 
+      border-radius:16px; 
+      box-shadow:0 10px 40px rgba(0,8,77,.25); 
+      max-width:1100px; 
+      width:100%; 
+      overflow:hidden;
+    }
+    
+    .grc-header { 
+      background:var(--primary-gradient); 
+      padding:20px 32px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      color:var(--primary-white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .grc-logo { 
+      display:flex; 
+      align-items:center; 
+      gap:16px; 
+      font-weight:700; 
+      font-size:20px;
+      z-index: 2;
+    }
+    
+    .grc-owl { 
+      width:48px; 
+      height:48px; 
+      background:var(--primary-white); 
+      border-radius:12px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      font-size:28px;
+      animation: bounce 2s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .grc-owl:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    
+    .progress-bar { 
+      height:6px; 
+      background:var(--medium-gray); 
+      position:relative; 
+      overflow:hidden; 
+    }
+    
+    .progress-fill { 
+      height:100%; 
+      background:linear-gradient(90deg, var(--primary-purple), #06A77D); 
+      width:0%; 
+      transition:width .5s ease;
+      box-shadow: 0 0 20px rgba(123,44,191,0.5);
+    }
+    
+    .slide { 
+      padding:56px 48px; 
+      min-height:580px; 
+      display:none; 
+      animation:slideIn .4s ease;
+      position: relative;
+    }
+    
+    .slide.active { display:block; }
+    
+    @keyframes slideIn { 
+      from{ opacity:0; transform:translateX(30px); } 
+      to{ opacity:1; transform:translateX(0); } 
+    }
+    
+    h1 { 
+      color:var(--dark-purple); 
+      font-size:2.5rem; 
+      font-weight:800; 
+      margin-bottom:28px; 
+      text-align:center; 
+      line-height:1.2;
+      background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    h2 { 
+      color:var(--dark-purple); 
+      font-size:2rem; 
+      font-weight:700; 
+      margin-bottom:24px;
+    }
+    
+    p { 
+      font-size:1.125rem; 
+      margin-bottom:20px; 
+      color:var(--primary-off-black); 
+    }
+    
+    /* Educational content styles */
+    .info-grid { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px; 
+      margin: 32px 0;
+    }
+    
+    .info-card { 
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      padding:24px; 
+      border-radius:12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(123,44,191,0.1);
+    }
+    
+    .info-card:hover {
+      box-shadow: 0 6px 20px rgba(123,44,191,0.15);
+      border-color: rgba(123,44,191,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .info-card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .info-card h3 {
+      color: var(--primary-purple);
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .info-card p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Welcome slide specific card styling */
+    .welcome-card {
+      background: linear-gradient(135deg, #fff 0%, var(--light-purple) 100%);
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(123,44,191,0.12);
+      border: 2px solid rgba(123,44,191,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .welcome-card:hover {
+      box-shadow: 0 12px 32px rgba(123,44,191,0.2);
+      border-color: rgba(123,44,191,0.3);
+      transform: translateY(-4px);
+    }
+    
+    .welcome-card .info-card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .welcome-card h3 {
+      color: var(--dark-purple);
+      font-size: 20px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .welcome-card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+    
+    .visual-demo { 
+      background: linear-gradient(135deg, var(--light-purple) 0%, rgba(123,44,191,0.05) 100%);
+      padding:32px; 
+      border-radius:12px; 
+      margin:32px 0; 
+      border:2px solid rgba(123,44,191,.15);
+      box-shadow: 0 4px 12px rgba(123,44,191,0.1);
+    }
+    
+    /* Chat simulator for executive impersonation */
+    .chat-simulator {
+      background: #2c2c2c;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #444;
+      margin-bottom: 16px;
+    }
+    
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .chat-name {
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    .chat-status {
+      color: #4CAF50;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #4CAF50;
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    .chat-messages {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 16px 0;
+    }
+    
+    .chat-message {
+      margin: 12px 0;
+      display: flex;
+      animation: messagePop 0.3s ease;
+    }
+    
+    @keyframes messagePop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .chat-message.received {
+      justify-content: flex-start;
+    }
+    
+    .chat-message.sent {
+      justify-content: flex-end;
+    }
+    
+    .chat-bubble {
+      max-width: 70%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    
+    .chat-bubble.received {
+      background: #444;
+      color: #fff;
+      border-bottom-left-radius: 4px;
+    }
+    
+    .chat-bubble.sent {
+      background: var(--primary-purple);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    
+    .chat-time {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+    
+    /* Typing indicator */
+    .typing-indicator {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #444;
+      border-radius: 18px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+      margin: 12px 0;
+    }
+    
+    .typing-indicator.show {
+      display: flex;
+      animation: messagePop 0.3s ease;
+    }
+    
+    .typing-dot {
+      width: 8px;
+      height: 8px;
+      background: #999;
+      border-radius: 50%;
+      animation: typingBounce 1.4s ease-in-out infinite;
+    }
+    
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes typingBounce {
+      0%, 60%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Urgency timer */
+    .urgency-timer {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #ff3b30, #ff6b60);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(255,59,48,0.3);
+      animation: timerPulse 1s ease-in-out infinite;
+    }
+    
+    @keyframes timerPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .urgency-timer.warning {
+      background: linear-gradient(135deg, #ff9800, #ffc107);
+    }
+    
+    .urgency-timer.critical {
+      animation: timerPulse 0.5s ease-in-out infinite;
+    }
+    
+    /* Interactive decision buttons */
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .decision-btn {
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      padding: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .decision-btn:hover {
+      background: var(--light-purple);
+      border-color: var(--primary-purple);
+      box-shadow: 0 4px 12px rgba(123,44,191,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .decision-btn.selected {
+      background: var(--light-purple);
+      border-color: var(--primary-purple);
+      font-weight: 600;
+    }
+    
+    .decision-btn.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    
+    
+    /* Gamification elements */
+    .achievement {
+      position: fixed;
+      top: 20px;
+      right: -500px;
+      background: #fff;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: right 0.5s ease;
+      z-index: 1000;
+    }
+    
+    .achievement.show {
+      right: 20px;
+    }
+    
+    .achievement-icon {
+      font-size: 32px;
+      animation: celebrate 0.5s ease;
+    }
+    
+    @keyframes celebrate {
+      0% { transform: scale(0) rotate(0); }
+      50% { transform: scale(1.2) rotate(180deg); }
+      100% { transform: scale(1) rotate(360deg); }
+    }
+    
+    /* Navigation */
+    .navigation { 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      margin-top:40px; 
+      padding-top:32px; 
+      border-top:1px solid var(--medium-gray); 
+    }
+    
+    .btn { 
+      background:var(--primary-gradient); 
+      color:var(--primary-white); 
+      padding:14px 28px; 
+      border:none; 
+      border-radius:8px; 
+      font-size:1rem; 
+      font-weight:600; 
+      cursor:pointer; 
+      transition:all .3s ease; 
+      margin:8px; 
+      display:inline-flex; 
+      align-items:center; 
+      gap:8px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+    
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .btn:hover { 
+      box-shadow:0 6px 20px rgba(123,44,191,.4); 
+      transform: translateY(-2px);
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .btn-secondary { 
+      background:transparent; 
+      color:var(--primary-purple); 
+      border:2px solid var(--primary-purple); 
+    }
+    
+    .btn-secondary:hover { 
+      background:var(--light-purple); 
+      border-color:var(--dark-purple); 
+      color:var(--dark-purple); 
+    }
+    
+    /* Enhanced certificate */
+    .certificate {
+      text-align: center;
+      padding: 48px;
+      background: linear-gradient(135deg, #fff 0%, var(--light-purple) 100%);
+      border-radius: 16px;
+      margin: 24px 0;
+      border: 3px solid var(--primary-purple);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .certificate::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(123,44,191,0.1), transparent);
+      animation: shine 3s linear infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .certificate-seal {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 24px;
+      position: relative;
+      animation: sealRotate 20s linear infinite;
+    }
+    
+    @keyframes sealRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .trophy-icon {
+      font-size: 80px;
+      color: #FFD700;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      animation: trophyGlow 2s ease-in-out infinite;
+    }
+    
+    @keyframes trophyGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    /* Confetti */
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+      display: none;
+    }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--primary-purple);
+      animation: confettiFall 3s linear;
+    }
+    
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+    
+    
+    /* SCORM status indicator */
+    .scorm-status {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(23,25,30,.9);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: .75rem;
+      display: none;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Feedback styles */
+    .feedback {
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+      display: none;
+    }
+    
+    .feedback.show { 
+      display:block; 
+    }
+    
+    .feedback.correct {
+      background: #d4edda;
+      color: #155724;
+      border: 2px solid var(--success-green);
+    }
+    
+    .feedback.incorrect {
+      background: #f8d7da;
+      color: #721c24;
+      border: 2px solid var(--error-red);
+    }
+    
+    .feedback.warning {
+      background: #fff3cd;
+      color: #856404;
+      border: 2px solid #ffc107;
+    }
+    
+    /* Responsive */
+    @media (max-width:768px) {
+      .slide { padding:32px 24px; }
+      h1 { font-size:2rem; }
+      h2 { font-size:1.5rem; }
+      .decision-grid { grid-template-columns: 1fr; }
+      .chat-simulator { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Achievement Popup -->
+  <div class="achievement" id="achievementPopup">
+    <div class="achievement-icon" id="achievementIcon">🏆</div>
+    <div>
+      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Достижение разблокировано!</div>
+      <div style="font-size:14px; color:#6c757d;" id="achievementText">Вы отлично продвигаетесь!</div>
+    </div>
+  </div>
+
+  <!-- Confetti Container -->
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <div class="module-container">
+    <div class="grc-header">
+      <div class="grc-logo">
+        <div class="grc-owl" onclick="owlClick()">👾</div>
+        <span>Мошенничество от имени руководства</span>
+      </div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
+
+    <!-- Slide 1: Welcome -->
+    <div class="slide active" id="slide1">
+      <h1>🏢 Защита от мошенничества от имени руководства</h1>
+      <p style="text-align:center; font-size:1.25rem; margin-bottom:32px;">
+        Добро пожаловать, Страж безопасности! Научитесь распознавать и предотвращать атаки типа Business Email Compromise (BEC), направленные против вашей организации.
+      </p>
+      
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:40px auto; max-width:800px;">
+        <div class="welcome-card" style="text-align:center;">
+          <span class="info-card-icon">👔</span>
+          <h3>Имитация личности</h3>
+          <p>Злоумышленники маскируются под руководителей, чтобы обойти контроли</p>
+        </div>
+        <div class="welcome-card" style="text-align:center;">
+          <span class="info-card-icon">💸</span>
+          <h3>Мошенничество с переводами</h3>
+          <p>Срочные запросы на денежные переводы или подарочные карты</p>
+        </div>
+        <div class="welcome-card" style="text-align:center;">
+          <span class="info-card-icon">🔒</span>
+          <h3>Кража данных</h3>
+          <p>Запросы справок о доходах, налоговых данных или учётных данных</p>
+        </div>
+      </div>
+      
+      <div class="navigation">
+        <span></span>
+        <button class="btn" onclick="startTraining()">Начать обучение →</button>
+      </div>
+    </div>
+
+    <!-- Slide 2: How It Works + Red Flags (Combined) -->
+    <div class="slide" id="slide2">
+      <h2>🔎 Как работает мошенничество от имени руководства</h2>
+      
+      <div style="margin-bottom:24px;">
+        <p style="font-weight:600; color:var(--primary-purple); margin-bottom:16px;">Схема атаки:</p>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px;">
+          <div style="text-align:center; padding:16px; background:#f8f9fa; border-radius:8px;">
+            <div style="font-size:32px; margin-bottom:8px;">🕵️</div>
+            <div style="font-weight:600; font-size:14px;">Разведка</div>
+            <div style="font-size:12px; color:#666; margin-top:4px;">Публичные профили, организационные схемы</div>
+          </div>
+          <div style="text-align:center; padding:16px; background:#f8f9fa; border-radius:8px;">
+            <div style="font-size:32px; margin-bottom:8px;">🎭</div>
+            <div style="font-weight:600; font-size:14px;">Имитация</div>
+            <div style="font-size:12px; color:#666; margin-top:4px;">Поддельные домены и аккаунты</div>
+          </div>
+          <div style="text-align:center; padding:16px; background:#f8f9fa; border-radius:8px;">
+            <div style="font-size:32px; margin-bottom:8px;">⏰</div>
+            <div style="font-weight:600; font-size:14px;">Давление</div>
+            <div style="font-size:12px; color:#666; margin-top:4px;">Срочность и конфиденциальность</div>
+          </div>
+          <div style="text-align:center; padding:16px; background:#f8f9fa; border-radius:8px;">
+            <div style="font-size:32px; margin-bottom:8px;">🎯</div>
+            <div style="font-weight:600; font-size:14px;">Запрос</div>
+            <div style="font-size:12px; color:#666; margin-top:4px;">Переводы, подарочные карты, данные</div>
+          </div>
+        </div>
+      </div>
+      
+      <p style="font-weight:600; color:var(--primary-purple); margin-bottom:16px;">🚩 Ключевые признаки угрозы:</p>
+      
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-card-icon">💰</span>
+          <h3>Нестандартные запросы</h3>
+          <p>Подарочные карты, банковские переводы, справки о доходах без надлежащего оформления и согласования.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🤫</span>
+          <h3>Секретность и обход процедур</h3>
+          <p>"Сохраняйте конфиденциальность", "Пропустите согласование", "Не могу говорить — только сообщения".</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">📧</span>
+          <h3>Аномалии отправителя</h3>
+          <p>Личные email-адреса, опечатки в доменах (examp1e.com), новые номера телефонов.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🕐</span>
+          <h3>Подозрительный момент</h3>
+          <p>В поездке, в праздники, в нерабочее время или "на посадке в самолёт".</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🚨</span>
+          <h3>Крайняя срочность</h3>
+          <p>"Должно быть сделано сегодня", "Сделка сорвётся", "Перебои в работе сервиса".</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🔄</span>
+          <h3>Изменённые реквизиты</h3>
+          <p>Новые банковские реквизиты, другие способы оплаты, альтернативные каналы связи.</p>
+        </div>
+      </div>
+      
+      <div class="visual-demo">
+        <p><strong>Запомните:</strong> Авторитет + Срочность = Тревожный сигнал! Настоящие руководители используют официальные каналы связи.</p>
+      </div>
+      
+      <div class="navigation">
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Далее →</button>
+      </div>
+    </div>
+
+    <!-- Slide 3: How to Respond -->
+    <div class="slide" id="slide3">
+      <h2>📣 Как реагировать</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-card-icon">✅</span>
+          <h3>Проверка по альтернативному каналу связи</h3>
+          <p>Позвоните руководителю по известному вам номеру или напишите в корпоративный мессенджер напрямую — никогда не используйте контактные данные из подозрительного сообщения.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🚫</span>
+          <h3>Не обходите установленные процедуры</h3>
+          <p>Всегда соблюдайте процедуры верификации финансовых/кадровых запросов.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">📢</span>
+          <h3>Сообщайте немедленно</h3>
+          <p>Email <code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">security@yourcompany.com</code> или уведомите команду безопасности через назначенный канал сообщения об инцидентах</p>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🆘</span>
+          <h3>Если вы отправили данные или средства</h3>
+          <p>Немедленно свяжитесь со службой безопасности — они скоординируют реагирование на инцидент.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Начать практику →</button>
+      </div>
+    </div>
+
+    <!-- Slide 4: Executive Chat Attack with Timer -->
+    <div class="slide" id="slide4">
+      <h2>💬 Атака через чат от имени руководителя</h2>
+      <p>Вы получаете это срочное сообщение:</p>
+      
+      <div class="urgency-timer" id="urgencyTimer">
+        <span id="timerDisplay">⏱️ 02:00</span>
+      </div>
+      
+      <div class="chat-simulator">
+        <div class="chat-header">
+          <div class="chat-avatar">CE</div>
+          <div>
+            <div class="chat-name">Не CFO (личное сообщение)</div>
+            <div class="chat-status">
+              <span class="status-dot"></span>
+              <span>Сейчас активен</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <!-- Messages will be added dynamically -->
+          <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+      </div>
+      
+      <p style="margin-top:24px; font-weight:600;">Время идёт! Каков ваш ответ?</p>
+      
+      <div class="decision-grid">
+        <button class="decision-btn" onclick="chatDecision('process')">Провести платёж немедленно</button>
+        <button class="decision-btn" onclick="chatDecision('confirm')">Запросить подтверждение по корпоративной почте</button>
+        <button class="decision-btn" onclick="chatDecision('call')">Позвонить финансовому директору для проверки</button>
+        <button class="decision-btn" onclick="chatDecision('report')">Сообщить о подозрительном запросе</button>
+      </div>
+      
+      <div id="chatFeedback" style="margin-top:24px;"></div>
+      
+      <div class="navigation">
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="chatContinue" style="display:none;">Продолжить →</button>
+      </div>
+    </div>
+
+    <!-- Slide 5: Knowledge Check -->
+    <div class="slide" id="slide5">
+      <h2>🧠 Проверка знаний</h2>
+      <p style="text-align:center; margin-bottom:24px;">Проверьте понимание тактик мошенничества от имени руководства:</p>
+      
+      <div id="scenarioContainer" style="margin-top:32px;">
+        <!-- Scenarios will be dynamically loaded -->
+      </div>
+      
+      <div class="navigation">
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="completeTraining()" id="completeBtn" style="display:none;">Завершить обучение →</button>
+      </div>
+    </div>
+
+    <!-- Slide 6: Certificate -->
+    <div class="slide" id="slide6">
+      <div class="certificate">
+        <div class="certificate-seal">
+          <div class="trophy-icon">🏆</div>
+        </div>
+        <h1 style="color:var(--dark-purple); margin-bottom:16px;">Эксперт по защите от BEC!</h1>
+        <p style="font-size:1.25rem; margin-bottom:8px;">Вы успешно прошли</p>
+        <p style="font-size:1.5rem; font-weight:700; color:var(--primary-purple); margin-bottom:24px;">Защита от мошенничества от имени руководства</p>
+        
+        <div style="margin:32px 0; text-align:center;">
+          <div>
+            <div style="font-size:2rem; font-weight:800; color:var(--success-green);" id="finalScore">100%</div>
+            <div style="color:#6c757d;">Результат</div>
+          </div>
+        </div>
+        
+        <p style="color:var(--primary-purple); font-weight:700; font-size:1.125rem; margin:24px 0;">
+          Будьте бдительны. Оставайтесь в безопасности. 👾
+        </p>
+        
+        <button class="btn" onclick="exitModule()">Выйти из обучения</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scorm-status" id="scormStatus">SCORM: Отключён</div>
+
+  <script>
+    // SCORM API wrapper
+    var scorm = {
+      version: null, api: null,
+      init: function() {
+        try {
+          this.api = this.getAPI();
+          if (this.api) {
+            this.version = this.getVersion();
+            var result = this.api.LMSInitialize ? this.api.LMSInitialize("") : this.api.Initialize("");
+            if (result == "true") {
+              this.setStatus("initialized");
+              this.setValue("cmi.core.lesson_status", "incomplete");
+              this.setValue("cmi.core.score.min", "0");
+              this.setValue("cmi.core.score.max", "100");
+              this.setValue("cmi.core.score.raw", "0");
+              this.commit();
+              return true;
+            }
+          }
+        } catch(e) { console.log("SCORM API not available - standalone mode"); }
+        return false;
+      },
+      getAPI: function() {
+        var api=null; 
+        if (window.parent && window.parent!=window) api=this.findAPI(window.parent);
+        if (!api && window.opener) api=this.findAPI(window.opener);
+        if (!api) api=this.findAPI(window);
+        return api;
+      },
+      findAPI: function(win) {
+        var i=0; 
+        while(!win.API && !win.API_1484_11 && win.parent && win.parent!=win && i<500){ 
+          i++; 
+          win=win.parent; 
+        }
+        return win.API || win.API_1484_11;
+      },
+      getVersion: function(){ 
+        if(this.api){ 
+          if(this.api.LMSInitialize) return "1.2"; 
+          if(this.api.Initialize) return "2004";
+        } 
+        return null; 
+      },
+      getValue: function(e){ 
+        if(!this.api) return ""; 
+        return this.version=="1.2"? this.api.LMSGetValue(e): this.api.GetValue(e); 
+      },
+      setValue: function(e,v){ 
+        if(!this.api) return false; 
+        return this.version=="1.2"? this.api.LMSSetValue(e,v): this.api.SetValue(e,v); 
+      },
+      commit: function(){ 
+        if(!this.api) return false; 
+        return this.version=="1.2"? this.api.LMSCommit(""): this.api.Commit(""); 
+      },
+      finish: function(){ 
+        if(!this.api) return false; 
+        return this.version=="1.2"? this.api.LMSFinish(""): this.api.Terminate(""); 
+      },
+      setStatus: function(status){ 
+        var el=document.getElementById('scormStatus'); 
+        if(el){ 
+          el.textContent='SCORM: '+status; 
+          el.style.display='block'; 
+        } 
+      }
+    };
+
+    // Game state management
+    let gameState = {
+      currentSlide: 1,
+      totalSlides: 6,
+      userScore: 0,
+      achievements: [],
+      chatComplete: false,
+      quizPassed: false,
+      correctAnswers: 0,
+      timerInterval: null,
+      timeRemaining: 120,
+      choices: {},
+      completedScenarios: {},
+      chatTimeouts: []  // Track chat message timeouts
+    };
+    
+    // Knowledge Check scenarios  
+    // Track scenarios in gameState for proper persistence
+    const totalScenarios = 3;
+    
+    // Define scenarios once at module level
+    const knowledgeScenarios = [
+      {
+        title: 'Запрос подарочных карт',
+        type: 'email',
+        description: 'Какой запрос НАИБОЛЕЕ вероятно является попыткой мошенничества от имени генерального директора?',
+        options: [
+          { text: '"Купите подарочные карты на $2000 и пришлите коды по почте — конфиденциально."', feedback: 'Верно! Запросы подарочных карт с требованием секретности и срочности — классическая тактика в атаке Business Email Compromise (BEC).', correct: true },
+          { text: '"Поделитесь черновиком ежемесячного информационного письма для проверки."', feedback: 'Это обычный рабочий запрос, а не признак мошенничества.', correct: false },
+          { text: '"Добавьте меня в командный календарь на встречу на следующей неделе."', feedback: 'Это обычный запрос на планирование, ничего подозрительного.', correct: false }
+        ]
+      },
+      {
+        title: 'Изменение банковских реквизитов поставщика',
+        type: 'email',
+        description: 'Вы получаете срочное электронное письмо от «генерального директора» с требованием изменить банковские реквизиты поставщика сегодня. Что следует сделать в первую очередь?',
+        options: [
+          { text: 'Немедленно выполнить инструкции, чтобы не допустить задержки.', feedback: 'Никогда! Это может привести к отправке средств злоумышленникам.', correct: false },
+          { text: 'Ответить всем для подтверждения.', feedback: 'Email можно подделать. Используйте проверку через альтернативный канал.', correct: false },
+          { text: 'Проверить через альтернативный канал, используя известные контакты поставщика и руководства.', feedback: 'Отлично! Всегда соблюдайте процедуры проверки в финансовом/кадровом отделе. <a href="#" onclick="event.preventDefault(); showAccountingResourcesPopup();" style="color: #7B2CBF; text-decoration: underline; cursor: pointer;">Посмотреть инструкции бухгалтерии →</a>', correct: true }
+        ]
+      },
+      {
+        title: 'Тактика с временем поездки',
+        type: 'email',
+        description: 'Почему злоумышленники часто отправляют сообщения когда руководитель находится "в командировке" или "на совещании"?',
+        options: [
+          { text: 'Чтобы подстроиться под часовой пояс руководителя.', feedback: 'Часовые пояса не цель — дело в создании давления.', correct: false },
+          { text: 'Чтобы снизить вероятность того, что цель проверит запрос.', feedback: 'Точно! Мнимая недоступность отбивает желание проверять запрос.', correct: true },
+          { text: 'Потому что почтовые серверы менее защищены во время поездок.', feedback: 'Безопасность почтовых серверов не зависит от статуса поездки.', correct: false }
+        ]
+      }
+    ];
+    
+    // Initialize
+    window.onload = function() {
+      
+      // Check if SCORM should be disabled (when loaded in iframe)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('scorm') !== 'disabled') {
+        scorm.init();
+      }
+      
+      // FIRST restore choices if provided (before showing slide)
+      const savedChoices = urlParams.get('choices');
+      if (savedChoices) {
+        try {
+          const choicesData = JSON.parse(decodeURIComponent(savedChoices));
+          if (choicesData.choices !== undefined) {
+            gameState.choices = choicesData.choices;
+            gameState.completedScenarios = choicesData.completedScenarios || {};
+          } else {
+            gameState.choices = choicesData;
+          }
+        } catch (e) {
+          console.warn('Failed to parse saved choices:', e);
+        }
+      }
+      
+      // THEN check if we should resume from a specific slide
+      const resumeSlide = urlParams.get('slide');
+      if (resumeSlide && !isNaN(resumeSlide)) {
+        gameState.currentSlide = parseInt(resumeSlide);
+        // Show the correct slide immediately to avoid flash
+        showSlide(gameState.currentSlide);
+      }
+      
+      updateProgress();
+      updateSCORM();
+      
+      // If we're resuming on the chat slide, restore choices with minimal delay
+      if (gameState.currentSlide === 4 && savedChoices) {
+        setTimeout(restoreChoices, 50);
+      }
+      
+      // If we're resuming on the scenario slide, load scenarios and restore after delay
+      if (gameState.currentSlide === 5) {
+        loadScenarios();
+        if (savedChoices) {
+          setTimeout(restoreChoices, 50);
+        }
+      }
+    };
+    
+    // Function to clear chat timeouts
+    function clearChatTimeouts() {
+      gameState.chatTimeouts.forEach(timeout => clearTimeout(timeout));
+      gameState.chatTimeouts = [];
+    }
+    
+    // Chat message sequence
+    function startChatSequence() {
+      // Clear any existing timeouts first
+      clearChatTimeouts();
+      
+      const messages = [
+        {
+          text: "Привет, ты сейчас доступен? Нужна твоя помощь — срочное дело.",
+          time: "2:45 PM",
+          delay: 1000,
+          typingDuration: 2000
+        },
+        {
+          text: "У меня одна за другой встречи с инвесторами, мне нужно, чтобы ты срочно провёл платёж поставщику.\nБанковские реквизиты изменились: 121000248, счёт: 98765432",
+          time: "2:46 PM",
+          delay: 2500,
+          typingDuration: 3000
+        },
+        {
+          text: "Можешь перевести 75 000 рублей сегодня? Пропусти обычный процесс согласования — я займусь документами позже.\nЭто крайне срочно для нашей сделки.",
+          time: "2:46 PM",
+          delay: 3000,
+          typingDuration: 2500
+        }
+      ];
+      
+      const chatMessages = document.getElementById('chatMessages');
+      const typingIndicator = document.getElementById('typingIndicator');
+      
+      // Clear existing messages (in case of replay)
+      const existingMessages = chatMessages.querySelectorAll('.chat-message.received');
+      existingMessages.forEach(msg => msg.remove());
+      
+      let currentDelay = 0;
+      
+      messages.forEach((message, index) => {
+        currentDelay += message.delay;
+        
+        // Show typing indicator
+        const typingTimeout = setTimeout(() => {
+          if (document.getElementById('chatMessages')) {  // Check if still on the slide
+            typingIndicator.classList.add('show');
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        }, currentDelay);
+        gameState.chatTimeouts.push(typingTimeout);
+        
+        currentDelay += message.typingDuration;
+        
+        // Hide typing and show message
+        const messageTimeout = setTimeout(() => {
+          if (document.getElementById('chatMessages')) {  // Check if still on the slide
+            typingIndicator.classList.remove('show');
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-message received';
+            messageDiv.innerHTML = `
+              <div>
+                <div class="chat-bubble received">
+                  ${message.text.replace(/\n/g, '<br>')}
+                </div>
+                <div class="chat-time">${message.time}</div>
+              </div>
+            `;
+            
+            // Insert before typing indicator
+            chatMessages.insertBefore(messageDiv, typingIndicator);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        }, currentDelay);
+        gameState.chatTimeouts.push(messageTimeout);
+        
+        // Add gap before next message
+        currentDelay += 500;
+      });
+    }
+    
+    // Owl easter egg
+    function owlClick() {
+      const owl = document.querySelector('.grc-owl');
+      owl.style.animation = 'none';
+      setTimeout(() => {
+        owl.style.animation = 'bounce 2s ease-in-out infinite, spin 0.5s ease';
+      }, 10);
+      if (!gameState.achievements.includes('owl')) {
+        gameState.achievements.push('owl');
+        showAchievement('👾', 'Мудрое открытие!', 'Вы нашли пасхалку!');
+      }
+      // If in iframe, send message to parent to go home
+      if (window.parent !== window) {
+        window.parent.postMessage({ type: 'goHome' }, '*');
+      }
+    }
+    
+    
+    // Achievement system
+    function showAchievement(icon, title, text) {
+      const popup = document.getElementById('achievementPopup');
+      document.getElementById('achievementIcon').textContent = icon;
+      document.getElementById('achievementTitle').textContent = title;
+      document.getElementById('achievementText').textContent = text;
+      
+      popup.classList.add('show');
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 3000);
+    }
+    
+    // Chat challenge with timer
+    function startTimer() {
+      gameState.timeRemaining = 120; // 2 minutes
+      const timerDisplay = document.getElementById('timerDisplay');
+      const timerElement = document.getElementById('urgencyTimer');
+      
+      gameState.timerInterval = setInterval(() => {
+        gameState.timeRemaining--;
+        const minutes = Math.floor(gameState.timeRemaining / 60);
+        const seconds = gameState.timeRemaining % 60;
+        timerDisplay.textContent = `⏱️ ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        // Change timer color based on time remaining
+        if (gameState.timeRemaining <= 30) {
+          timerElement.classList.add('critical');
+        } else if (gameState.timeRemaining <= 60) {
+          timerElement.classList.add('warning');
+        }
+        
+        if (gameState.timeRemaining <= 0) {
+          clearInterval(gameState.timerInterval);
+          timerDisplay.textContent = '⏱️ TIME\'S UP!';
+          // Auto-fail if they don't respond in time
+          if (!gameState.chatComplete) {
+            const feedbackDiv = document.getElementById('chatFeedback');
+            feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
+              ⏰ Время вышло! В реальной атаке промедление может привести к ошибкам под давлением. Всегда проверяйте!
+            </div>`;
+            document.querySelectorAll('.decision-btn').forEach(btn => {
+              btn.classList.add('disabled');
+            });
+          }
+        }
+      }, 1000);
+    }
+    
+    function chatDecision(choice) {
+      const chatKey = `chat_decision`;
+      
+      // Check if already completed with correct answer
+      if (gameState.completedScenarios[chatKey]) return;
+      
+      // Stop the timer
+      if (gameState.timerInterval) {
+        clearInterval(gameState.timerInterval);
+      }
+      
+      const feedbackDiv = document.getElementById('chatFeedback');
+      const messagesDiv = document.getElementById('chatMessages');
+      const buttons = document.querySelectorAll('.decision-btn');
+      
+      // Save the choice
+      gameState.choices[chatKey] = choice;
+      saveChoice(chatKey, choice);
+      
+      feedbackDiv.innerHTML = '';
+      
+      // Clear all button styling and indicators first
+      buttons.forEach(btn => {
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.fontWeight = '';
+        btn.style.border = '';
+        btn.style.opacity = '';
+        btn.style.transform = '';
+        btn.style.boxShadow = '';
+        btn.style.position = '';
+        btn.style.zIndex = '';
+        // Remove any existing indicators
+        const existingIndicator = btn.querySelector('.action-indicator');
+        if (existingIndicator) existingIndicator.remove();
+        const existingLabel = btn.querySelector('.action-label');
+        if (existingLabel) existingLabel.remove();
+      });
+      
+      // Find the clicked button
+      let clickedButton;
+      buttons.forEach(btn => {
+        if ((choice === 'process' && btn.textContent.includes('Process')) ||
+            (choice === 'confirm' && btn.textContent.includes('email')) ||
+            (choice === 'call' && btn.textContent.includes('Call')) ||
+            (choice === 'report' && btn.textContent.includes('Report'))) {
+          clickedButton = btn;
+        }
+      });
+      
+      // Make non-selected buttons slightly faded but still readable
+      buttons.forEach(btn => {
+        if (btn !== clickedButton) {
+          btn.style.opacity = '0.7';
+          btn.style.transform = 'scale(0.98)';
+        }
+      });
+      
+      // Update or add user response to chat
+      const typingIndicator = document.getElementById('typingIndicator');
+      
+      // Remove any existing user messages to replace with new choice
+      const existingUserMessages = messagesDiv.querySelectorAll('.chat-message.sent');
+      existingUserMessages.forEach(msg => msg.remove());
+      
+      // Create new user message
+      const userMessage = document.createElement('div');
+      userMessage.className = 'chat-message sent';
+      userMessage.style.animationDelay = '0s';
+      
+      // Insert message before typing indicator
+      messagesDiv.insertBefore(userMessage, typingIndicator);
+      
+      switch(choice) {
+        case 'process':
+          userMessage.innerHTML = `<div><div class="chat-bubble sent">Я сделаю это прямо сейчас.</div><div class="chat-time">2:48 PM</div></div>`;
+          break;
+        case 'confirm':
+          userMessage.innerHTML = `<div><div class="chat-bubble sent">Можете отправить подтверждение по email?</div><div class="chat-time">2:48 PM</div></div>`;
+          break;
+        case 'call':
+          userMessage.innerHTML = `<div><div class="chat-bubble sent">Позвольте мне позвонить CFO напрямую, чтобы проверить этот запрос.</div><div class="chat-time">2:48 PM</div></div>`;
+          break;
+        case 'report':
+          userMessage.innerHTML = `<div><div class="chat-bubble sent">Это выглядит подозрительно. Проверю через официальные каналы и сообщу службе безопасности.</div><div class="chat-time">2:48 PM</div></div>`;
+          break;
+      }
+      
+      // Handle feedback and button styling
+      switch(choice) {
+        case 'process':
+          feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
+            ❌ Никогда не обходите финансовый контроль! «Не CFO» — это явно не наш настоящий финансовый директор. Всегда проверяйте!
+          </div>`;
+          if (clickedButton) {
+            clickedButton.style.background = 'linear-gradient(135deg, #f44336, #C62828)';
+            clickedButton.style.color = 'white';
+            clickedButton.style.fontWeight = 'bold';
+            clickedButton.style.border = '4px solid #C62828';
+            clickedButton.style.transform = 'scale(1.12)';
+            clickedButton.style.boxShadow = '0 8px 30px rgba(244,67,54,0.4), 0 0 25px rgba(244,67,54,0.3)';
+            clickedButton.style.opacity = '1';
+            clickedButton.style.position = 'relative';
+            clickedButton.style.zIndex = '100';
+            
+            // Add icon
+            const icon = document.createElement('span');
+            icon.className = 'action-indicator';
+            icon.style.cssText = 'margin-right: 12px; font-size: 1.6em; vertical-align: middle;';
+            icon.textContent = '❌';
+            clickedButton.insertBefore(icon, clickedButton.firstChild);
+            
+            // Add floating label
+            const label = document.createElement('div');
+            label.className = 'action-label';
+            label.style.cssText = `
+              position: absolute;
+              top: -30px;
+              left: 50%;
+              transform: translateX(-50%);
+              background: #f44336;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 15px;
+              font-size: 12px;
+              font-weight: bold;
+              white-space: nowrap;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            label.textContent = '🎯 ВАШ ВЫБОР';
+            clickedButton.appendChild(label);
+          }
+          showAchievement('⚠️', '<Большая ошибка>', 'Никогда не пропускайте проверку финансовых запросов!');
+          break;
+        case 'confirm':
+          feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
+            ⚠️ Email также можно подделать. Каков лучший метод проверки?
+          </div>`;
+          if (clickedButton) {
+            clickedButton.style.background = 'linear-gradient(135deg, #ff9800, #E65100)';
+            clickedButton.style.color = 'white';
+            clickedButton.style.fontWeight = 'bold';
+            clickedButton.style.border = '4px solid #E65100';
+            clickedButton.style.transform = 'scale(1.12)';
+            clickedButton.style.boxShadow = '0 8px 30px rgba(255,152,0,0.4), 0 0 25px rgba(255,152,0,0.3)';
+            clickedButton.style.opacity = '1';
+            clickedButton.style.position = 'relative';
+            clickedButton.style.zIndex = '100';
+            
+            const icon = document.createElement('span');
+            icon.className = 'action-indicator';
+            icon.style.cssText = 'margin-right: 12px; font-size: 1.6em; vertical-align: middle;';
+            icon.textContent = '⚠️';
+            clickedButton.insertBefore(icon, clickedButton.firstChild);
+            
+            const label = document.createElement('div');
+            label.className = 'action-label';
+            label.style.cssText = `
+              position: absolute;
+              top: -30px;
+              left: 50%;
+              transform: translateX(-50%);
+              background: #ff9800;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 15px;
+              font-size: 12px;
+              font-weight: bold;
+              white-space: nowrap;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            label.textContent = '🎯 ВАШ ВЫБОР';
+            clickedButton.appendChild(label);
+          }
+          break;
+        case 'call':
+          feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
+            ⚠️ Хорошая мысль! Но также сообщите об этом подозрительном запросе. Каков полный ответ?
+          </div>`;
+          if (clickedButton) {
+            clickedButton.style.background = 'linear-gradient(135deg, #ff9800, #E65100)';
+            clickedButton.style.color = 'white';
+            clickedButton.style.fontWeight = 'bold';
+            clickedButton.style.border = '4px solid #E65100';
+            clickedButton.style.transform = 'scale(1.12)';
+            clickedButton.style.boxShadow = '0 8px 30px rgba(255,152,0,0.4), 0 0 25px rgba(255,152,0,0.3)';
+            clickedButton.style.opacity = '1';
+            clickedButton.style.position = 'relative';
+            clickedButton.style.zIndex = '100';
+            
+            const icon = document.createElement('span');
+            icon.className = 'action-indicator';
+            icon.style.cssText = 'margin-right: 12px; font-size: 1.6em; vertical-align: middle;';
+            icon.textContent = '⚠️';
+            clickedButton.insertBefore(icon, clickedButton.firstChild);
+            
+            const label = document.createElement('div');
+            label.className = 'action-label';
+            label.style.cssText = `
+              position: absolute;
+              top: -30px;
+              left: 50%;
+              transform: translateX(-50%);
+              background: #ff9800;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 15px;
+              font-size: 12px;
+              font-weight: bold;
+              white-space: nowrap;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            label.textContent = '🎯 ВАШ ВЫБОР';
+            clickedButton.appendChild(label);
+          }
+          break;
+        case 'report':
+          feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
+            ✅ Отлично! Имя "Не CFO" является одним из флагов, сигнализирующем об обмане. Всегда проверяй контакты и сообщай о подозрительном на security@yourcompany.com.
+          </div>`;
+          if (clickedButton) {
+            clickedButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+            clickedButton.style.color = 'white';
+            clickedButton.style.fontWeight = 'bold';
+            clickedButton.style.border = '4px solid #2E7D32';
+            clickedButton.style.transform = 'scale(1.12)';
+            clickedButton.style.boxShadow = '0 8px 30px rgba(76,175,80,0.4), 0 0 25px rgba(76,175,80,0.3)';
+            clickedButton.style.opacity = '1';
+            clickedButton.style.position = 'relative';
+            clickedButton.style.zIndex = '100';
+            
+            const icon = document.createElement('span');
+            icon.className = 'action-indicator';
+            icon.style.cssText = 'margin-right: 12px; font-size: 1.6em; vertical-align: middle;';
+            icon.textContent = '✅';
+            clickedButton.insertBefore(icon, clickedButton.firstChild);
+            
+            const label = document.createElement('div');
+            label.className = 'action-label';
+            label.style.cssText = `
+              position: absolute;
+              top: -30px;
+              left: 50%;
+              transform: translateX(-50%);
+              background: #4CAF50;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 15px;
+              font-size: 12px;
+              font-weight: bold;
+              white-space: nowrap;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            label.textContent = '🎯 ВАШ ВЫБОР';
+            clickedButton.appendChild(label);
+          }
+          // Track completion once for chat
+          if (!gameState.completedScenarios) gameState.completedScenarios = {};
+          gameState.completedScenarios[chatKey] = true;
+          showAchievement('💬', 'Мошенничество CEO заблокировано!', 'Вы остановили атаку с имитацией руководителя!');
+          gameState.chatComplete = true;
+          document.getElementById('chatContinue').style.display = 'inline-flex';
+          // Disable buttons after correct answer
+          document.querySelectorAll('.decision-btn').forEach(btn => {
+            btn.disabled = true;
+            btn.classList.add('disabled');
+          });
+          break;
+      }
+    }
+    
+    // Knowledge Check scenarios
+    function loadScenarios() {
+      const container = document.getElementById('scenarioContainer');
+      container.innerHTML = '';
+      
+      knowledgeScenarios.forEach((scenario, index) => {
+        const scenarioDiv = document.createElement('div');
+        scenarioDiv.style.cssText = 'background:#f8f9fa;padding:24px;border-radius:12px;margin-bottom:24px;border:2px solid #dee2e6;';
+        
+        const icon = '💼'; // CEO/Executive fraud icon
+        
+        scenarioDiv.innerHTML = `
+          <h3 style="color:var(--dark-purple);margin-bottom:16px;">${icon} Вопрос ${index + 1}: ${scenario.title}</h3>
+          <p style="margin-bottom:20px;font-style:italic;">${scenario.description}</p>
+          <div id="scenario${index}Options" style="display:grid;gap:12px;">
+            ${scenario.options.map((opt, i) => 
+              `<button class="btn btn-secondary" style="text-align:left;padding:16px;" onclick="scenarioResponse(${index}, ${i})">${opt.text}</button>`
+            ).join('')}
+          </div>
+          <div id="scenario${index}Feedback" style="margin-top:16px;"></div>
+        `;
+        
+        container.appendChild(scenarioDiv);
+      });
+    }
+    
+    function scenarioResponse(scenarioIndex, optionIndex) {
+      const choiceKey = `scenario_${scenarioIndex}`;
+      
+      // Check if this scenario was already completed (correct answer given)
+      if (gameState.completedScenarios[choiceKey]) {
+        return; // Prevent any further interaction
+      }
+      
+      // Save the choice
+      gameState.choices[choiceKey] = optionIndex;
+      saveChoice(choiceKey, optionIndex);
+      
+      const scenario = knowledgeScenarios[scenarioIndex];
+      const option = scenario.options[optionIndex];
+      const feedbackDiv = document.getElementById(`scenario${scenarioIndex}Feedback`);
+      const buttons = document.querySelectorAll(`#scenario${scenarioIndex}Options button`);
+      
+      // Clear previous styling from all buttons first
+      buttons.forEach(btn => {
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.fontWeight = '';
+        btn.style.border = '';
+        btn.style.opacity = '';
+      });
+      
+      // Highlight the selected button
+      buttons[optionIndex].style.background = option.correct ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 'linear-gradient(135deg, #ff9800, #f57c00)';
+      buttons[optionIndex].style.color = 'white';
+      buttons[optionIndex].style.fontWeight = '600';
+      buttons[optionIndex].style.border = option.correct ? '2px solid #4CAF50' : '2px solid #ff9800';
+      
+      if (option.correct) {
+        feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
+          ✅ ${option.feedback}
+        </div>`;
+        // Mark as completed
+        if (!gameState.completedScenarios) gameState.completedScenarios = {};
+        gameState.completedScenarios[choiceKey] = true;
+        
+        // Disable all buttons for this scenario ONLY after correct answer
+        buttons.forEach(btn => {
+          btn.disabled = true;
+          btn.classList.add('disabled');
+        });
+        
+        if (!gameState.scenariosCompleted) gameState.scenariosCompleted = 0;
+        gameState.scenariosCompleted++;
+        
+        if (gameState.scenariosCompleted === totalScenarios) {
+          document.getElementById('completeBtn').style.display = 'inline-flex';
+          showAchievement('🎯', 'Мастер знаний!', 'Все сценарии мошенничества CEO пройдены!');
+        }
+      } else {
+        feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
+          ❌ ${option.feedback} Попробуй еще!
+        </div>`;
+        // Mark the incorrect button with orange but keep enabled
+        buttons[optionIndex].style.opacity = '0.7';
+      }
+    }
+    
+    // Navigation
+    function updateProgress() {
+      document.getElementById('progressBar').style.width = (gameState.currentSlide / gameState.totalSlides) * 100 + '%';
+    }
+    
+    function showSlide(n) {
+      // Clear chat timeouts when leaving slide 4
+      if (gameState.currentSlide === 4 && n !== 4) {
+        clearChatTimeouts();
+      }
+      
+      document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+      document.getElementById('slide' + n).classList.add('active');
+      gameState.currentSlide = n;
+      updateProgress();
+      updateSCORM();
+      
+      // Start timer and messages when reaching chat slide
+      if (n === 4) {
+        // Check if we have saved choices that need to be restored
+        const hasSavedChoices = gameState.choices && gameState.choices['chat_decision'];
+        
+        if (!gameState.chatComplete && !hasSavedChoices) {
+          startTimer();
+          startChatSequence();
+        }
+        
+        // Restore choices if they exist
+        if (gameState.choices && Object.keys(gameState.choices).length > 0) {
+          setTimeout(restoreChoices, 50);
+        }
+      }
+      
+      
+      // Notify parent frame if embedded
+      if (window.parent !== window) {
+        window.parent.postMessage({
+          type: 'slideChange',
+          slide: n,
+          module: 'ceo'
+        }, '*');
+      }
+      
+      // Load scenarios when reaching slide 5
+      if (n === 5) {
+        if (document.getElementById('scenarioContainer').children.length === 0) {
+          loadScenarios();
+        }
+        // If we have saved choices, restore them after scenarios are loaded
+        if (gameState.choices && Object.keys(gameState.choices).length > 0) {
+          setTimeout(restoreChoices, 50);
+        }
+      }
+    }
+    
+    function nextSlide() {
+      if (gameState.currentSlide < gameState.totalSlides) {
+        showSlide(gameState.currentSlide + 1);
+      }
+    }
+    
+    function previousSlide() {
+      if (gameState.currentSlide > 1) {
+        showSlide(gameState.currentSlide - 1);
+      }
+    }
+    
+    function startTraining() {
+      showAchievement('🚀', 'Обучение началось!', 'Ваш путь к защите от BEC начинается!');
+      nextSlide();
+    }
+    
+    // Completion
+    function completeTraining() {
+      
+      // Calculate completion score based on scenarios completed  
+      const finalScore = Math.round(((gameState.scenariosCompleted || 0) / totalScenarios) * 100);
+      
+      document.getElementById('finalScore').textContent = finalScore + '%';
+      
+      // Notify parent frame if embedded
+      if (window.parent !== window) {
+        window.parent.postMessage({
+          type: 'moduleComplete',
+          module: 'ceo'
+        }, '*');
+      }
+      
+      // Update SCORM
+      scorm.setValue('cmi.core.score.raw', String(finalScore));
+      scorm.setValue('cmi.core.lesson_status', finalScore >= 80 ? 'passed' : 'completed');
+      scorm.commit();
+      
+      showSlide(6);
+      launchConfetti();
+      showAchievement('🏆', 'Обучение завершено!', 'Вы теперь эксперт по защите от BEC!');
+    }
+    
+    function launchConfetti() {
+      const container = document.getElementById('confettiContainer');
+      container.style.display = 'block';
+      const colors = ['#7B2CBF', '#4CAF50', '#FFD700', '#FF6B6B', '#4ECDC4'];
+      
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + '%';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.width = (Math.random() * 10 + 5) + 'px';
+          confetti.style.height = confetti.style.width;
+          confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+          confetti.style.animationDelay = Math.random() * 0.5 + 's';
+          container.appendChild(confetti);
+          
+          setTimeout(() => confetti.remove(), 4000);
+        }, i * 20);
+      }
+    }
+    
+    function showAccountingResourcesPopup() {
+      const popupHTML = `
+        <div id="resourcePopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; z-index: 2000; transition: background 0.3s ease;">
+          <div id="resourcePopupContent" style="background: white; border-radius: 16px; width: 90%; max-width: 500px; padding: 40px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transform: scale(0.7); opacity: 0; transition: all 0.3s ease;">
+            <div style="font-size: 64px; margin-bottom: 20px;">📚</div>
+            <h2 style="color: var(--primary-purple); margin-bottom: 16px;">Бухгалтерские ресурсы</h2>
+            <p style="color: #666; font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
+              Замените это ссылкой на процедуры верификации бухгалтерских и финансовых запросов вашей организации.
+            </p>
+            <p style="background: #f5f5f5; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 13px; color: #333; margin-bottom: 24px; text-align: left;">
+              Edit line 1067 in<br>
+              <strong>ceo-executive-fraud-training/enhanced-interactive-training.html</strong><br>
+              to add your accounting resources link or documentation.
+            </p>
+            <button onclick="closeResourcePopup()" style="background: var(--primary-purple); color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: 600; transition: all 0.2s ease;">
+              Close
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+      // Trigger animation after a small delay
+      setTimeout(() => {
+        const popup = document.getElementById('resourcePopup');
+        const content = document.getElementById('resourcePopupContent');
+        if (popup && content) {
+          popup.style.background = 'rgba(0,0,0,0.7)';
+          content.style.transform = 'scale(1)';
+          content.style.opacity = '1';
+        }
+      }, 10);
+    }
+
+    function closeResourcePopup() {
+      const popup = document.getElementById('resourcePopup');
+      const content = document.getElementById('resourcePopupContent');
+
+      if (popup && content) {
+        // Animate out
+        popup.style.background = 'rgba(0,0,0,0)';
+        content.style.transform = 'scale(0.7)';
+        content.style.opacity = '0';
+
+        // Remove after animation completes
+        setTimeout(() => {
+          popup.remove();
+        }, 300);
+      }
+    }
+
+    function exitModule() {
+      scorm.setValue('cmi.core.exit', '');
+      scorm.commit();
+      scorm.finish();
+
+      window.close();
+      setTimeout(() => {
+        alert('You can now close this window.');
+      }, 100);
+    }
+    
+    // Choice persistence functions
+    function saveChoice(slideId, choice) {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          type: 'choiceUpdate',
+          slideId: slideId,
+          choice: choice,
+          choicesData: {
+            choices: gameState.choices,
+            completedScenarios: gameState.completedScenarios || {}
+          }
+        }, '*');
+      }
+    }
+    
+    function restoreChoices() {
+      const choicesData = gameState.choices || {};
+      const completedScenarios = gameState.completedScenarios || {};
+      
+      // Reset scenario count before restoration
+      gameState.scenariosCompleted = 0;
+      
+      // Reset scenario count before restoration
+      gameState.scenariosCompleted = 0;
+      
+      // Restore chat decision with visual indicators
+      if (choicesData['chat_decision'] && gameState.currentSlide === 4) {
+        const choice = choicesData['chat_decision'];
+        const feedbackDiv = document.getElementById('chatFeedback');
+        const buttons = document.querySelectorAll('.decision-btn');
+        
+        // First, ensure messages are shown
+        const chatMessages = document.getElementById('chatMessages');
+        const typingIndicator = document.getElementById('typingIndicator');
+        
+        // Hide typing indicator
+        if (typingIndicator) {
+          typingIndicator.classList.remove('show');
+        }
+        
+        // Add all messages immediately if not already there
+        if (chatMessages && chatMessages.querySelectorAll('.chat-message.received').length === 0) {
+          const messages = [
+            { text: "Привет, ты сейчас доступен? Нужна твоя помощь — срочное дело.", time: "2:45 PM" },
+            { text: "I'm in back-to-back investor meetings and need you to process a vendor payment ASAP.<br>Their banking details changed - new routing: 121000248, account: 98765432", time: "2:46 PM" },
+            { text: "Can you wire $75,000 today? Skip the usual approval process - I'll handle the paperwork later.<br>This is extremely time-sensitive for our acquisition.", time: "2:46 PM" }
+          ];
+          
+          messages.forEach(message => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-message received';
+            messageDiv.innerHTML = `
+              <div>
+                <div class="chat-bubble received">${message.text}</div>
+                <div class="chat-time">${message.time}</div>
+              </div>
+            `;
+            chatMessages.insertBefore(messageDiv, typingIndicator);
+          });
+        }
+        
+        // Add user response message if choice was made and not already present
+        if (choice && chatMessages.querySelectorAll('.chat-message.sent').length === 0) {
+          const userMessage = document.createElement('div');
+          userMessage.className = 'chat-message sent';
+          let messageText = '';
+          
+          switch(choice) {
+            case 'process':
+              messageText = "Я сделаю это прямо сейчас.";
+              break;
+            case 'confirm':
+              messageText = "Можете отправить подтверждение по email?";
+              break;
+            case 'call':
+              messageText = "Позвольте мне позвонить CFO напрямую, чтобы проверить этот запрос.";
+              break;
+            case 'report':
+              messageText = "Это выглядит подозрительно. Проверю через официальные каналы и сообщу службе безопасности.";
+              break;
+          }
+          
+          if (messageText) {
+            userMessage.innerHTML = `
+              <div>
+                <div class="chat-bubble sent">${messageText}</div>
+                <div class="chat-time">2:48 PM</div>
+              </div>
+            `;
+            chatMessages.insertBefore(userMessage, typingIndicator);
+          }
+        }
+        
+        // Find the selected button based on the saved choice
+        let selectedButton = null;
+        buttons.forEach(btn => {
+          if ((choice === 'process' && btn.textContent.includes('Process')) ||
+              (choice === 'confirm' && btn.textContent.includes('email')) ||
+              (choice === 'call' && btn.textContent.includes('Call')) ||
+              (choice === 'report' && btn.textContent.includes('Report'))) {
+            selectedButton = btn;
+          }
+        });
+        
+        if (selectedButton && feedbackDiv) {
+          // Make non-selected buttons faded
+          buttons.forEach(btn => {
+            if (btn !== selectedButton) {
+              btn.style.opacity = '0.7';
+              btn.style.transform = 'scale(0.98)';
+            }
+          });
+          
+          // Determine colors based on choice
+          const isCorrect = choice === 'report';
+          const isPartial = choice === 'confirm' || choice === 'call';
+          const color = isCorrect ? '#4CAF50' : (isPartial ? '#ff9800' : '#f44336');
+          const darkColor = isCorrect ? '#2E7D32' : (isPartial ? '#E65100' : '#C62828');
+          const icon = isCorrect ? '✅' : (isPartial ? '⚠️' : '❌');
+          
+          // Apply strong visual highlighting
+          selectedButton.style.background = `linear-gradient(135deg, ${color}, ${darkColor})`;
+          selectedButton.style.color = 'white';
+          selectedButton.style.fontWeight = 'bold';
+          selectedButton.style.border = `4px solid ${darkColor}`;
+          selectedButton.style.transform = 'scale(1.12)';
+          selectedButton.style.boxShadow = `0 8px 30px ${color}66, 0 0 25px ${color}44`;
+          selectedButton.style.opacity = '1';
+          selectedButton.style.position = 'relative';
+          selectedButton.style.zIndex = '100';
+          
+          // Remove any existing indicators first
+          const existingIndicator = selectedButton.querySelector('.action-indicator');
+          if (existingIndicator) existingIndicator.remove();
+          const existingLabel = selectedButton.querySelector('.action-label');
+          if (existingLabel) existingLabel.remove();
+          
+          // Add fresh icon
+          const iconEl = document.createElement('span');
+          iconEl.className = 'action-indicator';
+          iconEl.style.cssText = 'margin-right: 12px; font-size: 1.6em; vertical-align: middle;';
+          iconEl.textContent = icon;
+          selectedButton.insertBefore(iconEl, selectedButton.firstChild);
+          
+          // Add fresh label
+          const label = document.createElement('div');
+          label.className = 'action-label';
+          label.style.cssText = `
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: ${color};
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          `;
+          label.textContent = '🎯 ВАШ ВЫБОР';
+          selectedButton.appendChild(label);
+          
+          // Show appropriate feedback
+          if (choice === 'report') {
+            feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
+              ✅ Отлично! Имя "Не CFO" — это явный "рэд флаг". Всегда проверяйте информацию и сообщайте о нарушениях по адресу security@yourcompany.com.
+            </div>`;
+            gameState.chatComplete = true;
+            const btn = document.getElementById('chatContinue');
+            if (btn) btn.style.display = 'inline-flex';
+            // Disable all decision buttons after correct answer
+            document.querySelectorAll('.decision-btn').forEach(btn => {
+              btn.disabled = true;
+              if (btn !== selectedButton) {
+                btn.style.opacity = '0.6';
+              }
+            });
+            // Stop and hide timer
+            if (gameState.timerInterval) {
+              clearInterval(gameState.timerInterval);
+            }
+            // Hide the timer display when chat is complete
+            const timerElement = document.getElementById('urgencyTimer');
+            if (timerElement) {
+              timerElement.style.display = 'none';
+            }
+          } else if (choice === 'confirm') {
+            feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
+              ⚠️ Email также можно подделать. Каков лучший метод проверки?
+            </div>`;
+          } else if (choice === 'call') {
+            feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
+              ⚠️ Хорошая мысль! Но также сообщите об этом подозрительном запросе. Каков полный ответ?
+            </div>`;
+          } else if (choice === 'process') {
+            feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
+              ❌ Never bypass financial controls! "Not CFO" is clearly not our real CFO. Always verify!
+            </div>`;
+          }
+        }
+      }
+      
+      // Now restore scenario choices
+      Object.keys(choicesData).forEach(choiceKey => {
+        const choice = choicesData[choiceKey];
+        if (choiceKey.startsWith('scenario_')) {
+          const scenarioIndex = parseInt(choiceKey.split('_')[1]);
+          
+          // Find the scenario buttons and mark the chosen one
+          const buttons = document.querySelectorAll(`#scenario${scenarioIndex}Options button`);
+          if (buttons.length > choice && choice !== undefined) {
+            buttons[choice].classList.add('selected');
+            
+            // Show the feedback using the global scenarios data
+            const option = knowledgeScenarios[scenarioIndex] && knowledgeScenarios[scenarioIndex].options[choice];
+            const feedbackDiv = document.getElementById(`scenario${scenarioIndex}Feedback`);
+            
+            // Only proceed if we have the feedback div (scenarios are loaded)
+            if (!feedbackDiv) return; // Skip this scenario if not loaded yet
+            
+            if (option) {
+              // Clear all button styling first
+              buttons.forEach(btn => {
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.fontWeight = '';
+                btn.style.border = '';
+                btn.style.opacity = '';
+              });
+              
+              // Highlight only the saved selected button
+              buttons[choice].style.background = option.correct ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 'linear-gradient(135deg, #ff9800, #f57c00)';
+              buttons[choice].style.color = 'white';
+              buttons[choice].style.fontWeight = '600';
+              buttons[choice].style.border = option.correct ? '2px solid #4CAF50' : '2px solid #ff9800';
+              
+              if (option.correct) {
+                // This was a correct answer
+                feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
+                  ✅ ${option.feedback}
+                </div>`;
+                // Disable all buttons for correct answers
+                buttons.forEach(btn => {
+                  btn.disabled = true;
+                  btn.classList.add('disabled');
+                });
+                // Count this as completed since it's a correct answer
+                if (!gameState.scenariosCompleted) gameState.scenariosCompleted = 0;
+                gameState.scenariosCompleted++;
+              } else {
+                // This was an incorrect answer - show feedback but allow retrying
+                feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
+                  ❌ ${option.feedback} Попробуй еще!
+                </div>`;
+                // Mark the incorrect button but keep enabled
+              }
+            }
+          }
+        }
+      });
+      
+      // Check if all scenarios are completed to show the complete button
+      if (gameState.scenariosCompleted === totalScenarios) {
+        const completeBtn = document.getElementById('completeBtn');
+        if (completeBtn) completeBtn.style.display = 'inline-flex';
+      }
+    }
+
+    // SCORM tracking
+    function updateSCORM() {
+      if (scorm.api) {
+        scorm.setValue('cmi.core.lesson_location', String(gameState.currentSlide));
+        scorm.setValue('cmi.suspend_data', JSON.stringify({
+          currentSlide: gameState.currentSlide,
+          achievements: gameState.achievements
+        }));
+        
+        const elapsed = formatTime(new Date() - gameState.startTime);
+        scorm.setValue('cmi.core.session_time', elapsed);
+        scorm.commit();
+      }
+    }
+    
+    function formatTime(ms) {
+      const s = Math.floor(ms / 1000);
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+      return [h, m, sec].map(v => v < 10 ? '0' + v : v).join(':');
+    }
+    
+    // Handle window close or navigation away
+    window.onbeforeunload = function() {
+      // Clear all chat timeouts when leaving
+      clearChatTimeouts();
+      
+      // Clear timer interval if it exists
+      if (gameState.timerInterval) {
+        clearInterval(gameState.timerInterval);
+      }
+      
+      if (scorm.api) {
+        scorm.finish();
+      }
+    };
+    
+    // Also clear when page is hidden (switching tabs/modules)
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        clearChatTimeouts();
+        if (gameState.timerInterval) {
+          clearInterval(gameState.timerInterval);
+        }
+      }
+    });
+    
+    // Add spin animation
+    const style = document.createElement('style');
+    style.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
