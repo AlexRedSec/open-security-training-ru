@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRC Engineering: Social Engineering Defense Training</title>
+  <title>Защита от социальной инженерии</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -831,8 +831,8 @@
   <div class="achievement" id="achievementPopup">
     <div class="achievement-icon" id="achievementIcon">🏆</div>
     <div>
-      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Achievement Unlocked!</div>
-      <div style="font-size:14px; color:#6c757d;" id="achievementText">You're making great progress!</div>
+      <div style="font-weight:700; color:var(--dark-purple);" id="achievementTitle">Достижение разблокировано!</div>
+      <div style="font-size:14px; color:#6c757d;" id="achievementText">Вы идете к успеху!</div>
     </div>
   </div>
 
@@ -843,264 +843,264 @@
     <div class="grc-header">
       <div class="grc-logo">
         <div class="grc-owl" onclick="owlClick()">👾</div>
-        <span>Phishing, Smishing & Vishing</span>
+        <span>Фишинг, смишинг и вишинг</span>
       </div>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
 
     <!-- Slide 1: Welcome -->
     <div class="slide active" id="slide1">
-      <h1>🛡️ Defend Against Social Engineering</h1>
+      <h1>🛡️ Защита от социальной инженерии</h1>
       <p style="text-align:center; font-size:1.25rem; margin-bottom:32px;">
-        Welcome, Security Champion! Your mission: Master the art of detecting phishing, smishing, and vishing attacks.
+        Добро пожаловать, Чемпион безопасности! Твоя миссия: научиться распознавать такие атаки как фишинг, смишинг и вишинг.
       </p>
       
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:40px auto; max-width:800px;">
         <div class="welcome-card" style="text-align:center;">
           <span class="info-card-icon">📧</span>
-          <h3>Email Phishing</h3>
-          <p>Deceptive emails designed to steal your credentials</p>
+          <h3>Почтовый фишинг</h3>
+          <p>Мошеннические письма, созданные для кражи ваших учётных данных</p>
         </div>
         <div class="welcome-card" style="text-align:center;">
           <span class="info-card-icon">📱</span>
-          <h3>SMS Smishing</h3>
-          <p>Fake text messages with malicious links</p>
+          <h3>Смишинг</h3>
+          <p>Поддельные SMS с вредоносными ссылками</p>
         </div>
         <div class="welcome-card" style="text-align:center;">
           <span class="info-card-icon">📞</span>
-          <h3>Voice Vishing</h3>
-          <p>Phone calls requesting sensitive data</p>
+          <h3>Вишинг</h3>
+          <p>Телефонные звонки с целью заполучить конфиденциальные данные</p>
         </div>
       </div>
       
       <div class="navigation">
         <span></span>
-        <button class="btn" onclick="startTraining()">Begin Your Training →</button>
+        <button class="btn" onclick="startTraining()">Начать обучение →</button>
       </div>
     </div>
 
     <!-- Slide 2: What are Phishing, Smishing, and Vishing? -->
     <div class="slide" id="slide2">
-      <h2>🔎 What are Phishing, Smishing, and Vishing?</h2>
+      <h2>🔎 Что такое фишинг, смишинг и вишинг?</h2>
       <div class="info-grid">
         <div class="info-card">
           <span class="info-card-icon">📧</span>
-          <h3>Phishing (Email)</h3>
-          <p>Deceptive emails crafted to steal credentials or push malware. Often use spoofed domains and urgent language.</p>
+          <h3>Почтовый Фишинг</h3>
+          <p>Мошеннические письма для кражи учётных данных или распространения вредоносного ПО. Часто используют поддельные домены и язык срочности.</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">📱</span>
-          <h3>Smishing (SMS)</h3>
-          <p>Text messages that impersonate services, urging quick action via links. Usually contain shortened URLs.</p>
+          <h3>Смишинг</h3>
+          <p>SMS, маскирующиеся под сервисы и побуждающие к быстрым действиям по ссылке. Обычно содержат сокращённые URL.</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">📞</span>
-          <h3>Vishing (Voice)</h3>
-          <p>Phone calls that apply pressure, impersonate IT, banks, or leadership. May request sensitive information.</p>
+          <h3>Вишинг</h3>
+          <p>Телефонные звонки с давлением: злоумышленники выдают себя за ИТ-поддержку, банки или руководство. Могут запрашивать конфиденциальные данные.</p>
         </div>
       </div>
       <div class="visual-demo">
-        <p><strong>Attacker goals:</strong> steal secrets/tokens, install malware, hijack payments, or bypass MFA via "push fatigue."</p>
+        <p><strong>Цели злоумышленников:</strong> кража секретов/токенов, установка вредоносного ПО, перехват платежей или обход многофакторной аутентификации через синдром «усталости от уведомлений».</p>
       </div>
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Next →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Далее →</button>
       </div>
     </div>
 
     <!-- Slide 3: Common Red Flags -->
     <div class="slide" id="slide3">
-      <h2>🚩 Common Red Flags</h2>
+      <h2>🚩 Типичные признаки угрозы</h2>
       <div class="info-grid">
         <div class="info-card">
           <span class="info-card-icon">⏰</span>
-          <h3>Urgency or Fear</h3>
-          <p>"Act now or accounts will be closed." Attackers create panic to bypass your judgment.</p>
+          <h3>Срочность или угроза</h3>
+          <p>«Действуйте сейчас, иначе аккаунт будет заблокирован.» Злоумышленники создают чувство паники, чтобы отключить ваше критическое мышление.</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🎭</span>
-          <h3>Odd Sender Info</h3>
-          <p>Misspelled domains, free email providers, spoofed caller IDs. Check carefully!</p>
+          <h3>Подозрительный отправитель</h3>
+          <p>Опечатки в доменах, бесплатные почтовые сервисы, поддельные ID звонящего. Проверяйте внимательно!</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🔗</span>
-          <h3>Suspicious Links</h3>
-          <p>ZIPs, .html login pages, shortened URLs. Hover to check before clicking.</p>
+          <h3>Подозрительные ссылки</h3>
+          <p>ZIP-файлы, .html страницы входа, сокращённые URL. Наведите курсор перед кликом, чтобы посмотреть на ссылку</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🔑</span>
-          <h3>Secret Requests</h3>
-          <p>Passwords, MFA codes, API tokens, gift cards. Legitimate sources never ask!</p>
+          <h3>Запросы конфиденциальных данных</h3>
+          <p>Пароли, коды MFA, API-токены, подарочные карты. Легитимные источники никогда не просят называть конфиденциальные данные!</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">🚫</span>
-          <h3>Process Bypass</h3>
-          <p>"Let's skip ticketing/approvals" or off-platform chats. Always follow protocol.</p>
+          <h3>Обход стандартных процедур</h3>
+          <p>«Пропустим заявки/согласования» или общение вне официальных каналов. Всегда следуйте установленным в организации правилам и процессам.</p>
         </div>
       </div>
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Next →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Далее →</button>
       </div>
     </div>
 
     <!-- Slide 4: How to Respond to Attacks -->
     <div class="slide" id="slide4">
-      <h2>📣 How to Respond to Attacks</h2>
+      <h2>📣 Как реагировать на атаки</h2>
       <div class="info-grid">
         <div class="info-card">
           <span class="info-card-icon">🚫</span>
-          <h3>Don't Engage</h3>
-          <p>Never click links, reply to messages, or share codes over the phone with suspicious contacts.</p>
+          <h3>Не взаимодействуйте</h3>
+          <p>Никогда не переходите по ссылкам, не отвечайте на сообщения и не называйте коды по телефону подозрительным контактам.</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">✅</span>
-          <h3>Verify Independently</h3>
-          <p>Re-type official URLs, call back via known numbers, or Slack your verified contacts.</p>
+          <h3>Проверяйте самостоятельно</h3>
+          <p>Вводите официальные URL вручную, перезванивайте по известным номерам или пишите проверенным контактам в корпоративно почте или мессенджере.</p>
         </div>
         <div class="info-card">
           <span class="info-card-icon">📢</span>
-          <h3>Report Immediately</h3>
-          <p>Forward to <code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">security@yourcompany.com</code> or report in Slack <code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">your security reporting channel</code></p>
+          <h3>Сообщайте немедленно</h3>
+          <p>Переслать на <code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">security@yourcompany.com</code> или сообщить в чат <code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">ссылка на чат отдела безопасности</code></p>
         </div>
       </div>
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()">Start Practice →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()">Начать практику →</button>
       </div>
     </div>
 
     <!-- Slide 5: Interactive Email Challenge -->
     <div class="slide" id="slide5">
-      <h2>📧 Email Detective Challenge</h2>
-      <p>Can you spot all 6 red flags in this suspicious email? Click on anything that looks suspicious!</p>
+      <h2>📧 Детектив по электронной почте</h2>
+      <p>Найдёте ли вы все 6 признаков фишинга в этом подозрительном письме? Нажмите на всё подозрительное!</p>
       
       <div style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 12px 20px; border-radius: 20px; font-weight: 600; color: var(--primary-purple); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <span>Found:</span>
+        <span>Найдено:</span>
         <span style="font-size: 24px; font-weight: 800; color: var(--success-green);" id="emailScore">0/6</span>
       </div>
       
       <div class="email-simulator">
         <div class="email-header">
           <div class="email-field">
-            <span class="email-label">From:</span>
+            <span class="email-label">От:</span>
             <span class="suspicious-element" onclick="foundFlag(this, 'spoofed-sender')">
               IT Support &lt;support@secure-portal.com&gt;
-              <span class="flag-tooltip">Spoofed domain! Suspicious sender address</span>
+              <span class="flag-tooltip">Поддельный домен! Подозрительный адрес отправителя</span>
             </span>
           </div>
           <div class="email-field">
-            <span class="email-label">Subject:</span>
+            <span class="email-label">Тема:</span>
             <span class="suspicious-element" onclick="foundFlag(this, 'urgent-subject')">
-              URGENT: Account Security Alert - Immediate Action Required
-              <span class="flag-tooltip">Excessive urgency is a red flag!</span>
+              СРОЧНО: Подозрительная активность с учетной записью - требуются немедленные действия!
+              <span class="flag-tooltip">Чрезмерная срочность — тревожный сигнал!</span>
             </span>
           </div>
         </div>
         <div class="email-content">
-          <p>Dear <span class="suspicious-element" onclick="foundFlag(this, 'generic-greeting')">User<span class="flag-tooltip">Generic greeting - legitimate emails use your name</span></span>,</p>
+          <p>Dear <span class="suspicious-element" onclick="foundFlag(this, 'generic-greeting')">User<span class="flag-tooltip">Обезличенное обращение — в легитимных письмах обычно используют ваше имя</span></span>,</p>
           
-          <p>We have detected suspicious activity on your your account account. Your account will be 
-          <span class="suspicious-element" onclick="foundFlag(this, 'threat')">suspended within 24 hours<span class="flag-tooltip">Threatening deadline creates panic</span></span> 
-          unless you verify your identity immediately.</p>
+          <p>Мы обнаружили подозрительную активность в вашем аккаунте. Ваш аккаунт будет 
+          <span class="suspicious-element" onclick="foundFlag(this, 'threat')">заблокирован в течение 24 часов<span class="flag-tooltip">Угрожающий срок создаёт панику</span></span> 
+          если вы не подтвердите свою личность немедленно.</p>
           
-          <p>Please click the link below to secure your account:</p>
+          <p>Перейдите по ссылке ниже для защиты аккаунта:</p>
           <p style="text-align:center;">
             <span class="suspicious-element" onclick="foundFlag(this, 'bad-link')" style="color:#007AFF; text-decoration:underline;">
               https://secure-portal.com/verify-account
-              <span class="flag-tooltip">Malicious URL with spoofed domain!</span>
+              <span class="flag-tooltip">Вредоносный URL с поддельным доменом!</span>
             </span>
           </p>
           
-          <p>Thank you,<br>
+          <p>Спасибо,<br>
             <span class="suspicious-element" onclick="foundFlag(this, 'mismatched-signature')">
               Security Team
-              <span class="flag-tooltip">Signature doesn't match sender - claims to be Security Team but From says IT Support!</span>
+              <span class="flag-tooltip">Подпись не совпадает с отправителем — подписано «Security Team», а в поле «От»: IT Support!</span>
             </span>
           </p>
         </div>
         <div class="email-actions">
-          <button class="btn btn-danger" onclick="emailAction('report')">Report Phishing</button>
-          <button class="btn btn-secondary" onclick="emailAction('delete')">Delete Email</button>
-          <button class="btn" onclick="emailAction('click')">Click Link</button>
+          <button class="btn btn-danger" onclick="emailAction('report')">Сообщить о фишинге</button>
+          <button class="btn btn-secondary" onclick="emailAction('delete')">Удалить письмо</button>
+          <button class="btn" onclick="emailAction('click')">Перейти по ссылке</button>
         </div>
       </div>
       
       <div id="emailFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="emailContinueBtn" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="emailContinueBtn" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 6: SMS Simulator -->
     <div class="slide" id="slide6">
-      <h2>📱 SMS Phishing Simulator</h2>
-      <p>You received a text message! Analyze it and decide what to do.</p>
+      <h2>📱 Симулятор SMS-фишинга</h2>
+      <p>Вы получили SMS! Проанализируйте его и решите, что делать.</p>
       
       <div class="phone-simulator">
         <div class="phone-screen">
-          <div class="phone-header">Messages</div>
+          <div class="phone-header">Сообщения</div>
           <div class="sms-container" id="smsContainer">
             <div class="sms-message">
-              <strong>PAYROLL-ALERT</strong><br>
-              Your latest paycheck couldn't be processed. Update your banking info immediately to avoid delays: <span class="sms-link" onclick="smsLinkClick()">bit.ly/payroll-update-urgent</span>
+              <strong>УВЕДОМЛЕНИЕ О ЗАРПЛАТЕ</strong><br>
+              Перечисление заработной платы не выполнено. Немедленно обновите банковские реквизиты, чтобы избежать задержек: <span class="sms-link" onclick="smsLinkClick()">bit.ly/payroll-update-urgent</span>
             </div>
           </div>
         </div>
       </div>
       
       <div class="sms-actions" id="smsActionsContainer">
-        <button class="btn btn-danger" onclick="smsResponse('click')">Click the link</button>
-        <button class="btn btn-secondary" onclick="smsResponse('ignore')">Ignore it</button>
-        <button class="btn btn-success" onclick="smsResponse('verify')">Verify via official channels</button>
+        <button class="btn btn-danger" onclick="smsResponse('click')">Перейти по ссылке</button>
+        <button class="btn btn-secondary" onclick="smsResponse('ignore')">Игнорировать</button>
+        <button class="btn btn-success" onclick="smsResponse('verify')">Проверить через официальные каналы</button>
       </div>
       
       <div id="smsFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation" style="margin-top:48px;">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="nextSlide()" id="smsContinueBtn" style="display:none;">Continue →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="nextSlide()" id="smsContinueBtn" style="display:none;">Продолжить →</button>
       </div>
     </div>
 
     <!-- Slide 7: Enhanced Voice Call Simulator -->
     <div class="slide" id="slide7">
-      <h2>📞 Vishing Call Simulator</h2>
-      <p>Incoming call! The caller claims to be from IT Support...</p>
+      <h2>📞 Симулятор звонка-вишинг</h2>
+      <p>Входящий звонок! Звонящий представляется сотрудником IT-поддержки...</p>
       
       <div class="call-simulator">
         <div class="caller-info">
           <div class="caller-avatar">👤</div>
-          <div class="caller-name">IT Support</div>
-          <div class="caller-number">Unknown Number</div>
-          <div class="call-status" id="callStatus">Incoming call...</div>
+          <div class="caller-name">IT-поддержка</div>
+          <div class="caller-number">Неизвестный номер</div>
+          <div class="call-status" id="callStatus">Входящий звонок...</div>
         </div>
         
         <div class="call-transcript" id="callTranscript">
           <div class="transcript-line">
-            <span class="transcript-speaker">Caller:</span>
-            <span>Hi, this is Jake from IT Support. We're doing emergency maintenance and need you to verify your MFA code to prevent account lockout.</span>
+            <span class="transcript-speaker">Звонящий:</span>
+            <span>Привет, это Иван из IT-поддержки. Мы проводим экстренное обновление и нам нужно, чтобы вы сообщили код MFA для предотвращения блокировки аккаунта.</span>
           </div>
         </div>
         
         <div class="call-actions" id="initialCallActions">
-          <button class="call-btn decline" onclick="callAction('decline')" title="Decline">
+          <button class="call-btn decline" onclick="callAction('decline')" title="Отклонить">
             📞
           </button>
-          <button class="call-btn answer" onclick="callAction('answer')" title="Answer">
+          <button class="call-btn answer" onclick="callAction('answer')" title="Ответить">
             📞
           </button>
         </div>
         
         <div class="call-decision" id="callDecision">
-          <p style="font-weight:600; margin-bottom:16px; color:#fff; font-size:18px;">The caller is asking for your MFA code. What do you do?</p>
+          <p style="font-weight:600; margin-bottom:16px; color:#fff; font-size:18px;">Звонящий просит ваш код MFA. Что вы сделаете?</p>
           <div class="decision-grid" id="callDecisionGrid">
-            <button class="btn" onclick="callResponse('share')">Share the MFA code</button>
-            <button class="btn btn-danger" onclick="callResponse('hangup')">Hang up immediately</button>
-            <button class="btn btn-secondary" onclick="callResponse('question')">Ask verification questions</button>
-            <button class="btn btn-success" onclick="callResponse('report')">Hang up and report to security</button>
+            <button class="btn" onclick="callResponse('share')">Назвать код MFA</button>
+            <button class="btn btn-danger" onclick="callResponse('hangup')">Немедленно положить трубку</button>
+            <button class="btn btn-secondary" onclick="callResponse('question')">Задать уточняющие вопросы</button>
+            <button class="btn btn-success" onclick="callResponse('report')">Положить трубку и сообщить в отдел безопасности</button>
           </div>
         </div>
       </div>
@@ -1108,8 +1108,8 @@
       <div id="callFeedback" style="margin-top:24px;"></div>
       
       <div class="navigation" style="margin-top:32px;">
-        <button class="btn btn-secondary" onclick="previousSlide()">← Back</button>
-        <button class="btn" onclick="completeTraining()" id="callContinueBtn" style="display:none;">Complete Training →</button>
+        <button class="btn btn-secondary" onclick="previousSlide()">← Назад</button>
+        <button class="btn" onclick="completeTraining()" id="callContinueBtn" style="display:none;">Завершить обучение →</button>
       </div>
     </div>
 
@@ -1119,27 +1119,27 @@
         <div class="certificate-seal">
           <div class="trophy-icon">🏆</div>
         </div>
-        <h1 style="color:var(--dark-purple); margin-bottom:16px;">Security Champion Certified!</h1>
-        <p style="font-size:1.25rem; margin-bottom:8px;">You've successfully completed</p>
-        <p style="font-size:1.5rem; font-weight:700; color:var(--primary-purple); margin-bottom:24px;">Social Engineering Defense Training</p>
+        <h1 style="color:var(--dark-purple); margin-bottom:16px;">Сертификат чемпиона безопасности!</h1>
+        <p style="font-size:1.25rem; margin-bottom:8px;">Вы успешно прошли</p>
+        <p style="font-size:1.5rem; font-weight:700; color:var(--primary-purple); margin-bottom:24px;">Обучение защите от социальной инженерии</p>
         
         <div style="margin:32px 0; text-align:center;">
           <div>
             <div style="font-size:2rem; font-weight:800; color:var(--success-green);" id="finalScore">100%</div>
-            <div style="color:#6c757d;">Score</div>
+            <div style="color:#6c757d;">Результат</div>
           </div>
         </div>
         
         <p style="color:var(--primary-purple); font-weight:700; font-size:1.125rem; margin:24px 0;">
-          Stay Vigilant. Stay Secure. 👾
+          Будьте бдительны. Оставайтесь в безопасности. 👾
         </p>
         
-        <button class="btn" onclick="exitModule()">Exit Training</button>
+        <button class="btn" onclick="exitModule()">Выйти из обучения</button>
       </div>
     </div>
   </div>
 
-  <div class="scorm-status" id="scormStatus">SCORM: Disconnected</div>
+  <div class="scorm-status" id="scormStatus">SCORM: Отключён</div>
 
   <script>
     // SCORM API wrapper
@@ -1335,7 +1335,7 @@
       }, 10);
       if (!gameState.achievements.includes('owl')) {
         gameState.achievements.push('owl');
-        showAchievement('👾', 'Wise Discovery!', 'You found the easter egg!');
+        showAchievement('👾', 'Мудрое открытие!', 'Вы нашли пасхалку!');
       }
       // If in iframe, send message to parent to go home
       if (window.parent !== window) {
@@ -1377,11 +1377,11 @@
       
       if (score === 1 && !gameState.achievements.includes('first_flag')) {
         gameState.achievements.push('first_flag');
-        showAchievement('👁️', 'Sharp Eye', 'Found your first red flag!');
+        showAchievement('👁️', 'Острый глаз', 'Найден первый признак фишинга!');
       }
       
       if (score === 6) {
-        showAchievement('🔍', 'Eagle Eye', 'Found all email red flags!');
+        showAchievement('🔍', 'Орлиный глаз', 'Найдены все признаки фишинга!');
         gameState.emailComplete = true;
         checkEmailCompletion();
       }
@@ -1474,17 +1474,17 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Excellent! Reporting phishing emails to security@yourcompany.com protects everyone.
+            ✅ Отлично! Сообщая о фишинге на security@yourcompany.com, вы защищаете всю компанию.
           </div>`;
           if (!gameState.completedActions[actionKey]) {
             gameState.completedActions[actionKey] = true;
             gameState.choices[actionKey] = action;
             saveChoice(actionKey, action);
-            showAchievement('🛡️', 'Phishing Fighter', 'Reported a phishing email!');
+            showAchievement('🛡️', 'Борец с фишингом', 'Сообщил о фишинговом письме!');
           }
           gameState.emailComplete = true;
           checkEmailCompletion();
@@ -1534,12 +1534,12 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
             clickedButton.style.border = '2px solid #ff9800';
           }
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Deleting is okay, but reporting helps protect your colleagues too! Try again - what's the BEST action?
+            ⚠️ Удалять — это нормально, но сообщение о нарушении также помогает защитить ваших коллег! Попробуйте еще раз — какое действие будет НАИЛУЧШИМ?
           </div>`;
           // Save the choice even though it's not optimal
           gameState.choices[actionKey] = action;
@@ -1583,13 +1583,13 @@
               white-space: nowrap;
               box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             `;
-            label.textContent = '🎯 YOUR CHOICE';
+            label.textContent = '🎯 ТВОЙ ВЫБОР';
             clickedButton.appendChild(label);
           }
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Never click suspicious links! This could have compromised your account. Try again - what should you do instead?
+            ❌ Никогда не переходите по подозрительным ссылкам! Злоумышленник мог скомпрометировать вашу учетную запись. Попробуйте еще раз — что следует сделать вместо этого?
           </div>`;
-          showAchievement('📚', 'Learning Moment', 'Remember: Never click suspicious links!');
+          showAchievement('📚', 'Важный момент', 'Помни: никогда не переходи по подозрительным ссылкам!');
           // Save the choice even though it's incorrect
           gameState.choices[actionKey] = action;
           saveChoice(actionKey, action);
@@ -1616,20 +1616,20 @@
             <div style="font-size: 64px; margin-bottom: 20px;">🚨</div>
             <h2 style="color: #f44336; margin-bottom: 16px;">Phishing Link Detected!</h2>
             <p style="color: #666; font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
-              <strong>Never click suspicious links!</strong><br><br>
-              This would have taken you to a phishing site designed to steal your banking credentials.
+              <strong>Никогда не переходи по подозрительным ссылкам!</strong><br><br>
+              Это привело бы вас на фишинговый сайт, созданный для кражи ваших банковских учетных данных.
             </p>
             <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 16px; border-radius: 4px; margin-bottom: 24px; text-align: left;">
               <p style="margin: 0; color: #856404; font-size: 14px; line-height: 1.5;">
-                <strong>⚠️ Warning Signs:</strong><br>
-                • Shortened URL (bit.ly)<br>
-                • Creates urgency ("immediately")<br>
-                • Unsolicited text message<br>
-                • Requests sensitive banking info
+                <strong>⚠️ Признаки фишинга:</strong><br>
+                • Сокращенные ссылки (bit.ly)<br>
+                • Создаётся ощущение срочности («немедленно»)<br>
+                • Нестандартное текстовое сообщение<br>
+                • Запрашивается чувствительная информация (банковская тайна)
               </p>
             </div>
             <button onclick="closePhishingLinkPopup()" style="background: linear-gradient(135deg, #7B2CBF 0%, #06A77D 100%); color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: 600; transition: all 0.2s ease;">
-              I Understand
+              Всё понятно
             </button>
           </div>
         </div>
@@ -1767,7 +1767,7 @@
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           z-index: 101;
         `;
-        label.textContent = '🎯 YOUR CHOICE';
+        label.textContent = '🎯 ТВОЙ ВЫБОР';
         selectedButton.appendChild(label);
       }
       
@@ -1776,22 +1776,22 @@
       
       switch(action) {
         case 'click':
-          response.textContent = 'Clicking the link...';
+          response.textContent = 'Перейти по ссылке';
           container.appendChild(response);
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ Never click links in unexpected texts! Scammers use shortened URLs to hide malicious sites. Try again!
+            ❌ Никогда не переходите по ссылкам в неожидаемых текстовых сообщениях! Мошенники используют сокращенные URL-адреса, чтобы скрыть вредоносные сайты. Попробуйте еще раз!
           </div>`;
-          showAchievement('⚠️', 'Learning Moment', 'Remember: Verify through official channels!');
+          showAchievement('⚠️', 'Важный момент', 'Помни: Проверяй информацию через официальные источники и каналы!');
           // Save the choice even though it's incorrect
           gameState.choices[smsKey] = action;
           saveChoice(smsKey, action);
           // Re-enable buttons for retry
           break;
         case 'ignore':
-          response.textContent = 'Ignoring the message';
+          response.textContent = 'Игнорировать сообщение';
           container.appendChild(response);
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Good instinct, but there's a better option! What would be the BEST way to handle this?
+            ⚠️ Хорошо, но есть вариант получше! Как лучше всего поступить в этой ситуации?
           </div>`;
           // Save the choice even though it's not optimal
           gameState.choices[smsKey] = action;
@@ -1799,10 +1799,10 @@
           // Let them try again
           break;
         case 'verify':
-          response.textContent = 'I\'ll check through official channels';
+          response.textContent = 'Я уточню в бухгалтерии';
           container.appendChild(response);
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Perfect! Always verify through official channels. Report to security@yourcompany.com or Slack your security reporting channel.
+            ✅ Отлично! Всегда проверяй информацию в официальных источниках. Сообщи в security@yourcompany.com.
           </div>`;
           // Track completion once for SMS
           if (!gameState.completedActions[smsKey]) {
@@ -1810,7 +1810,7 @@
             gameState.choices[smsKey] = action;
             saveChoice(smsKey, action);
           }
-          showAchievement('🛡️', 'SMS Defender', 'Made the right choice!');
+          showAchievement('🛡️', 'SMS Защитник', 'Сделал правильный выбор!');
           gameState.smsComplete = true;
           document.getElementById('smsContinueBtn').style.display = 'inline-flex';
           // Disable buttons after correct answer
@@ -1842,16 +1842,16 @@
         setTimeout(() => {
           const newLine = document.createElement('div');
           newLine.className = 'transcript-line';
-          newLine.innerHTML = '<span class="transcript-speaker">Caller:</span><span>Can you please read me the 6-digit code you just received?</span>';
+          newLine.innerHTML = '<span class="transcript-speaker">Звонящий:</span><span>Не могли бы вы, пожалуйста, продиктовать мне шестизначный код, который вы только что получили?</span>';
           transcript.appendChild(newLine);
           
           decision.style.display = 'block';
         }, 2000);
       } else {
-        status.textContent = 'Call declined';
+        status.textContent = 'Сбросить звонок';
         const feedbackDiv = document.getElementById('callFeedback');
         feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-          ✅ Good decision! When in doubt, decline and verify through official channels.
+          ✅ Отличное решение! В случае сомнений лучше отказаться и уточнить информацию по официальным каналам.
         </div>`;
         // Track completion once for declining
         if (!gameState.completedActions) gameState.completedActions = {};
@@ -1970,7 +1970,7 @@
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           z-index: 101;
         `;
-        label.textContent = '🎯 YOUR CHOICE';
+        label.textContent = '🎯 ТВОЙ ВЫБОР';
         selectedButton.appendChild(label);
       }
       
@@ -1980,41 +1980,41 @@
       
       switch(action) {
         case 'share':
-          userLine.innerHTML = '<span class="transcript-speaker" style="color:#ff3b30;">You:</span><span>Sure, the code is...</span>';
+          userLine.innerHTML = '<span class="transcript-speaker" style="color:#ff3b30;">You:</span><span>Конечно, код ...</span>';
           transcript.appendChild(userLine);
           feedbackDiv.innerHTML = `<div class="feedback incorrect" style="display:block;">
-            ❌ NEVER share MFA codes! IT will never ask for them. You just gave an attacker access to your account. Try again!
+            ❌ НИКОГДА не сообщайте коды многофакторной аутентификации! ИТ-поддержка никогда их не запросит. Вы только что предоставили злоумышленнику доступ к вашему аккаунту. Попробуйте еще раз!
           </div>`;
-          showAchievement('📚', 'Critical Lesson', 'Never share MFA codes with anyone!');
+          showAchievement('📚', 'Важный урок', 'Никогда никому не сообщай коды MFA!');
           // Save the choice even though it's incorrect
           gameState.choices[callKey] = action;
           saveChoice(callKey, action);
           break;
         case 'hangup':
-          userLine.innerHTML = '<span class="transcript-speaker" style="color:#34c759;">You:</span><span>*Hangs up*</span>';
+          userLine.innerHTML = '<span class="transcript-speaker" style="color:#34c759;">Ты:</span><span>*Положил трубку*</span>';
           transcript.appendChild(userLine);
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Good instinct! But what's the BEST action to take after hanging up?
+            ⚠️ Хороший выбор! Но что ЛУЧШЕ всего предпринять после того, как вы положили трубку?
           </div>`;
           // Save the choice even though it's not optimal
           gameState.choices[callKey] = action;
           saveChoice(callKey, action);
           break;
         case 'question':
-          userLine.innerHTML = '<span class="transcript-speaker" style="color:#ff9800;">You:</span><span>Can you verify your identity first?</span>';
+          userLine.innerHTML = '<span class="transcript-speaker" style="color:#ff9800;">Ты:</span><span>Можете ли вы сначала подтвердить свою личность?</span>';
           transcript.appendChild(userLine);
           feedbackDiv.innerHTML = `<div class="feedback warning" style="display:block;">
-            ⚠️ Good thinking, but it\'s safer to hang up and verify independently. What's the best approach?
+            ⚠️ Хорошая идея, но безопаснее повесить трубку и проверить всё самостоятельно. Какой подход будет наилучшим?
           </div>`;
           // Save the choice even though it's not optimal
           gameState.choices[callKey] = action;
           saveChoice(callKey, action);
           break;
         case 'report':
-          userLine.innerHTML = '<span class="transcript-speaker" style="color:#34c759;">You:</span><span>I\'ll contact IT through official channels. *Hangs up*</span>';
+          userLine.innerHTML = '<span class="transcript-speaker" style="color:#34c759;">Ты:</span><span>Я свяжусь с IT-отделом по официальным каналам. *Вешает трубку*</span>';
           transcript.appendChild(userLine);
           feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-            ✅ Excellent! This is the best response. Always verify through official channels and report to security@yourcompany.com or Slack your security reporting channel.
+            ✅ Отлично! Это лучший ответ. Всегда проверяйте информацию через официальные каналы и сообщайте о проблемах безопасности по адресу security@yourcompany.com.
           </div>`;
           // Track completion once for call
           if (!gameState.completedActions[callKey]) {
@@ -2022,7 +2022,7 @@
             gameState.choices[callKey] = action;
             saveChoice(callKey, action);
           }
-          showAchievement('🦸', 'Vishing Victor', 'You stopped a voice phishing attack!');
+          showAchievement('🦸', 'Победитель вишинга', 'Ты остановил фишинговую атаку!');
           gameState.callComplete = true;
           document.getElementById('callContinueBtn').style.display = 'inline-flex';
           decisionGrid.querySelectorAll('button').forEach(btn => {
@@ -2047,7 +2047,7 @@
             { text: 'Purchase the gift cards immediately', feedback: 'Never! This is a classic CEO fraud scam.', correct: false },
             { text: 'Reply asking for more details', feedback: 'Don\'t engage! Verify through official channels.', correct: false },
             { text: 'Check with CEO\'s assistant via Slack', feedback: 'Good approach, but reporting is better.', correct: false },
-            { text: 'Forward to security@yourcompany.com', feedback: 'Perfect! Report suspicious emails immediately.', correct: true }
+            { text: 'Переслать на security@yourcompany.com', feedback: 'Отлично! Незамедлительно сообщайте о подозрительных письмах.', correct: true }
           ]
         },
         {
@@ -2069,7 +2069,7 @@
             { text: 'Press 1 to talk to support', feedback: 'No! This is a vishing attempt.', correct: false },
             { text: 'Hang up and ignore', feedback: 'Good, but reporting would be better.', correct: false },
             { text: 'Hang up and check VPN status yourself', feedback: 'Smart, but also report it!', correct: false },
-            { text: 'Hang up and report to security', feedback: 'Perfect! Report through official channels like security@yourcompany.com or Slack your security reporting channel.', correct: true }
+            { text: 'Положить трубку и сообщить безопасности', feedback: 'Perfect! Report through official channels like security@yourcompany.com or Slack your security reporting channel.', correct: true }
           ]
         }
       ];
@@ -2235,7 +2235,7 @@
     }
     
     function startTraining() {
-      showAchievement('🚀', 'Training Started!', 'Your security journey begins!');
+      showAchievement('🚀', 'Обучение началось!', 'Твое путешествие в мир кибербезопасности началось!');
       nextSlide();
     }
     
@@ -2262,7 +2262,7 @@
       
       showSlide(8);
       launchConfetti();
-      showAchievement('🏆', 'Training Complete!', 'You are now a Security Champion!');
+      showAchievement('🏆', 'Обучение завершено!', 'You are now a Security Champion!');
     }
     
     function launchConfetti() {
@@ -2420,7 +2420,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             z-index: 1000;
           `;
-          label.textContent = '🎯 YOUR CHOICE';
+          label.textContent = '🎯 ТВОЙ ВЫБОР';
           selectedButton.appendChild(label);
         }
         
@@ -2428,7 +2428,7 @@
         if (action === 'report') {
           if (feedbackDiv) {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ Excellent! Reporting phishing emails to security@yourcompany.com protects everyone.
+              ✅ Отлично! Сообщение о фишинговых письмах на адрес security@yourcompany.com защитит всю компанию.
             </div>`;
           }
           gameState.emailComplete = true;
@@ -2581,7 +2581,7 @@
                   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
                   z-index: 101;
                 `;
-                label.textContent = '🎯 YOUR CHOICE';
+                label.textContent = '🎯 ТВОЙ ВЫБОР';
                 btn.appendChild(label);
               }
             }
@@ -2612,7 +2612,7 @@
         if (action === 'report') {
           if (feedbackDiv) {
             feedbackDiv.innerHTML = `<div class="feedback correct" style="display:block;">
-              ✅ Excellent! This is the best response. Always verify through official channels and report to security@yourcompany.com or Slack your security reporting channel.
+              ✅ Отлично! Это лучший ответ. Всегда проверяйте информацию через официальные каналы и сообщайте о подозрительных сообщениях по адресу security@yourcompany.com.
             </div>`;
           }
           if (btn) btn.style.display = 'inline-flex';
@@ -2735,7 +2735,7 @@
                     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
                     z-index: 101;
                   `;
-                  label.textContent = '🎯 YOUR CHOICE';
+                  label.textContent = '🎯 ТВОЙ ВЫБОР';
                   btn.appendChild(label);
                 }
               }
