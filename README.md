@@ -4,7 +4,7 @@
 
 ## Файлы в этой папке:
 
-- **`cybersecurity-privacy-training-combined.html`** — Основной интерфейс обучения с боковой панелью навигации
+- **`index.html`** — Основной интерфейс обучения с боковой панелью навигации
 - **`imsmanifest.xml`** — Файл манифеста SCORM для совместимости с LMS
 - **`create-scorm-package.sh`** — Скрипт для сборки SCORM-пакета
 - **`cybersecurity-privacy-training-scorm.zip`** — Готовый к загрузке SCORM-пакет
