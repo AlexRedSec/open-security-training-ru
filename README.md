@@ -1,87 +1,87 @@
-# Cybersecurity & Privacy Training - Combined Module
+# Обучение кибербезопасности и защите данных — Объединенный модуль
 
-This folder contains the comprehensive Cybersecurity & Privacy Training that includes all six modules in a single, unified interface.
+Эта папка содержит комплексный курс обучения кибербезопасности и защите данных, который включает все шесть модулей в едином унифицированном интерфейсе.
 
-## Files in this folder:
+## Файлы в этой папке:
 
-- **`cybersecurity-privacy-training-combined.html`** - The main training interface with sidebar navigation
-- **`imsmanifest.xml`** - SCORM manifest file for LMS compatibility
-- **`create-scorm-package.sh`** - Script to build SCORM package
-- **`cybersecurity-privacy-training-scorm.zip`** - Ready-to-upload SCORM package
+- **`cybersecurity-privacy-training-combined.html`** — Основной интерфейс обучения с боковой панелью навигации
+- **`imsmanifest.xml`** — Файл манифеста SCORM для совместимости с LMS
+- **`create-scorm-package.sh`** — Скрипт для сборки SCORM-пакета
+- **`cybersecurity-privacy-training-scorm.zip`** — Готовый к загрузке SCORM-пакет
 
-## Training Modules Included:
+## Включенные учебные модули:
 
-1. **Phishing, Smishing & Vishing** (9 slides)
-   - Email phishing simulator
-   - SMS smishing simulator  
-   - Voice vishing simulator
-   - Real-world scenarios
+1. **Фишинг, смишинг и вишинг (Phishing, Smishing & Vishing)** (9 слайдов)
+   - Симулятор email-фишинга
+   - Симулятор SMS-смишинга  
+   - Симулятор голосового вишинга
+   - Сценарии из реальной жизни
 
-2. **CEO & Executive Fraud** (6 slides)
-   - Chat attack simulator with "Not Don Johnson"
-   - Urgency timer challenge
-   - Wire transfer scenarios
+2. **Мошенничество от лица руководителей (CEO & Executive Fraud)** (6 слайдов)
+   - Симулятор атаки в чате с «Не CFO» (Маскировка под финансового директора)
+   - Испытание с таймером срочности
+   - Сценарии с банковскими переводами
 
-3. **Watering Hole Attacks** (9 slides)
-   - Website infection simulator
-   - URL detection game
-   - Incident response simulation
+3. **Атаки типа «Водопой» (Watering Hole Attacks)** (9 слайдов)
+   - Симулятор заражения веб-сайта
+   - Игра по распознаванию опасных URL
+   - Симуляция реагирования на инциденты
 
-4. **General Cybersecurity** (10 slides)
-   - Ransomware response simulation
-   - Device security scenarios
-   - Password strength challenges
-   - Software security assessment
+4. **Основы кибербезопасности (General Cybersecurity)** (10 слайдов)
+   - Симуляция реагирования на программы-вымогатели (Ransomware)
+   - Сценарии безопасности устройств
+   - Задачи на проверку надежности паролей
+   - Оценка безопасности программного обеспечения
 
-5. **Privacy Awareness** (10 slides)
-   - Data classification exercises
-   - GDPR/CCPA compliance scenarios
-   - Privacy breach simulations
-   - Data handling best practices
+5. **Осведомленность о конфиденциальности (Privacy Awareness)** (10 слайдов)
+   - Упражнения по классификации данных
+   - Сценарии соответствия требованиям 152-ФЗ
+   - Симуляции утечки конфиденциальных данных
+   - Лучшие практики обработки данных
 
-6. **Secure Coding (OWASP Top 10)** (6 slides)
-   - Interactive OWASP Top 10 explorer
-   - SQL injection lab
-   - Code review challenges
-   - Dependency vulnerability scanner
+6. **Безопасное программирование (OWASP Top 10)** (6 слайдов)
+   - Интерактивный обозреватель OWASP Top 10
+   - Лабораторная работа по SQL-инъекциям
+   - Задачи по анализу кода (Code review)
+   - Сканер уязвимостей зависимостей
 
-## How to Use:
+## Как использовать:
 
-### For Web Deployment:
-1. Open `cybersecurity-privacy-training-combined.html` in a browser
-2. Navigate through modules using the sidebar
-3. Progress is saved automatically in localStorage
+### Для веб-развертывания:
+1. Откройте `cybersecurity-privacy-training-combined.html` в браузере.
+2. Перемещайтесь по модулям с помощью боковой панели.
+3. Прогресс автоматически сохраняется в `localStorage`.
 
-### For LMS Deployment:
-1. Upload `cybersecurity-privacy-training-scorm.zip` to your LMS
-2. The LMS will track progress, scores, and completion
+### Для развертывания в LMS (Системе управления обучением):
+1. Загрузите `cybersecurity-privacy-training-scorm.zip` в вашу LMS.
+2. LMS будет отслеживать прогресс, набранные баллы и статус завершения.
 
-### To Rebuild SCORM Package:
+### Чтобы пересобрать SCORM-пакет:
 ```bash
 cd cybersecurity-privacy-training-combined
 ./create-scorm-package.sh
 ```
 
-## Features:
+## Особенности:
 
-- **SCORM 1.2 Compliant** - Works with any standard LMS
-- **Progress Tracking** - Saves progress for each module
-- **Gamification** - XP points, achievements, levels
-- **Interactive Simulators** - Hands-on practice with realistic scenarios
-- **Responsive Design** - Works on desktop and tablet
-- **No Time Limits** - Learn at your own pace
-- **Comprehensive Coverage** - Social engineering, privacy, and secure coding
+- **Совместимость со SCORM 1.2** — Работает с любой стандартной LMS
+- **Отслеживание прогресса** — Сохраняет прогресс для каждого модуля
+- **Геймификация** — Очки опыта (XP), достижения, уровни
+- **Интерактивные симуляторы** — Практика на реалистичных сценариях
+- **Адаптивный дизайн** — Поддерживается работа на десктопах и планшетах
+- **Без ограничений по времени** — Обучайтесь в собственном темпе
+- **Комплексный охват** — Социальная инженерия, конфиденциальность и безопасная разработка
 
-## Technical Notes:
+## Технические примечания:
 
-- The combined interface uses iframes to load individual modules
-- Modules communicate with parent frame via postMessage API
-- SCORM tracking is handled at the parent level only
-- Individual module SCORM is disabled when loaded in iframe
+- Объединенный интерфейс использует iframes для загрузки отдельных модулей
+- Модули взаимодействуют с родительским окном через API postMessage
+- Отслеживание SCORM обрабатывается только на уровне родительского фрейма
+- Встроенный SCORM отдельных модулей отключается при их загрузке внутри iframe
 
-## File Structure:
+## Структура файлов:
 
-All training modules are now contained within this folder:
+Все учебные модули теперь содержатся внутри этой папки:
 - `phishing-smishing-vishing-training/enhanced-interactive-training.html`
 - `ceo-executive-fraud-training/enhanced-interactive-training.html`
 - `watering-hole-attacks-training/enhanced-interactive-training.html`
@@ -89,11 +89,11 @@ All training modules are now contained within this folder:
 - `privacy-awareness-training/enhanced-interactive-training.html`
 - `secure-coding-training/enhanced-interactive-training.html`
 
-This makes the combined training self-contained and portable.
+Это делает объединенный курс самодостаточным и легко переносимым.
 
-## Training Statistics:
+## Статистика обучения:
 
-- **Total Slides**: 50 interactive slides
-- **Estimated Time**: 90-120 minutes
-- **Topics Covered**: 6 major cybersecurity domains
-- **Interactive Elements**: 20+ simulations and exercises
+- **Всего слайдов**: 50 интерактивных слайдов
+- **Расчетное время**: 90-120 минут
+- **Охваченные темы**: 6 основных доменов кибербезопасности
+- **Интерактивные элементы**: более 20 симуляций и упражнений
