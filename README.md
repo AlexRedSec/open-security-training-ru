@@ -97,3 +97,8 @@ cd cybersecurity-privacy-training-combined
 - **Расчетное время**: 90-120 минут
 - **Охваченные темы**: 6 основных доменов кибербезопасности
 - **Интерактивные элементы**: более 20 симуляций и упражнений
+
+## Авторы перевода и адаптации курса:
+- [Aleksandr Redchits](https://linkedin.com/in/aredchits)
+- [Anton Ivershen](https://linkedin.com/in/anton-ivershen-701282b3/)
+- [Maya Kartonis](https://linkedin.com/in/maya-kartonis-335319213/)
