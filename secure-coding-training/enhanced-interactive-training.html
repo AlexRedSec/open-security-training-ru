@@ -895,317 +895,215 @@
       <p>Нажмите на каждый пункт, чтобы узнать об этих критических уязвимостях:</p>
       
       <div style="max-width: 900px; margin: 32px auto;">
-        <div class="owasp-item" onclick="toggleOWASP(this, 1)">
-          <div class="owasp-header">
-            <span class="owasp-number">1</span>
-            <span class="owasp-icon">💉</span>
-            <span class="owasp-title">Инъекции</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Инъекции происходят, когда вредоносный код вставляется в уязвимые программы через ненадёжные входные данные.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2017 году Equifax был взломан из-за уязвимости SQL-инъекции, что привело к утечке 147 миллионов записей. Атака использовала простой payload, например <code>' UNION SELECT password FROM users--</code></p>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Используйте параметризованные запросы: <code>SELECT * FROM users WHERE id = ?</code></li>
-              <li>Проверяйте все входные данные на стороне сервера</li>
-              <li>Используйте ORM-фреймворки со встроенной защитой</li>
-              <li>Применяйте принцип наименьших привилегий к аккаунтам баз данных</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank" style="color: var(--primary-purple);">OWASP: SQL-инъекции</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Памятка по предотвращению</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 2)">
-          <div class="owasp-header">
-            <span class="owasp-number">2</span>
-            <span class="owasp-icon">🔐</span>
-            <span class="owasp-title">Нарушение аутентификации</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Уязвимости в аутентификации и управлении сессиями, позволяющие злоумышленникам компрометировать пароли, ключи или токены сессий.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2019 году Capital One был взломан: злоумышленник использовал некорректно настроенные AWS-учётные данные для доступа к 100 миллионам записей клиентов.</p>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Внедряйте многофакторную аутентификацию (MFA) везде</li>
-              <li>Используйте системы управления секретами (HashiCorp Vault, AWS Secrets)</li>
-              <li>Регулярно и автоматически ротируйте учётные данные</li>
-              <li>Применяйте политики надёжных паролей (12+ символов, сложность)</li>
-              <li>Внедряйте тайм-аут сессий и безопасные флаги cookie</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication" target="_blank" style="color: var(--primary-purple);">OWASP: нарушение аутентификации</a> | <a href="https://owasp.org/www-community/secrets-management" target="_blank" style="color: var(--primary-purple);">Управление секретами</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 3)">
-          <div class="owasp-header">
-            <span class="owasp-number">3</span>
-            <span class="owasp-icon">🕵️</span>
-            <span class="owasp-title">Раскрытие конфиденциальных данных</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Приложения не защищают конфиденциальные данные — кредитные карты, медицинские записи, персональные данные — из-за недостаточного шифрования или ненадлежащего хранения.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2018 году Marriott раскрыл 500 миллионов записей гостей, хранившихся в открытом виде годами. Данные включали номера паспортов, имена и зашифрованные платёжные карты — но ключи шифрования тоже были скомпрометированы!</p>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Шифруйте все данные в покое (AES-256) и при передаче (TLS 1.2/1.3)</li>
-              <li>Используйте безопасное управление переменными окружения (не текстовые файлы)</li>
-              <li>Классифицируйте данные и применяйте соответствующие уровни защиты</li>
-              <li>Отключайте автозаполнение на конфиденциальных формах</li>
-              <li>Используйте безопасное управление ключами (AWS KMS, Azure Key Vault)</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure" target="_blank" style="color: var(--primary-purple);">OWASP: конфиденциальные данные</a> | <a href="https://csrc.nist.gov/publications/detail/fips/140/2/final" target="_blank" style="color: var(--primary-purple);">Стандарты шифрования NIST</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 4)">
-          <div class="owasp-header">
-            <span class="owasp-number">4</span>
-            <span class="owasp-icon">🔗</span>
-            <span class="owasp-title">XML-сущности (XXE)</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Парсеры XML обрабатывают ссылки на внешние сущности в XML-документах, что может привести к раскрытию внутренних файлов, сканированию портов или удалённому выполнению кода.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2014 году XML-парсер Facebook был использован для чтения локальных файлов с серверов компании.</p>
-            <code style="display: block; background: #f0f0f0; padding: 8px; margin: 8px 0; border-radius: 4px; font-size: 12px;">
-&lt;?xml version="1.0"?&gt;<br>
-&lt;!DOCTYPE data [&lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;<br>
-&lt;data&gt;&amp;xxe;&lt;/data&gt;
-            </code>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Отключайте внешние сущности: <code>DocumentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true)</code></li>
-              <li>Используйте JSON вместо XML там, где это возможно</li>
-              <li>Проверяйте и очищайте все XML-входные данные</li>
-              <li>Используйте XML-процессоры с безопасными настройками по умолчанию</li>
-              <li>Внедряйте валидацию входных данных по белому списку</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing" target="_blank" style="color: var(--primary-purple);">OWASP: руководство по XXE</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение XXE</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 5)">
-          <div class="owasp-header">
-            <span class="owasp-number">5</span>
-            <span class="owasp-icon">🚪</span>
-            <span class="owasp-title">Нарушение управления доступом</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Пользователи могут получить доступ к несанкционированным функциям и данным из-за отсутствия или неэффективности проверок контроля доступа.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2019 году First American Financial Corp раскрыла 885 миллионов документов из-за отсутствия надлежащего контроля доступа. Изменение параметров URL давало доступ к ипотечным документам любого клиента. <code>/document/12345</code> → <code>/document/99999</code></p>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Внедряйте ролевое управление доступом (RBAC)</li>
-              <li>Запускайте приложения с минимально необходимыми привилегиями</li>
-              <li>Проверяйте контроль доступа при каждом запросе</li>
-              <li>Применяйте принцип наименьших привилегий повсеместно</li>
-              <li>Внедряйте сегментацию сети и контроль доступа</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control" target="_blank" style="color: var(--primary-purple);">OWASP: управление доступом</a> | <a href="https://www.nist.gov/privacy-framework/nist-sp-800-53" target="_blank" style="color: var(--primary-purple);">Средства управления безопасностью NIST</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 6)">
-          <div class="owasp-header">
-            <span class="owasp-number">6</span>
-            <span class="owasp-icon">⚙️</span>
-            <span class="owasp-title">Неправильная конфигурация безопасности</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Приложения, фреймворки и серверы часто настроены неправильно, что оставляет системы уязвимыми из-за небезопасных конфигураций по умолчанию, неполных настроек или устаревшего ПО.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2017 году некорректно настроенный AWS S3-бакет компании Deep Root Analytics раскрыл 198 миллионов записей избирателей. Бакет был настроен на публичный доступ для чтения, хотя должен был быть приватным.</p>
-            
-            <p><strong>Типичные ошибки конфигурации:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Стандартные логины/пароли до сих пор активны</li>
-              <li>Включены ненужные функции или сервисы</li>
-              <li>Отсутствуют заголовки безопасности</li>
-              <li>Подробные сообщения об ошибках раскрывают информацию о системе</li>
-              <li>Устаревшие или непропатченные компоненты ПО</li>
-            </ul>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Внедряйте безопасные настройки по умолчанию и руководства по усилению защиты</li>
-              <li>Удаляйте ненужные функции, компоненты и документацию</li>
-              <li>Поддерживайте все системы с актуальными патчами безопасности</li>
-              <li>Используйте автоматическое сканирование конфигурации безопасности</li>
-              <li>Внедряйте правильную обработку ошибок (не раскрывайте системную информацию)</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration" target="_blank" style="color: var(--primary-purple);">OWASP: неправильная конфигурация безопасности</a> | <a href="https://cisecurity.org/cis-benchmarks/" target="_blank" style="color: var(--primary-purple);">Эталоны безопасности CIS</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 7)">
-          <div class="owasp-header">
-            <span class="owasp-number">7</span>
-            <span class="owasp-icon">💻</span>
-            <span class="owasp-title">Межсайтовый скриптинг (XSS)</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Вредоносные скрипты внедряются в доверенные сайты и выполняются в браузерах пользователей для кражи cookie, токенов сессий или перенаправления на вредоносные сайты.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2018 году British Airways подверглась XSS-атаке: вредоносный JavaScript был внедрён на страницу оплаты, похитив данные платёжных карт 380 000 клиентов. The script looked like:</p>
-            <code style="display: block; background: #f0f0f0; padding: 8px; margin: 8px 0; border-radius: 4px; font-size: 12px;">
-&lt;script&gt;document.getElementById('card').value = steal();&lt;/script&gt;
-            </code>
-            
-            <p><strong>Типичные сценарии XSS:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Пользовательский ввод без проверки: <code>&lt;p&gt;Hello {{username}}&lt;/p&gt;</code></li>
-              <li>Параметры URL отражаются на страницах</li>
-              <li>Небезопасное использование innerHTML в JavaScript</li>
-              <li>Пользовательский контент в комментариях или профилях</li>
-            </ul>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Используйте контекстно-зависимое экранирование: HTML-экранирование для HTML, JS-экранирование для JavaScript</li>
-              <li>Включайте Content Security Policy: <code>Content-Security-Policy: default-src 'self'</code></li>
-              <li>Используйте безопасные API: <code>textContent</code> вместо <code>innerHTML</code></li>
-              <li>Проверяйте все входные данные на стороне сервера по белому списку</li>
-              <li>Используйте фреймворки со встроенной защитой от XSS (React, Angular)</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" style="color: var(--primary-purple);">OWASP: руководство по XSS</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение XSS</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 8)">
-          <div class="owasp-header">
-            <span class="owasp-number">8</span>
-            <span class="owasp-icon">📦</span>
-            <span class="owasp-title">Небезопасная десериализация</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Приложения десериализуют ненадёжные данные без надлежащей проверки, что может привести к удалённому выполнению кода, атакам повтора или повышению привилегий.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2017 году Apache Struts был использован через небезопасную десериализацию, затронув компании, включая Equifax. Злоумышленники отправляли вредоносные сериализованные объекты, выполнявшие системные команды при десериализации.</p>
-            
-            <p><strong>Опасные сценарии:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Принятие pickle-объектов в Python-приложениях</li>
-              <li>Java-приложения, десериализующие ненадёжные данные ObjectInputStream</li>
-              <li>PHP-приложения, использующие unserialize() на пользовательском вводе</li>
-              <li>Node.js-приложения, использующие eval() для сериализованного JSON</li>
-            </ul>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Никогда не десериализуйте данные из ненадёжных источников</li>
-              <li>Используйте подпись/шифрование для сериализованных данных: HMAC, JWT</li>
-              <li>Внедряйте строгие ограничения типов при десериализации</li>
-              <li>Используйте безопасные форматы сериализации, например JSON (без выполнения кода)</li>
-              <li>Отслеживайте исключения и сбои десериализации</li>
-              <li>Запускайте код десериализации в средах с минимальными привилегиями</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization" target="_blank" style="color: var(--primary-purple);">OWASP: десериализация</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Предотвращение небезопасной десериализации</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 9)">
-          <div class="owasp-header">
-            <span class="owasp-number">9</span>
-            <span class="owasp-icon">🔧</span>
-            <span class="owasp-title">Использование компонентов с известными уязвимостями</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Приложения используют компоненты (библиотеки, фреймворки, модули) с известными уязвимостями безопасности, предоставляя злоумышленникам лёгкие точки входа.</p>
-            
-            <p><strong>Реальный пример:</strong> В 2017 году ransomware WannaCry использовал уязвимость Windows SMB (CVE-2017-0144), которая была исправлена за несколько месяцев до этого. Организации с непропатченными системами пострадали по всему миру.</p>
-            
-            <p><strong>Примеры критических уязвимостей:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li><strong>Log4j (2021):</strong> Удалённое выполнение кода в библиотеке логирования, используемой миллионами</li>
-              <li><strong>Struts (2017):</strong> Привёл к утечке Equifax, затронувшей 147 млн человек</li>
-              <li><strong>OpenSSL Heartbleed (2014):</strong> Раскрытие памяти в библиотеке шифрования</li>
-              <li><strong>jQuery XSS (2019):</strong> XSS в популярной JavaScript-библиотеке</li>
-            </ul>
-            
-            <p><strong>Предотвращение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Ведите инвентаризацию всех компонентов и версий</li>
-              <li>Отслеживайте базы данных CVE: <code>npm audit</code>, <code>pip-audit</code>, Snyk, WhiteSource</li>
-              <li>Регулярно обновляйте компоненты с помощью автоматизированного обновления зависимостей</li>
-              <li>Удаляйте неиспользуемые зависимости и функции</li>
-              <li>Используйте инструменты анализа состава ПО (SCA)</li>
-              <li>Подписывайтесь на рассылки безопасности для вашего технологического стека</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities" target="_blank" style="color: var(--primary-purple);">OWASP: уязвимые компоненты</a> | <a href="https://cve.mitre.org/" target="_blank" style="color: var(--primary-purple);">База данных CVE</a></p>
-          </div>
-        </div>
-        
-        <div class="owasp-item" onclick="toggleOWASP(this, 10)">
-          <div class="owasp-header">
-            <span class="owasp-number">10</span>
-            <span class="owasp-icon">📊</span>
-            <span class="owasp-title">Недостаточное логирование и мониторинг</span>
-            <span class="owasp-checkmark">✓</span>
-            <span class="owasp-arrow">▶</span>
-          </div>
-          <div class="owasp-detail">
-            <p><strong>Что это такое:</strong> Отсутствие надлежащего логирования и мониторинга позволяет утечкам оставаться незамеченными месяцами, давая злоумышленникам время достичь целей и скрыть следы.</p>
-            
-            <p><strong>Реальный пример:</strong> Взлом Target (2013) оставался незамеченным 19 дней, несмотря на срабатывание инструментов безопасности. Слабый мониторинг привёл к краже 40 миллионов кредитных карт до обнаружения. Среднее время обнаружения утечки по-прежнему составляет 277 дней (IBM, 2022).</p>
-            
-            <p><strong>Критические события для логирования:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Неудачные попытки входа и блокировки аккаунтов</li>
-              <li>Повышение привилегий и административные действия</li>
-              <li>Ошибки валидации входных данных и попытки инъекций</li>
-              <li>Манипуляции с токенами аутентификации</li>
-              <li>Попытки подделки запросов на стороне сервера (SSRF)</li>
-            </ul>
-            
-            <p><strong>Предотвращение и обнаружение:</strong></p>
-            <ul style="margin: 8px 0; padding-left: 20px;">
-              <li>Логируйте все события, связанные с безопасностью, с достаточным контекстом</li>
-              <li>Используйте централизованное логирование: ELK Stack, Splunk, CloudWatch</li>
-              <li>Внедряйте оповещения в реальном времени для подозрительных паттернов</li>
-              <li>Обеспечивайте целостность логов (защита от изменений, хранение вне сайта)</li>
-              <li>Регулярно тестируйте процедуры реагирования на инциденты</li>
-              <li>Используйте инструменты управления информацией и событиями безопасности (SIEM)</li>
-            </ul>
-            
-            <p style="margin-top: 12px;"><strong>📚 Ресурсы:</strong> <a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring" target="_blank" style="color: var(--primary-purple);">OWASP: логирование и мониторинг</a> | <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" style="color: var(--primary-purple);">Лучшие практики логирования</a></p>
-          </div>
-        </div>
+<div class="owasp-item" onclick="toggleOWASP(this, 1)">
+  <div class="owasp-header">
+    <span class="owasp-number">1</span>
+    <span class="owasp-icon">🚫</span>
+    <span class="owasp-title">Нарушение контроля доступа</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Злоумышленники могут действовать за пределами своих разрешенных прав, получая несанкционированный доступ к чужим данным или функциям администратора.</p>
+    <p><strong>Пример:</strong> Изменение параметра в URL (например, <code>account_id=123</code> на <code>account_id=1</code>) дает доступ к учетной записи другого пользователя без проверки прав сервером.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Внедряйте механизмы проверки прав доступа строго на стороне сервера</li>
+      <li>Используйте принцип наименьших привилегий (PoLP)</li>
+      <li>Запрещайте доступ ко всем ресурсам по умолчанию (Deny by default)</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 2)">
+  <div class="owasp-header">
+    <span class="owasp-number">2</span>
+    <span class="owasp-icon">⚙️</span>
+    <span class="owasp-title">Небезопасная конфигурация</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Неправильные настройки безопасности в приложениях, фреймворках, серверах или облачных средах. Категория поднялась на 2-е место в 2025 году.</p>
+    <p><strong>Пример:</strong> Оставленные включенными отладочные функции в production-среде, открытые S3-корзины без аутентификации или использование паролей по умолчанию.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Автоматизируйте процессы проверки конфигурации среды</li>
+      <li>Отключайте неиспользуемые функции и порты</li>
+      <li>Применяйте подход "безопасность по умолчанию"</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 3)">
+  <div class="owasp-header">
+    <span class="owasp-number">3</span>
+    <span class="owasp-icon">📦</span>
+    <span class="owasp-title">Сбои в цепочке поставок ПО</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Новая категория 2025 года. Компрометация продукта через сторонние зависимости, инструменты сборки, CI/CD-конвейеры или образы контейнеров.</p>
+    <p><strong>Пример:</strong> Внедрение вредоносного кода в популярный NPM-пакет или использование OpenSource-библиотеки с известной критической уязвимостью.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Ведите и проверяйте SBOM (спецификацию программного обеспечения)</li>
+      <li>Используйте автоматическое сканирование зависимостей (SCA)</li>
+      <li>Загружайте пакеты только из доверенных реестров</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A03_2025-Software_Supply_Chain_Failures/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 4)">
+  <div class="owasp-header">
+    <span class="owasp-number">4</span>
+    <span class="owasp-icon">🔐</span>
+    <span class="owasp-title">Криптографические сбои</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Ошибки в реализации криптографии, которые приводят к утечке конфиденциальных данных (паролей, персональных или финансовых данных).</p>
+    <p><strong>Пример:</strong> Использование устаревших алгоритмов хеширования (MD5/SHA1), передача данных в открытом виде по HTTP или жестко закодированные API-ключи в коде.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Шифруйте данные при передаче (TLS) и во время хранения</li>
+      <li>Используйте современные алгоритмы (например, Argon2id для паролей)</li>
+      <li>Храните секреты в специализированных хранилищах (Vault)</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 5)">
+  <div class="owasp-header">
+    <span class="owasp-number">5</span>
+    <span class="owasp-icon">💉</span>
+    <span class="owasp-title">Инъекции (Injection)</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Уязвимость возникает, когда недоверенные данные отправляются интерпретатору как часть команды или запроса (SQL, NoSQL, OS-команды, XSS).</p>
+    <p><strong>Пример:</strong> Ввод вредоносного SQL-кода <code>' OR 1=1 --</code> в поле логина, который модифицирует запрос и заставляет базу данных вернуть все записи пользователей.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Используйте параметризованные запросы (Prepared Statements)</li>
+      <li>Избегайте прямого выполнения команд операционной системы</li>
+      <li>Валидируйте и экранируйте все входные данные</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A05_2025-Injection/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 6)">
+  <div class="owasp-header">
+    <span class="owasp-number">6</span>
+    <span class="owasp-icon">🏗️</span>
+    <span class="owasp-title">Небезопасный дизайн</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Уязвимости, возникающие из-за отсутствия архитектурного планирования безопасности и моделирования угроз на ранних этапах разработки.</p>
+    <p><strong>Пример:</strong> Механизм восстановления пароля, полагающийся на предсказуемые "секретные вопросы" (например, девичья фамилия матери), что позволяет легко взломать аккаунт.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Внедряйте моделирование угроз (Threat Modeling) до написания кода</li>
+      <li>Используйте безопасные паттерны проектирования</li>
+      <li>Ограничивайте бизнес-логику (например, лимиты на транзакции)</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A06_2025-Insecure_Design/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 7)">
+  <div class="owasp-header">
+    <span class="owasp-number">7</span>
+    <span class="owasp-icon">🔑</span>
+    <span class="owasp-title">Нарушения аутентификации</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Ошибки в механизмах проверки личности, управлении сессиями или восстановлении доступа, позволяющие злоумышленникам выдавать себя за других.</p>
+    <p><strong>Пример:</strong> Отсутствие защиты от перебора паролей (brute-force) или использование токенов сессий с длительным сроком жизни без возможности их отзыва.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Обязательно внедрите многофакторную аутентификацию (MFA)</li>
+      <li>Ограничивайте количество неудачных попыток входа (Rate Limiting)</li>
+      <li>Используйте безопасные, встроенные фреймворки сессий</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 8)">
+  <div class="owasp-header">
+    <span class="owasp-number">8</span>
+    <span class="owasp-icon">🛡️</span>
+    <span class="owasp-title">Нарушения целостности ПО и данных</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Системы полагаются на обновления, плагины или данные из CI/CD без должной проверки их целостности, что приводит к несанкционированным изменениям.</p>
+    <p><strong>Пример:</strong> Приложение загружает критическое обновление по незашифрованному каналу без проверки цифровой подписи, и злоумышленник подменяет файл.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Проверяйте цифровые подписи для всех скачиваемых обновлений</li>
+      <li>Используйте надежные механизмы проверки целостности (хэши)</li>
+      <li>Ограничьте и защитите доступ к CI/CD пайплайнам</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A08_2025-Software_and_Data_Integrity_Failures/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 9)">
+  <div class="owasp-header">
+    <span class="owasp-number">9</span>
+    <span class="owasp-icon">📋</span>
+    <span class="owasp-title">Сбои в журналировании и мониторинге</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Отсутствие или неадекватность логов безопасности и мониторинга, что позволяет злоумышленникам долгое время оставаться незамеченными.</p>
+    <p><strong>Пример:</strong> Система не записывает неудачные попытки входа или смены привилегий, из-за чего атака длится днями без срабатывания оповещений у команды ИБ.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Журналируйте все ключевые события контроля доступа и ошибки</li>
+      <li>Обеспечьте защиту логов от изменения или удаления злоумышленником</li>
+      <li>Настройте оповещения об аномалиях в реальном времени (SIEM)</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
+
+<div class="owasp-item" onclick="toggleOWASP(this, 10)">
+  <div class="owasp-header">
+    <span class="owasp-number">10</span>
+    <span class="owasp-icon">⚠️</span>
+    <span class="owasp-title">Неправильная обработка исключений</span>
+    <span class="owasp-checkmark">✓</span>
+    <span class="owasp-arrow">▶</span>
+  </div>
+  <div class="owasp-detail">
+    <p><strong>Что это такое:</strong> Новая категория 2025 года. Ошибки в логике обработки сбоев системы, приводящие к раскрытию конфиденциальной информации или "небезопасному отказу".</p>
+    <p><strong>Пример:</strong> При ошибке подключения к базе данных приложение выводит пользователю полную трассировку стека (stack trace) с внутренними IP-адресами и фрагментами кода.</p>
+    <p><strong>Предотвращение:</strong></p>
+    <ul style="margin: 8px 0; padding-left: 20px;">
+      <li>Отображайте пользователям только общие сообщения об ошибках</li>
+      <li>Логируйте детальную информацию об исключениях только на сервере</li>
+      <li>Используйте принцип "безопасного отказа" (fail securely)</li>
+    </ul>
+    <a href="https://owasp.org/Top10/2025/A10_2025-Mishandling_of_Exceptional_Conditions/" target="_blank" style="color:var(--primary-purple); font-weight:bold; display:inline-block; margin-top:10px;">Подробнее на OWASP &rarr;</a>
+  </div>
+</div>
       </div>
       
       <div style="text-align: center; margin: 24px 0;">
