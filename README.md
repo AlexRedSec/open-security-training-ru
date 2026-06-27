@@ -57,7 +57,7 @@
 2. LMS будет отслеживать прогресс, набранные баллы и статус завершения.
 
 ### Веб-версия для демонстрации:
-https://alexredsec.github.io/open-security-training-ru/
+https://sa.alexredsec.ru/
 
 ### Чтобы пересобрать SCORM-пакет:
 ```bash
