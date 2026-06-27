@@ -983,7 +983,7 @@
   <div class="owasp-header">
     <span class="owasp-number">5</span>
     <span class="owasp-icon">💉</span>
-    <span class="owasp-title">Инъекции (Injection)</span>
+    <span class="owasp-title">Инъекции</span>
     <span class="owasp-checkmark">✓</span>
     <span class="owasp-arrow">▶</span>
   </div>
@@ -2146,15 +2146,15 @@
       fixContent.innerHTML = `
         <div style="display: grid; gap: 20px;">
           <div>
-            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #1: Remove PII and Passwords from Logs</h4>
+            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Исправление #1: Удалить персональные данные и пароли из логов</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div>
-                <strong style="color: #666;">❌ Current (Vulnerable):</strong>
+                <strong style="color: #666;">❌ Текущая версия (уязвимая):</strong>
                 <pre style="background: #2d2d2d; color: #ff9999; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 console.log(\`Login for \${email} with password: \${password}\`);</pre>
               </div>
               <div>
-                <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
+                <strong style="color: #2e7d32;">✅ Исправленная версия (безопасная):</strong>
                 <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 console.log(\`Login attempt for user ID: \${userId}\`);
 // Never log passwords, emails, or other PII!</pre>
@@ -2163,15 +2163,15 @@ console.log(\`Login attempt for user ID: \${userId}\`);
           </div>
           
           <div>
-            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use VAULT for Secrets</h4>
+            <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Исправление #2: Использование VAULT для хранения секретов</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div>
-                <strong style="color: #666;">❌ Current (Vulnerable):</strong>
+                <strong style="color: #666;">❌ Текущая версия (уязвимая):</strong>
                 <pre style="background: #2d2d2d; color: #ff9999; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = "secret2024Key!";</pre>
               </div>
               <div>
-                <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
+                <strong style="color: #2e7d32;">✅ Исправленная версия (безопасная):</strong>
                 <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
 // Managed in VAULT with rotation!</pre>
@@ -2180,14 +2180,14 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
           </div>
           
           <div style="background: #e3f2fd; padding: 16px; border-radius: 8px;">
-            <h4 style="color: var(--dark-purple); margin-bottom: 8px;">📚 Security Best Practices Applied:</h4>
+            <h4 style="color: var(--dark-purple); margin-bottom: 8px;">📚 Применяйте лучшие практики:</h4>
             <ul style="margin: 0; padding-left: 20px; color: #666;">
-              <li>Never log sensitive information (passwords, tokens, emails, or PII)</li>
+              <li>Никогда не логируйте чувствительную информацию (пароли, токены, ПДн)</li>
               <li>Используйте ID пользователей вместо email-адресов в логах</li>
-              <li>Store secrets in VAULT</li>
-              <li>Enable automatic secret rotation</li>
-              <li>Use structured logging with severity levels</li>
-              <li>Implement audit logging for security events</li>
+              <li>Храните пароли в VAULT</li>
+              <li>Включите автоматическую ротацию секретов</li>
+              <li>Используйте структурированное логирование с уровнями важности</li>
+              <li>Внедрите журнал аудита для событий безопасности</li>
             </ul>
           </div>
         </div>
@@ -3494,10 +3494,10 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
               </div>
               
               <div style="margin-top: 16px; padding: 16px; background: #fff3e0; border-radius: 8px;">
-                <strong>📊 Scan Summary:</strong>
-                <p style="margin: 8px 0 0 0;">• 2 Critical vulnerabilities found</p>
-                <p style="margin: 4px 0 0 0;">• Security Score: 40/100</p>
-                <p style="margin: 4px 0 0 0;">• Recommendation: Fix critical issues immediately</p>
+                <strong>📊Отчет о сканировании:</strong>
+                <p style="margin: 8px 0 0 0;">• 2 критические уязвимости найдено</p>
+                <p style="margin: 4px 0 0 0;">• Оценка безопасности: 40/100</p>
+                <p style="margin: 4px 0 0 0;">• Рекомендации: Немедленно устранить уязвимости</p>
               </div>
             </div>
           `;
@@ -3533,15 +3533,15 @@ const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
           fixContent.innerHTML = `
             <div style="display: grid; gap: 20px;">
               <div>
-                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #1: Remove PII and Passwords from Logs</h4>
+                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Исправление #1: Удаление персональных данных</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                   <div>
-                    <strong style="color: #666;">❌ Current (Vulnerable):</strong>
+                    <strong style="color: #666;">❌ Текущая версия (уязвимая):</strong>
                     <pre style="background: #2d2d2d; color: #ff9999; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 console.log(\`Login for \${email} with password: \${password}\`);</pre>
                   </div>
                   <div>
-                    <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
+                    <strong style="color: #2e7d32;">✅ Исправленная версия (безопасная):</strong>
                     <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 console.log(\`Login attempt for user ID: \${userId}\`);
 // Never log passwords, emails, or other PII!</pre>
@@ -3550,15 +3550,15 @@ console.log(\`Login attempt for user ID: \${userId}\`);
               </div>
               
               <div>
-                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Fix #2: Use VAULT for Secrets</h4>
+                <h4 style="color: #c62828; margin-bottom: 8px;">🔧 Исправление #2: Использование VAULT для хранения секретов</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                   <div>
-                    <strong style="color: #666;">❌ Current (Vulnerable):</strong>
+                    <strong style="color: #666;">❌ Текущая версия (уязвимая):</strong>
                     <pre style="background: #2d2d2d; color: #ff9999; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = "secret2024Key!";</pre>
                   </div>
                   <div>
-                    <strong style="color: #2e7d32;">✅ Fixed (Secure):</strong>
+                    <strong style="color: #2e7d32;">✅ Исправленная версия (безопасная):</strong>
                     <pre style="background: #2d2d2d; color: #81c784; padding: 8px; border-radius: 4px; font-size: 12px; margin-top: 8px;">
 const JWT_SECRET = await secretsManager.getSecret('jwt-secret');
 // Managed in VAULT with rotation!</pre>
