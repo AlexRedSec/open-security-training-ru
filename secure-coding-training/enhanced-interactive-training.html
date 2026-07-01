@@ -1544,26 +1544,26 @@
         if (email.includes("' OR '") || password.includes("' OR '") || 
             email.toLowerCase().includes("' or 1=1") || password.toLowerCase().includes("' or 1=1")) {
           analysis = `<div style="background: #ffebee; border-left: 4px solid #f44336; padding: 16px;">
-            <strong style="color: #c62828;">🚨 SQL INJECTION DETECTED!</strong><br>
-            <strong>Attack Type:</strong> Authentication Bypass<br>
-            <strong>What happens:</strong> The OR condition makes the WHERE clause always TRUE<br>
-            <strong>База данных возвращает:</strong> ВСЕ записи пользователей вместо проверки учётных данных<br>
-            <strong>Result:</strong> Attacker logs in without knowing any passwords!<br>
+                <strong style="color: #c62828;">🚨 АТАКА С ОБХОДОМ АУТЕНТИФИКАЦИИ!</strong><br>
+                <strong>Результат запроса:</strong> возвращены ВСЕ записи о пользователях (их может быть тысячи!)<br>
+                <strong>Влияние атаки:</strong> Злоумышленник входит в систему под именем первого пользователя (часто администратора)<br>
+                <strong>Почему это сработало:</strong> Условие ИЛИ '1'='1' всегда истинно, поэтому запрос возвращает всех пользователей в базе данных<br>
+                <strong>Реальный ущерб:</strong> Полный обход аутентификации — злоумышленник получает несанкционированный доступ!
             <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
-              Query becomes: WHERE email = '' OR '1'='1' AND password = '...'<br>
-              This evaluates to: WHERE (false) OR (true) = TRUE for every row!
+              Запрос преобразуется в: WHERE email = '' OR '1'='1' AND password = '...'<br>
+              Результатом этого является: WHERE (false) OR (true) = TRUE для каждой строки!
             </div>
           </div>`;
         } else if (email.toUpperCase().includes("UNION") || password.toUpperCase().includes("UNION")) {
           analysis = `<div style="background: #ffebee; border-left: 4px solid #f44336; padding: 16px;">
-            <strong style="color: #c62828;">💀 ADVANCED SQL INJECTION!</strong><br>
-            <strong>Attack Type:</strong> UNION-based data extraction<br>
-            <strong>What happens:</strong> Combines your query with attacker's query<br>
-            <strong>Database returns:</strong> Data from OTHER tables (passwords, credit cards, etc.)<br>
-            <strong>Result:</strong> Complete data breach - sensitive information exposed!<br>
+                <strong style="color: #c62828;">💀 Усовершенствованная атака по извлечению данных!</strong><br>
+                <strong>Результат запроса:</strong> Злоумышленник извлекает данные из ДРУГИХ таблиц<br>
+                <strong>Влияние атаки:</strong> Может украсть имена пользователей, пароли, данные кредитных карт и персональные данные<br>
+                <strong>Почему это сработало:</strong> Функция UNION объединяет результаты нескольких запросов, что приводит к раскрытию конфиденциальных данных<br>
+                <strong>Реальный ущерб:</strong> Полная утечка данных — раскрыты все учетные данные администратора!<br>
             <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
-              Attacker can see: admin_passwords, payment_info, personal_data<br>
-              All because of string concatenation vulnerability!
+              Злоумышленние может увидеть: admin_passwords, payment_info, personal_data<br>
+              Всё из-за уязвимости, связанной с конкатенацией строк!
             </div>
           </div>`;
         } else if (email.includes("--") || password.includes("--") || 
@@ -1598,10 +1598,10 @@
         </div>`;
       } else {
         analysis = `<div style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 16px;">
-          <strong style="color: #2e7d32;">✅ Normal Authentication Query</strong><br>
-          <strong>What happens:</strong> Database checks if email and password match<br>
-          <strong>Database returns:</strong> 0 rows (no match) or 1 row (valid user)<br>
-          <strong>Result:</strong> Secure authentication - only valid credentials work
+                <strong style="color: #2e7d32;">✅ Обычная аутентификация</strong><br>
+                <strong>Результат запроса:</strong> Возвращена запись 0 или 1 пользователя<br>
+                <strong>Поведение:</strong> Если учетные данные совпадают, пользователь входит в систему. В противном случае аутентификация завершается неудачей.<br>
+                <strong>Для базы данных:</strong> Обычный запрос, проверяющий наличие одного конкретного пользователя.
         </div>`;
       }
       
@@ -1634,10 +1634,14 @@
             resultDiv.innerHTML = `
               <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 16px;">
                 <strong style="color: #c62828;">🚨 АТАКА С ОБХОДОМ АУТЕНТИФИКАЦИИ!</strong><br>
-                <strong>Результат запроса:</strong> озвращены ВСЕ записи о пользователях (их может быть тысячи!)<br>
+                <strong>Результат запроса:</strong> возвращены ВСЕ записи о пользователях (их может быть тысячи!)<br>
                 <strong>Влияние атаки:</strong> Злоумышленник входит в систему под именем первого пользователя (часто администратора)<br>
                 <strong>Почему это сработало:</strong> Условие ИЛИ '1'='1' всегда истинно, поэтому запрос возвращает всех пользователей в базе данных<br>
                 <strong>Реальный ущерб:</strong> Полный обход аутентификации — злоумышленник получает несанкционированный доступ!
+              <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace; font-size: 12px;">
+              Запрос преобразуется в: WHERE email = '' OR '1'='1' AND password = '...'<br>
+              Результатом этого является: WHERE (false) OR (true) = TRUE для каждой строки!
+            </div>
               </div>`;
           }, 100);
           break;
@@ -1653,9 +1657,8 @@
                 <strong>Почему это сработало:</strong> Функция UNION объединяет результаты нескольких запросов, что приводит к раскрытию конфиденциальных данных<br>
                 <strong>Реальный ущерб:</strong> Полная утечка данных — раскрыты все учетные данные администратора!<br>
                 <div style="background: #1e1e1e; color: #ff9999; padding: 8px; margin-top: 8px; border-radius: 4px; font-family: monospace;">
-                  admin_user1 | $2b$10$hashedpassword...<br>
-                  admin_user2 | $2b$10$anotherhashedpw...<br>
-                  superadmin | $2b$10$superadminpw...
+              Злоумышленние может увидеть: admin_passwords, payment_info, personal_data<br>
+              Всё из-за уязвимости, связанной с конкатенацией строк!
                 </div>
               </div>`;
           }, 100);
@@ -2084,13 +2087,13 @@
           <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 12px; border-radius: 4px;">
             <strong style="color: #c62828;">🔴 CRITICAL - CWE-798: Use of Hard-coded Credentials</strong>
             <p style="margin: 8px 0 0 0; color: #666;">Line 1: JWT secret key hardcoded. Impact: Critical</p>
-            <p style="margin: 4px 0 0 0; font-size: 12px; color: #999;">OWASP: A2:2017 - Broken Authentication</p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #999;">OWASP: A07:2025 Authentication Failures</p>
           </div>
           
           <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 12px; border-radius: 4px;">
             <strong style="color: #c62828;">🔴 CRITICAL - CWE-532: Information Exposure Through Log Files</strong>
             <p style="margin: 8px 0 0 0; color: #666;">Line 2: Password and email (PII) logged in plain text. Impact: High</p>
-            <p style="margin: 4px 0 0 0; font-size: 12px; color: #999;">OWASP: A3:2017 - Sensitive Data Exposure</p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #999;">OWASP: A04:2025 - Cryptographic Failures</p>
           </div>
           
           <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px; border-radius: 4px;">
